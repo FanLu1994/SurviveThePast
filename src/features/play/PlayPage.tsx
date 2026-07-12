@@ -1,7 +1,7 @@
 import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { getBackgroundImageUrl } from '@/game/background-assets'
 import { getAvailableChoices, getSceneNode } from '@/game/engine'
-import { getLevelById } from '@/game/scenario-loader'
+import { getLevelById, getLevelIndex } from '@/game/scenario-loader'
 import { EvidencePanel } from '@/features/evidence/EvidencePanel'
 import { HypothesisPanel } from '@/features/evidence/HypothesisPanel'
 import { StatusPanel } from '@/features/play/StatusPanel'
@@ -41,7 +41,7 @@ export function PlayPage() {
     <div className={`play-layout theme-${level.theme}`}>
       <header className="play-toolbar">
         <div>
-          <strong>{level.title}</strong>
+          <strong>第 {getLevelIndex(level.id) + 1} 关 · 未知时空</strong>
           <span style={{ marginLeft: '0.75rem', color: 'var(--color-text-muted)' }}>
             场景：{scene.title}
           </span>

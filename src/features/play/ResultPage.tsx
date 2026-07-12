@@ -36,8 +36,7 @@ export function ResultPage() {
     <main className="page">
       <h1 className="page-title">本局结算</h1>
       <p className="page-subtitle">
-        {lastResult.levelTitle}
-        {cleared ? ' · 已通关' : ' · 未通关'}
+        {cleared ? `${lastResult.levelTitle} · 已通关` : '未知时空 · 未通关'}
       </p>
 
       <div className="result-grid">
@@ -71,18 +70,21 @@ export function ResultPage() {
         </section>
 
         <section className="archive-card">
-          <h3>参考答案</h3>
-          <p>年代：{lastResult.correctAnswers.period}</p>
-          <p>地域：{lastResult.correctAnswers.region}</p>
+          <h3>{cleared ? '参考答案' : '复盘提示'}</h3>
+          {cleared ? (
+            <>
+              <p>年代：{lastResult.correctAnswers.period}</p>
+              <p>地域：{lastResult.correctAnswers.region}</p>
+            </>
+          ) : (
+            <p>重新核对已收集证据之间的支持与冲突关系，完整答案将在通关后揭示。</p>
+          )}
         </section>
       </div>
 
       <section className="archive-card" style={{ marginTop: '1rem' }}>
         {cleared && nextLevel ? (
-          <p>
-            通关成功，下一关「<strong>{nextLevel.title}</strong>」
-            {nextUnlocked ? '已开放。' : '即将开放。'}
-          </p>
+          <p>通关成功，下一关{nextUnlocked ? '已开放。' : '即将开放。'}</p>
         ) : cleared && !nextLevel ? (
           <p>你已通关目前所有关卡，感谢游玩。</p>
         ) : (

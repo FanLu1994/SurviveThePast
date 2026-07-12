@@ -60,10 +60,12 @@ export function HomePage() {
             <article className="archive-card level-card" key={level.id}>
               <div className="level-card-info">
                 <h3>
-                  第 {index + 1} 关 · {level.title}
+                  第 {index + 1} 关 · {completed ? level.title : '未知时空'}
                 </h3>
                 <p style={{ color: 'var(--color-text-muted)' }}>
-                  {level.eraLabel} · {level.year} 年 · {level.regionLabel}
+                  {completed
+                    ? `${level.eraLabel} · ${level.year} 年 · ${level.regionLabel}`
+                    : '年代未知 · 地点未知'}
                 </p>
               </div>
               <div className="level-card-action">

@@ -16,18 +16,26 @@ export function ArchivePage() {
       <div className="archive-grid">
         {sources.map((source) => {
           const unlocked = meta.unlockedSources.includes(source.id)
+          const revealed =
+            unlocked && meta.completedLevels.includes(source.levelId)
           return (
             <article className="archive-card" key={source.id}>
-              <h3>{source.title}</h3>
+              <h3>{revealed ? source.title : '未解锁史料'}</h3>
               <p style={{ color: 'var(--color-text-muted)' }}>
-                {source.levelTitle} ·{' '}
-                {source.factType === 'historical'
-                  ? '史实'
-                  : source.factType === 'inference'
-                    ? '合理推演'
-                    : '剧情虚构'}
+                {revealed ? (
+                  <>
+                    {source.levelTitle} ·{' '}
+                    {source.factType === 'historical'
+                      ? '史实'
+                      : source.factType === 'inference'
+                        ? '合理推演'
+                        : '剧情虚构'}
+                  </>
+                ) : (
+                  '来源关卡未知'
+                )}
               </p>
-              {unlocked ? (
+              {revealed ? (
                 <>
                   <p>{source.summary}</p>
                   <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem' }}>
