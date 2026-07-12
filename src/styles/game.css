@@ -1,3 +1,8 @@
+.theme-jiaqing-cloth {
+  --stage-bg: linear-gradient(180deg, #3a3228 0%, #1a1612 100%);
+  --stage-accent: #a67c52;
+}
+
 .theme-late-han {
   --stage-bg: linear-gradient(180deg, #2b2118 0%, #17120f 100%);
   --stage-accent: #8b5a2b;
@@ -32,6 +37,80 @@
   min-height: 100vh;
   display: grid;
   grid-template-rows: auto 1fr auto;
+}
+
+.crossing-page {
+  min-height: 100vh;
+}
+
+.crossing-stage {
+  position: relative;
+  min-height: 100vh;
+  display: grid;
+  place-items: end center;
+  padding: 2rem 1.25rem 2.5rem;
+  background: var(--stage-bg, linear-gradient(180deg, #2b2118 0%, #17120f 100%));
+  overflow: hidden;
+}
+
+.crossing-stage-has-image::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: var(--crossing-image);
+  background-size: cover;
+  background-position: center;
+  transform: scale(1.04);
+  filter: saturate(0.85) contrast(1.05);
+}
+
+.crossing-veil {
+  position: absolute;
+  inset: 0;
+  background:
+    linear-gradient(180deg, rgba(8, 6, 4, 0.35) 0%, rgba(8, 6, 4, 0.72) 55%, rgba(8, 6, 4, 0.92) 100%);
+}
+
+.crossing-panel {
+  position: relative;
+  z-index: 1;
+  width: min(40rem, 100%);
+  display: grid;
+  gap: 1.25rem;
+}
+
+.crossing-eyebrow {
+  margin: 0;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  font-size: 0.75rem;
+  color: var(--stage-accent, var(--color-accent));
+}
+
+.crossing-text {
+  min-height: 10rem;
+  cursor: pointer;
+}
+
+.crossing-text p {
+  margin: 0 0 1rem;
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: #f3ebe1;
+  white-space: pre-wrap;
+}
+
+.crossing-caret {
+  display: inline-block;
+  margin-left: 0.1rem;
+  animation: crossing-blink 1s step-end infinite;
+  color: var(--stage-accent, var(--color-accent));
+}
+
+@keyframes crossing-blink {
+  50% {
+    opacity: 0;
+  }
 }
 
 .play-toolbar {
@@ -312,6 +391,16 @@
   gap: var(--space-md);
   padding: var(--space-sm) 0;
   border-bottom: 1px solid var(--color-border);
+}
+
+.result-score {
+  margin: 0 0 0.75rem;
+  font-size: 1.05rem;
+}
+
+.result-score strong {
+  font-size: 1.6rem;
+  color: var(--color-accent);
 }
 
 @media (max-width: 900px) {

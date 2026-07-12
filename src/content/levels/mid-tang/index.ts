@@ -11,6 +11,13 @@ export const midTangLevel: LevelPack = {
   coreCrisis: '无本坊户籍与保人——坊市制与宵禁下，无籍者不得随意过夜，闭坊后将被驱离。',
   historicalBackground:
     '公元742年，京师仍行坊市制。诸坊以鼓报时，日暮闭坊门，行人须有本坊籍或保人作保方可寄住。开元通宝流通广泛，市口胡商与驿使往来频繁，但繁华不等于夜间自由。外来者若无坊正认可的寄住登记，只能在闭坊前找到落脚点，否则将被坊门吏员驱离或扣留问话。',
+  crossing: {
+    background: 'mid-tang-fang',
+    leadText:
+      '光影碎裂又合拢。你坠落在硬土与砖缝之间，穿越失败的余震还在骨缝里发麻。',
+    sceneText:
+      '坊墙高立，鼓声尚未起。街巷里有人赶路，有人张罗寄住。日色西斜，闭坊的规矩像一扇尚未落下的门，正等着把无籍者关在外头。',
+  },
   startNodeId: 'scene_awakening',
   correctAnswers: {
     period: '盛唐',
@@ -549,6 +556,7 @@ export const midTangLevel: LevelPack = {
       type: 'ending',
       title: '暂得寄住',
       outcome: 'success',
+      score: 82,
       text: '你在坊正处登记为寄住客，暂时获得了可被本坊承认的过夜资格。闭坊鼓敲响时，你已在邸店歇下。',
       unlockSources: ['mt_s1', 'mt_s2'],
     },
@@ -557,6 +565,7 @@ export const midTangLevel: LevelPack = {
       type: 'ending',
       title: '过所登记',
       outcome: 'success',
+      score: 82,
       text: '你凭过所完成寄住登记，并在闭坊前找到了可歇脚的邸店。你仍不知明日几何，但至少没有被当场识破。',
       unlockSources: ['mt_s2', 'mt_s3'],
     },
@@ -565,6 +574,7 @@ export const midTangLevel: LevelPack = {
       type: 'ending',
       title: '闭坊前离去',
       outcome: 'partial',
+      score: 48,
       text: '你在闭坊鼓敲响前离开坊外，躲过了当场查验，但饥饿与疲惫仍在累积。你活了下来，却仍未真正立足。',
       unlockSources: ['mt_s3'],
     },
@@ -573,6 +583,7 @@ export const midTangLevel: LevelPack = {
       type: 'ending',
       title: '来历败露',
       outcome: 'failure',
+      score: 18,
       text: '你的说法与时代细节对不上，坊正将你扣下问话。在缺少保人作保的情况下，这通常意味着失去在本坊过夜的能力。',
       unlockSources: ['mt_s2'],
     },
@@ -581,6 +592,7 @@ export const midTangLevel: LevelPack = {
       type: 'ending',
       title: '力竭倒毙',
       outcome: 'failure',
+      score: 18,
       text: '你在市口倒下，再未醒来。体力与粮食和寄住资格一样，都是生存必需品。',
     },
     {
@@ -588,6 +600,7 @@ export const midTangLevel: LevelPack = {
       type: 'ending',
       title: '伤重不治',
       outcome: 'failure',
+      score: 18,
       text: '伤病耗尽了你最后一点行动能力。你未能走到下一个可以寄住的地方。',
     },
     {
@@ -595,6 +608,7 @@ export const midTangLevel: LevelPack = {
       type: 'ending',
       title: '嫌疑缠身',
       outcome: 'failure',
+      score: 18,
       text: '周围人对你的怀疑已到无法掩饰的地步。你已无法再以任何身份自如行动。',
     },
   ],

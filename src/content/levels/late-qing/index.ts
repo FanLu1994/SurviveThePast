@@ -11,6 +11,13 @@ export const lateQingLevel: LevelPack = {
   coreCrisis: '客籍无铺保——晚清城市要求留宿者持有铺保或熟人作保，巡警与保甲双重查验，无保者难落脚过夜。',
   historicalBackground:
     '公元1898年，天津城厢仍行保甲制度，巡警查夜与客栈留宿规则并行。外来客籍须由铺保或熟人作保方可在客栈过夜。光绪通宝、银元与纸烟并存流通，街巷洋货招牌与中式铺面交错。失去铺保者只能依附同乡会、凭介绍信找客栈，或趁夜转移躲避查夜。',
+  crossing: {
+    background: 'late-qing-street',
+    leadText:
+      '穿越失败。煤油气与河风搅在一起，远处巡夜的脚步踩得又稳又慢，像在提醒你：今晚没有铺保就很难躺下。',
+    sceneText:
+      '街巷灯火将明未明，客栈门口写着留宿规矩。洋货招牌与旧式铺面挤在同一条路上。你说不清自己掉进哪座口岸城厢，只知道客籍二字一旦被问住，便无处可歇。',
+  },
   startNodeId: 'scene_awakening',
   correctAnswers: {
     period: '晚清',
@@ -549,6 +556,7 @@ export const lateQingLevel: LevelPack = {
       type: 'ending',
       title: '暂得留宿',
       outcome: 'success',
+      score: 82,
       text: '你在客栈登记为客籍，暂时获得了可被本城承认的过夜资格。查夜哨响起时，你已在铺位歇下。',
       unlockSources: ['lq_s1', 'lq_s2'],
     },
@@ -557,6 +565,7 @@ export const lateQingLevel: LevelPack = {
       type: 'ending',
       title: '介绍信留宿',
       outcome: 'success',
+      score: 82,
       text: '你凭介绍信完成留宿登记，并在查夜前找到了可歇脚的铺位。你仍不知明日几何，但至少没有被当场识破。',
       unlockSources: ['lq_s1', 'lq_s3'],
     },
@@ -565,6 +574,7 @@ export const lateQingLevel: LevelPack = {
       type: 'ending',
       title: '查夜前离去',
       outcome: 'partial',
+      score: 48,
       text: '你在查夜哨响起前离开街巷，躲过了当场查验，但饥饿与疲惫仍在累积。你活了下来，却仍未真正立足。',
       unlockSources: ['lq_s3'],
     },
@@ -573,6 +583,7 @@ export const lateQingLevel: LevelPack = {
       type: 'ending',
       title: '来历败露',
       outcome: 'failure',
+      score: 18,
       text: '你的说法与时代细节对不上，巡警将你扣下问话。在缺少铺保的情况下，这通常意味着失去在本城过夜的能力。',
       unlockSources: ['lq_s1'],
     },
@@ -581,6 +592,7 @@ export const lateQingLevel: LevelPack = {
       type: 'ending',
       title: '力竭倒毙',
       outcome: 'failure',
+      score: 18,
       text: '你在街巷倒下，再未醒来。体力与银元和留宿资格一样，都是生存必需品。',
     },
     {
@@ -588,6 +600,7 @@ export const lateQingLevel: LevelPack = {
       type: 'ending',
       title: '伤重不治',
       outcome: 'failure',
+      score: 18,
       text: '伤病耗尽了你最后一点行动能力。你未能走到下一个可以留宿的地方。',
     },
     {
@@ -595,6 +608,7 @@ export const lateQingLevel: LevelPack = {
       type: 'ending',
       title: '嫌疑缠身',
       outcome: 'failure',
+      score: 18,
       text: '周围人对你的怀疑已到无法掩饰的地步。你已无法再以任何身份自如行动。',
     },
   ],

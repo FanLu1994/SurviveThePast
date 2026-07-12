@@ -1,4 +1,9 @@
 const BACKGROUND_PATHS: Record<string, string> = {
+  'cloth-yard': '/assets/images/levels/late-han/bg-village.webp',
+  'cloth-shop': '/assets/images/levels/late-han/bg-inn.webp',
+  'cloth-tea': '/assets/images/levels/northern-song/bg-street.webp',
+  'cloth-alley': '/assets/images/levels/late-han/bg-road.webp',
+  'cloth-dye': '/assets/images/levels/late-qing/bg-street.webp',
   'late-han-road': '/assets/images/levels/late-han/bg-road.webp',
   'late-han-village': '/assets/images/levels/late-han/bg-village.webp',
   'late-han-inn': '/assets/images/levels/late-han/bg-inn.webp',

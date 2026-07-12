@@ -11,6 +11,13 @@ export const earlyMingLevel: LevelPack = {
   coreCrisis: '无路引——明初里甲与关津制度要求行人持有路引方可远行，无引者随时可能被扣留问话。',
   historicalBackground:
     '公元1393年，明初里甲制度已全面推行。行人远行须持有路引，关津吏员与里甲盘查趋严。洪武通宝仍流通，但粮价因征役与催报波动。失去路引者只能依附商队、凭里长作保，或绕道小径躲避查验。这一关卡的危机，正是无路引者在严法中求存的真实困境。',
+  crossing: {
+    background: 'early-ming-road',
+    leadText:
+      '天地颠倒片刻，你摔在官道边的草泥里。穿越失败，又一次。',
+    sceneText:
+      '官道笔直，远处有人催行。空气里是尘土与草木气。没有路引的人走在这样的路上，每一步都像在等盘查的声音。',
+  },
   startNodeId: 'scene_awakening',
   correctAnswers: {
     period: '明初',
@@ -549,6 +556,7 @@ export const earlyMingLevel: LevelPack = {
       type: 'ending',
       title: '暂得容身',
       outcome: 'success',
+      score: 82,
       text: '你在里中登记为客，暂时获得了可被当地承认的身份。严法之中，这已是难得的生存。',
       unlockSources: ['em_s1', 'em_s2'],
     },
@@ -557,6 +565,7 @@ export const earlyMingLevel: LevelPack = {
       type: 'ending',
       title: '文书通行',
       outcome: 'success',
+      score: 82,
       text: '你凭封套通过盘查，并在下一处找到了可继续前行的道路。你仍不知未来几何，但至少没有被当场识破。',
       unlockSources: ['em_s2', 'em_s3'],
     },
@@ -565,6 +574,7 @@ export const earlyMingLevel: LevelPack = {
       type: 'ending',
       title: '夜行脱险',
       outcome: 'partial',
+      score: 48,
       text: '你趁夜离开，躲过了当场查验，但饥饿与疲惫仍在累积。你活了下来，却仍未真正立足。',
       unlockSources: ['em_s3'],
     },
@@ -573,6 +583,7 @@ export const earlyMingLevel: LevelPack = {
       type: 'ending',
       title: '来历败露',
       outcome: 'failure',
+      score: 18,
       text: '你的说法与时代细节对不上，吏员将你扣下问话。在缺少路引的情况下，这通常意味着失去自由行动的能力。',
       unlockSources: ['em_s2'],
     },
@@ -581,6 +592,7 @@ export const earlyMingLevel: LevelPack = {
       type: 'ending',
       title: '力竭倒毙',
       outcome: 'failure',
+      score: 18,
       text: '你在道旁倒下，再未醒来。严法里，体力与粮食和路引一样，都是生存必需品。',
     },
     {
@@ -588,6 +600,7 @@ export const earlyMingLevel: LevelPack = {
       type: 'ending',
       title: '伤重不治',
       outcome: 'failure',
+      score: 18,
       text: '伤病耗尽了你最后一点行动能力。你未能走到下一个可以容身的地方。',
     },
     {
@@ -595,6 +608,7 @@ export const earlyMingLevel: LevelPack = {
       type: 'ending',
       title: '嫌疑缠身',
       outcome: 'failure',
+      score: 18,
       text: '周围人对你的怀疑已到无法掩饰的地步。你已无法再以任何身份自如行动。',
     },
   ],

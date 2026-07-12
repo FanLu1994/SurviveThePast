@@ -13,6 +13,13 @@ export const earlyRepublicLevel: LevelPack = {
     '新政府名义已立，但铺保、介绍信与地方查验仍按旧例或洋界各自规矩执行；证件效力在华界与外人街区并不一致，短时间内找不到担保就无法合法住下。',
   historicalBackground:
     '1912年（民国元年），上海刚经历政权更替，华界与租界并存、各自为政。车站、客栈与商铺仍看重铺保和介绍信，不同街区对证件的要求并不统一；银元铜元并用，报刊与电车已普及，但社会规则远未同步更新。本关核心危机——证件与铺保不统一——正是这一过渡期的日常困境。',
+  crossing: {
+    background: 'early-republic-station',
+    leadText:
+      '穿越失败。汽笛与报童的嗓子同时炸开，纸墨与机油味道冲进肺里，像被一列尚未停稳的车抛到月台上。',
+    sceneText:
+      '车站外电车铃响，华洋街面各行其是。客栈柜台要看介绍与铺保，不同街区口径却不一致。你还对不上这是哪一年的口岸，只明白：证件若对不上眼下的规矩，今夜仍可能无家可归。',
+  },
   startNodeId: 'scene_station',
   correctAnswers: {
     period: '民国初年',
@@ -543,6 +550,7 @@ export const earlyRepublicLevel: LevelPack = {
       type: 'ending',
       title: '城中立足',
       outcome: 'success',
+      score: 82,
       text: '你在城中获得短期担保，找到了继续生存的位置。新旧交替的街面上，理解铺保与分区规矩比口号更重要。',
       unlockSources: ['er_s1', 'er_s2'],
     },
@@ -551,6 +559,7 @@ export const earlyRepublicLevel: LevelPack = {
       type: 'ending',
       title: '悬居城中',
       outcome: 'partial',
+      score: 48,
       text: '你留在城里，却始终没有完全融入。你活了下来，但随时可能被新的查验打乱安排。',
       unlockSources: ['er_s3'],
     },
@@ -559,6 +568,7 @@ export const earlyRepublicLevel: LevelPack = {
       type: 'ending',
       title: '夜离城区',
       outcome: 'partial',
+      score: 48,
       text: '你离开了这座口岸城市，躲过了证件压力，却仍未找到真正安身之处。',
       unlockSources: ['er_s1'],
     },
@@ -567,6 +577,7 @@ export const earlyRepublicLevel: LevelPack = {
       type: 'ending',
       title: '来历可疑',
       outcome: 'failure',
+      score: 18,
       text: '你的说法与本地实际规则严重不符。被怀疑往往意味着失去担保与落脚处，你只能被逐出客栈。',
       unlockSources: ['er_s2'],
     },
@@ -575,6 +586,7 @@ export const earlyRepublicLevel: LevelPack = {
       type: 'ending',
       title: '力竭',
       outcome: 'failure',
+      score: 18,
       text: '你在电车和洋行之间耗尽最后一丝体力，再未能撑到下一个可容身之处。',
     },
     {
@@ -582,6 +594,7 @@ export const earlyRepublicLevel: LevelPack = {
       type: 'ending',
       title: '伤病',
       outcome: 'failure',
+      score: 18,
       text: '伤病让你无法继续在这座口岸城市行动。近代街市不会为无法行动的人停留。',
     },
     {
@@ -589,6 +602,7 @@ export const earlyRepublicLevel: LevelPack = {
       type: 'ending',
       title: '嫌疑',
       outcome: 'failure',
+      score: 18,
       text: '关于你的议论已经扩散，客栈与商铺都不再欢迎你。',
     },
   ],

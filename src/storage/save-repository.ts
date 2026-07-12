@@ -68,7 +68,16 @@ export function createEmptySave(): SaveData {
 
 export function migrateSave(data: SaveData): SaveData {
   if (data.schemaVersion === SAVE_SCHEMA_VERSION) {
-    return data
+    return {
+      ...data,
+      activeRun: data.activeRun
+        ? {
+            ...data.activeRun,
+            choiceHistory: data.activeRun.choiceHistory ?? [],
+            crossingDone: data.activeRun.crossingDone ?? true,
+          }
+        : null,
+    }
   }
 
   const base =
@@ -100,6 +109,7 @@ export function migrateSave(data: SaveData): SaveData {
     ? {
         ...data.activeRun,
         choiceHistory: data.activeRun.choiceHistory ?? [],
+        crossingDone: data.activeRun.crossingDone ?? true,
       }
     : null
 

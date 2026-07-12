@@ -7,17 +7,23 @@ const GRADE_LABELS = { A: 'A 级', B: 'B 级', C: 'C 级', D: 'D 级' } as const
 export function ResultPage() {
   const navigate = useNavigate()
   const lastResult = useGameStore((state) => state.lastResult)
+  const activeRun = useGameStore((state) => state.activeRun)
   const meta = useGameStore((state) => state.meta)
   const clearResult = useGameStore((state) => state.clearResult)
   const startNewRun = useGameStore((state) => state.startNewRun)
 
   if (!lastResult) {
+    if (activeRun && !activeRun.crossingDone) {
+      return <Navigate to="/crossing" replace />
+    }
+    if (activeRun) {
+      return <Navigate to="/play" replace />
+    }
     return <Navigate to="/" replace />
   }
 
   const level = getLevelById(lastResult.levelId)
-  const cleared =
-    lastResult.outcome === 'success' || lastResult.outcome === 'partial'
+  const cleared = lastResult.outcome === 'success'
   const nextLevelId = getNextLevelId(lastResult.levelId)
   const nextLevel = nextLevelId ? getLevelById(nextLevelId) : null
   const nextUnlocked = nextLevelId
@@ -26,25 +32,40 @@ export function ResultPage() {
 
   const handleReplay = () => {
     startNewRun(lastResult.levelId)
-    navigate('/play')
+    navigate('/crossing')
   }
 
   const handleNext = () => {
     if (!nextLevelId || !nextUnlocked) return
     startNewRun(nextLevelId)
-    navigate('/play')
+    navigate('/crossing')
   }
 
   return (
     <main className="page">
       <h1 className="page-title">本局结算</h1>
       <p className="page-subtitle">
-        {cleared ? `${lastResult.levelTitle} · 已通关` : '未知时空 · 未通关'}
+        {cleared
+          ? `${lastResult.levelTitle} · 已通关 · ${lastResult.endingScore} 分`
+          : lastResult.outcome === 'partial'
+            ? `未知时空 · 未完全过关 · ${lastResult.endingScore} 分`
+            : `未知时空 · 未通关 · ${lastResult.endingScore} 分`}
       </p>
 
       <div className="result-grid">
         <section className="archive-card">
           <h3>生存结果</h3>
+          <p className="result-score">
+            本局评分 <strong>{lastResult.endingScore}</strong>
+            <span style={{ color: 'var(--color-text-muted)', marginLeft: '0.5rem' }}>
+              / 100 · {lastResult.endingTitle}
+              {lastResult.outcome === 'success'
+                ? ' · 通关'
+                : lastResult.outcome === 'partial'
+                  ? ' · 未完全过关'
+                  : ' · 失败'}
+            </span>
+          </p>
           <p>{lastResult.endingText}</p>
           {cleared && lastResult.primarySurvival && (
             <>
@@ -91,31 +112,6 @@ export function ResultPage() {
         )}
 
         <section className="archive-card">
-          <h3>推理评价</h3>
-          <div className="result-metric">
-            <span>断代准确度</span>
-            <strong>{lastResult.periodAccuracy}%</strong>
-          </div>
-          <div className="result-metric">
-            <span>地域判断准确度</span>
-            <strong>{lastResult.regionAccuracy}%</strong>
-          </div>
-          <div className="result-metric">
-            <span>身份还原度</span>
-            <strong>{lastResult.identityAccuracy}%</strong>
-          </div>
-        </section>
-
-        <section className="archive-card">
-          <h3>你的判断</h3>
-          <p>年代：{lastResult.playerHypothesis.period || '未填写'}</p>
-          <p>地域：{lastResult.playerHypothesis.region || '未填写'}</p>
-          <p>身份：{lastResult.playerHypothesis.identity || '未填写'}</p>
-          <p>关系：{lastResult.playerHypothesis.relation || '未填写'}</p>
-          <p>危机：{lastResult.playerHypothesis.crisis || '未填写'}</p>
-        </section>
-
-        <section className="archive-card">
           <h3>{cleared ? '参考答案' : '复盘提示'}</h3>
           {cleared ? (
             <>
@@ -123,7 +119,7 @@ export function ResultPage() {
               <p>地域：{lastResult.correctAnswers.region}</p>
             </>
           ) : (
-            <p>重新核对已收集证据之间的支持与冲突关系，完整答案将在通关后揭示。</p>
+            <p>本局未通关。可回看关键选择与生存状态，再重开尝试。</p>
           )}
         </section>
       </div>
@@ -178,6 +174,10 @@ export function ResultPage() {
           <p>通关成功，下一关{nextUnlocked ? '已开放。' : '即将开放。'}</p>
         ) : cleared && !nextLevel ? (
           <p>你已通关目前所有关卡，感谢游玩。</p>
+        ) : lastResult.outcome === 'partial' ? (
+          <p>
+            本局评分 {lastResult.endingScore}，算勉强收场，但不算通关，下一关未开放。只有更高分的圆满结局才能解锁后续。
+          </p>
         ) : (
           <p>本局未通关，下一关尚未开放。可重玩本关再行尝试。</p>
         )}

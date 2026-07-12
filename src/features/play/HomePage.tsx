@@ -15,12 +15,13 @@ export function HomePage() {
 
   const handleStart = (levelId: string) => {
     startNewRun(levelId)
-    navigate('/play')
+    navigate('/crossing')
   }
 
   const handleContinue = () => {
     if (continueRun()) {
-      navigate('/play')
+      const run = useGameStore.getState().activeRun
+      navigate(run && !run.crossingDone ? '/crossing' : '/play')
     }
   }
 

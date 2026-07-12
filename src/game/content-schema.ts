@@ -99,6 +99,7 @@ const endingSchema = z.object({
   type: z.literal('ending'),
   title: z.string().min(1),
   outcome: z.enum(['success', 'failure', 'partial']),
+  score: z.number().int().min(0).max(100),
   text: z.string().min(1),
   unlockSources: z.array(z.string().min(1)).optional(),
 })
@@ -113,6 +114,11 @@ export const levelPackSchema = z.object({
   oneLiner: z.string().min(1),
   coreCrisis: z.string().min(1),
   historicalBackground: z.string().min(1),
+  crossing: z.object({
+    background: z.string().min(1),
+    leadText: z.string().min(1),
+    sceneText: z.string().min(1),
+  }),
   startNodeId: z.string().min(1),
   correctAnswers: z.object({
     period: z.string().min(1),

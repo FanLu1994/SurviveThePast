@@ -184,11 +184,22 @@ export interface EndingDef {
   type: 'ending'
   title: string
   outcome: 'success' | 'failure' | 'partial'
+  /** 0–100，本结局评分 */
+  score: number
   text: string
   unlockSources?: string[]
 }
 
 export type NodeDef = SceneNodeDef | EndingDef
+
+/** 进关前穿越过场：氛围描述，不点名年代答案。 */
+export interface CrossingIntro {
+  background: string
+  /** 穿越瞬间 */
+  leadText: string
+  /** 落地后的时间地点场景感 */
+  sceneText: string
+}
 
 export interface LevelPack {
   id: string
@@ -200,6 +211,7 @@ export interface LevelPack {
   oneLiner: string
   coreCrisis: string
   historicalBackground: string
+  crossing: CrossingIntro
   startNodeId: string
   correctAnswers: CorrectAnswers
   sources: SourceRef[]
@@ -228,6 +240,8 @@ export interface RunState {
   unlockedSources: string[]
   isComplete: boolean
   endingId?: string
+  /** 进关穿越过场是否已看完 */
+  crossingDone: boolean
 }
 
 export interface GameSettings {
@@ -266,6 +280,7 @@ export interface RunResult {
   outcome: 'success' | 'failure' | 'partial'
   endingTitle: string
   endingText: string
+  endingScore: number
   periodAccuracy: number
   regionAccuracy: number
   identityAccuracy: number
@@ -305,4 +320,4 @@ export const DEFAULT_SETTINGS: GameSettings = {
   reducedMotion: false,
 }
 
-export const SAVE_SCHEMA_VERSION = 3
+export const SAVE_SCHEMA_VERSION = 4

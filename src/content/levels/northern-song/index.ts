@@ -13,6 +13,13 @@ export const northernSongLevel: LevelPack = {
     '入城后数日内若无行会或店主担保，将无法合法留在行市谋生，并可能被逐出邸店。',
   historicalBackground:
     '公元1085年，北宋都城是一座人口百万级的商业城市。交子与铜钱并用，行市、邸店与夜市构成了高度城市化的日常。外来人口要在此留城谋生，通常需要行业行会、店主或熟人提供担保，否则难以长期在行市接活、在邸店安住。本关危机正源于这一制度性障碍，而非单纯的财物短缺。',
+  crossing: {
+    background: 'northern-song-gate',
+    leadText:
+      '你再次没能回到原处。耳边先是车马与叫卖，随后才是自己的呼吸。',
+    sceneText:
+      '城门外人潮拥挤，邸店幌子远近错落。铜钱与纸券的气息混在尘土里。这里像一座永不歇市的都会入口——没有担保，就很难在里头真正站住。',
+  },
   startNodeId: 'scene_city_gate',
   correctAnswers: {
     period: '北宋',
@@ -641,6 +648,7 @@ export const northernSongLevel: LevelPack = {
       type: 'ending',
       title: '城中立足',
       outcome: 'success',
+      score: 82,
       text: '你在汴京获得担保，找到了可继续谋生的位置。繁华之城从不是无主之地，但你终于在其中站住了脚。',
       unlockSources: ['ns_s1', 'ns_s3'],
     },
@@ -649,6 +657,7 @@ export const northernSongLevel: LevelPack = {
       type: 'ending',
       title: '引见续命',
       outcome: 'success',
+      score: 82,
       text: '你凭旧识短引在行市帮工，虽未能立刻找回旧主，却重新接上了依附关系。在这座城市里，有人肯为你写引，就意味着还能活下去。',
       unlockSources: ['ns_s1', 'ns_s3'],
     },
@@ -657,6 +666,7 @@ export const northernSongLevel: LevelPack = {
       type: 'ending',
       title: '行会接活',
       outcome: 'success',
+      score: 82,
       text: '行老点头之后，你终于在行市接上了稳定活计。手艺在这座城市有用，但光凭手艺还不够，规矩与担保同样决定生死。',
       unlockSources: ['ns_s2', 'ns_s3'],
     },
@@ -665,6 +675,7 @@ export const northernSongLevel: LevelPack = {
       type: 'ending',
       title: '悬居城中',
       outcome: 'partial',
+      score: 48,
       text: '你留在汴京，却始终没有完全融入。你活了下来，但随时可能被新的查验打乱安排。',
       unlockSources: ['ns_s2'],
     },
@@ -673,6 +684,7 @@ export const northernSongLevel: LevelPack = {
       type: 'ending',
       title: '夜出城郭',
       outcome: 'partial',
+      score: 48,
       text: '你离开了这座城，躲过了城里的担保压力，却仍未找到真正安身之处。',
       unlockSources: ['ns_s1'],
     },
@@ -681,6 +693,7 @@ export const northernSongLevel: LevelPack = {
       type: 'ending',
       title: '镇店暂息',
       outcome: 'partial',
+      score: 48,
       text: '你在城外镇店花铜钱买了一夜安稳。危机暂缓，但长路仍在前方，你还未真正在这时代立足。',
       unlockSources: ['ns_s2'],
     },
@@ -689,6 +702,7 @@ export const northernSongLevel: LevelPack = {
       type: 'ending',
       title: '行市起疑',
       outcome: 'failure',
+      score: 18,
       text: '你的说法与这座城的日常规矩格格不入，行市中人开始对你避而远之。在讲究担保的城市里，被怀疑往往意味着失去一切。',
       unlockSources: ['ns_s3'],
     },
@@ -697,6 +711,7 @@ export const northernSongLevel: LevelPack = {
       type: 'ending',
       title: '力竭',
       outcome: 'failure',
+      score: 18,
       text: '你在拥挤的行市与邸店之间耗尽最后一丝体力，再未能撑到下一个可容身之处。',
     },
     {
@@ -704,6 +719,7 @@ export const northernSongLevel: LevelPack = {
       type: 'ending',
       title: '伤病',
       outcome: 'failure',
+      score: 18,
       text: '伤病让你无法继续行动。繁华之城不会为无法行动的人停留。',
     },
     {
@@ -711,6 +727,7 @@ export const northernSongLevel: LevelPack = {
       type: 'ending',
       title: '嫌疑',
       outcome: 'failure',
+      score: 18,
       text: '关于你的议论已经扩散，行市与邸店都不再欢迎你。',
     },
   ],

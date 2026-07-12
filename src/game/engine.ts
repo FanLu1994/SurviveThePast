@@ -54,6 +54,7 @@ export function createInitialRun(level: LevelPack, identityId: string): RunState
     choiceHistory: [],
     unlockedSources: [],
     isComplete: false,
+    crossingDone: false,
   }
 }
 
@@ -307,6 +308,7 @@ export function computeRunResult(
     outcome: ending?.outcome ?? 'failure',
     endingTitle: ending?.title ?? '未知结局',
     endingText: ending?.text ?? '旅程意外中断。',
+    endingScore: ending?.score ?? 0,
     periodAccuracy,
     regionAccuracy,
     identityAccuracy,

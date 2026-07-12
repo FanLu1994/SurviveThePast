@@ -2,22 +2,23 @@ import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { getBackgroundImageUrl } from '@/game/background-assets'
 import { getAvailableChoices, getSceneNode } from '@/game/engine'
 import { getLevelById, getLevelIndex } from '@/game/scenario-loader'
-import { EvidencePanel } from '@/features/evidence/EvidencePanel'
-import { HypothesisPanel } from '@/features/evidence/HypothesisPanel'
 import { StatusPanel } from '@/features/play/StatusPanel'
 import { useGameStore } from '@/stores/game-store'
+import type { CSSProperties } from 'react'
 
 export function PlayPage() {
   const navigate = useNavigate()
   const activeRun = useGameStore((state) => state.activeRun)
   const choose = useGameStore((state) => state.choose)
   const sidebarOpen = useGameStore((state) => state.sidebarOpen)
-  const evidencePanelOpen = useGameStore((state) => state.evidencePanelOpen)
   const toggleSidebar = useGameStore((state) => state.toggleSidebar)
-  const toggleEvidencePanel = useGameStore((state) => state.toggleEvidencePanel)
 
   if (!activeRun) {
     return <Navigate to="/" replace />
+  }
+
+  if (!activeRun.crossingDone) {
+    return <Navigate to="/crossing" replace />
   }
 
   if (activeRun.isComplete) {
@@ -50,9 +51,6 @@ export function PlayPage() {
           <button className="btn" type="button" onClick={toggleSidebar}>
             状态
           </button>
-          <button className="btn" type="button" onClick={toggleEvidencePanel}>
-            证据板
-          </button>
           <Link className="btn btn-ghost" to="/">
             首页
           </Link>
@@ -65,7 +63,7 @@ export function PlayPage() {
             className={`stage${backgroundUrl ? ' stage-has-image' : ''}`}
             style={
               backgroundUrl
-                ? ({ '--stage-image': `url("${backgroundUrl}")` } as React.CSSProperties)
+                ? ({ '--stage-image': `url("${backgroundUrl}")` } as CSSProperties)
                 : undefined
             }
           >
@@ -100,13 +98,8 @@ export function PlayPage() {
 
         <aside className={`play-sidebar ${sidebarOpen ? 'open-mobile' : ''}`}>
           <StatusPanel run={activeRun} />
-          <HypothesisPanel />
         </aside>
       </div>
-
-      {evidencePanelOpen && (
-        <EvidencePanel level={level} run={activeRun} onClose={toggleEvidencePanel} />
-      )}
     </div>
   )
 }

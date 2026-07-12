@@ -11,6 +11,13 @@ export const lateHanLevel: LevelPack = {
   coreCrisis: '缺里证明——没有乡里担保，你无法合法通行，随时可能被扣留问话。',
   historicalBackground:
     '公元190年前后，兖州地处中原要道，京师政局动荡，地方盘查趋严。汉代编户齐民制度要求行人持有乡里证明；战乱中大量人口流离，失去里籍者只能依附豪族、凭文书过关，或躲避查验。五铢钱仍流通，但粮价因战乱飞涨。这一关卡的危机，正是缺里证明者在乱世中求存的真实困境。',
+  crossing: {
+    background: 'late-han-road',
+    leadText:
+      '穿越失败。尘土灌进喉咙，官道上的车辙像一道道未愈的伤。',
+    sceneText:
+      '道旁有人高声呼喝，里程木指向远处诸县。你说不清自己落在哪一州境，只感到身上缺了能过关隘的凭据。',
+  },
   startNodeId: 'scene_awakening',
   correctAnswers: {
     period: '东汉末年',
@@ -549,6 +556,7 @@ export const lateHanLevel: LevelPack = {
       type: 'ending',
       title: '暂得容身',
       outcome: 'success',
+      score: 82,
       text: '你在里中登记为客，暂时获得了可被当地承认的身份。乱世之中，这已是难得的生存。',
       unlockSources: ['lh_s1', 'lh_s2'],
     },
@@ -557,6 +565,7 @@ export const lateHanLevel: LevelPack = {
       type: 'ending',
       title: '文书通行',
       outcome: 'success',
+      score: 82,
       text: '你凭封套通过盘查，并在下一处找到了可继续前行的道路。你仍不知未来几何，但至少没有被当场识破。',
       unlockSources: ['lh_s2', 'lh_s3'],
     },
@@ -565,6 +574,7 @@ export const lateHanLevel: LevelPack = {
       type: 'ending',
       title: '夜行脱险',
       outcome: 'partial',
+      score: 48,
       text: '你趁夜离开，躲过了当场查验，但饥饿与疲惫仍在累积。你活了下来，却仍未真正立足。',
       unlockSources: ['lh_s3'],
     },
@@ -573,6 +583,7 @@ export const lateHanLevel: LevelPack = {
       type: 'ending',
       title: '来历败露',
       outcome: 'failure',
+      score: 18,
       text: '你的说法与时代细节对不上，吏员将你扣下问话。在缺少乡里证明的情况下，这通常意味着失去自由行动的能力。',
       unlockSources: ['lh_s2'],
     },
@@ -581,6 +592,7 @@ export const lateHanLevel: LevelPack = {
       type: 'ending',
       title: '力竭倒毙',
       outcome: 'failure',
+      score: 18,
       text: '你在道旁倒下，再未醒来。乱世里，体力与粮食和身份一样，都是生存必需品。',
     },
     {
@@ -588,6 +600,7 @@ export const lateHanLevel: LevelPack = {
       type: 'ending',
       title: '伤重不治',
       outcome: 'failure',
+      score: 18,
       text: '伤病耗尽了你最后一点行动能力。你未能走到下一个可以容身的地方。',
     },
     {
@@ -595,6 +608,7 @@ export const lateHanLevel: LevelPack = {
       type: 'ending',
       title: '嫌疑缠身',
       outcome: 'failure',
+      score: 18,
       text: '周围人对你的怀疑已到无法掩饰的地步。你已无法再以任何身份自如行动。',
     },
   ],

@@ -1,6 +1,7 @@
 import { useEffect } from 'react'
 import { Navigate, Route, Routes } from 'react-router-dom'
 import { ArchivePage } from '@/features/archive/ArchivePage'
+import { CrossingPage } from '@/features/play/CrossingPage'
 import { HomePage } from '@/features/play/HomePage'
 import { PlayPage } from '@/features/play/PlayPage'
 import { ResultPage } from '@/features/play/ResultPage'
@@ -18,6 +19,7 @@ export default function App() {
     <div className="app-shell">
       <Routes>
         <Route path="/" element={<HomePage />} />
+        <Route path="/crossing" element={<CrossingPage />} />
         <Route path="/play" element={<PlayPage />} />
         <Route path="/result" element={<ResultPage />} />
         <Route path="/archive" element={<ArchivePage />} />

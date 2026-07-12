@@ -7,20 +7,10 @@ import {
   enterNode,
   getEndingNode,
   getSceneNode,
-  markEvidence,
   pickRandomIdentity,
-  submitHypothesis,
-  updateHypothesis,
 } from '@/game/engine'
 import { getLevelById, getNextLevelId } from '@/game/scenario-loader'
-import type {
-  EvidenceMark,
-  GameSettings,
-  Hypothesis,
-  MetaProgress,
-  RunResult,
-  RunState,
-} from '@/game/types'
+import type { GameSettings, MetaProgress, RunResult, RunState } from '@/game/types'
 import { DEFAULT_SETTINGS } from '@/game/types'
 import {
   createEmptySave,
@@ -39,18 +29,14 @@ interface GameStore {
   activeRun: RunState | null
   lastResult: RunResult | null
   sidebarOpen: boolean
-  evidencePanelOpen: boolean
   dialogueHistory: string[]
   initialize: () => Promise<void>
   startNewRun: (levelId: string) => void
   continueRun: () => boolean
+  finishCrossing: () => void
   choose: (choiceId: string) => void
-  setHypothesis: (hypothesis: Hypothesis) => void
-  submitHypothesisAction: () => void
-  markEvidenceAction: (evidenceId: string, mark: EvidenceMark) => void
   updateSettings: (settings: Partial<GameSettings>) => void
   toggleSidebar: () => void
-  toggleEvidencePanel: () => void
   clearResult: () => void
   abandonRun: () => Promise<void>
 }
@@ -91,7 +77,6 @@ export const useGameStore = create<GameStore>((set, get) => ({
   activeRun: null,
   lastResult: null,
   sidebarOpen: false,
-  evidencePanelOpen: false,
   dialogueHistory: [],
 
   initialize: async () => {
@@ -120,7 +105,6 @@ export const useGameStore = create<GameStore>((set, get) => ({
       lastResult: null,
       dialogueHistory: [],
       sidebarOpen: false,
-      evidencePanelOpen: false,
     })
 
     void saveState(get())
@@ -130,6 +114,14 @@ export const useGameStore = create<GameStore>((set, get) => ({
     const { activeRun } = get()
     if (!activeRun || activeRun.isComplete) return false
     return true
+  },
+
+  finishCrossing: () => {
+    const { activeRun } = get()
+    if (!activeRun || activeRun.crossingDone) return
+    const next = { ...activeRun, crossingDone: true }
+    set({ activeRun: next })
+    void saveState(get())
   },
 
   choose: (choiceId) => {
@@ -154,8 +146,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
     if (next.isComplete && next.endingId) {
       const result = computeRunResult(level, next, meta.unlockedSources)
       const ending = getEndingNode(level, next.endingId)
-      const cleared =
-        ending?.outcome === 'success' || ending?.outcome === 'partial'
+      const cleared = ending?.outcome === 'success'
       const levelClear = cleared
         ? { clearedLevelId: level.id, nextLevelId: getNextLevelId(level.id) }
         : undefined
@@ -179,30 +170,6 @@ export const useGameStore = create<GameStore>((set, get) => ({
     void saveState(get())
   },
 
-  setHypothesis: (hypothesis) => {
-    const { activeRun } = get()
-    if (!activeRun) return
-    const next = updateHypothesis(activeRun, hypothesis)
-    set({ activeRun: next })
-    void saveState(get())
-  },
-
-  submitHypothesisAction: () => {
-    const { activeRun } = get()
-    if (!activeRun) return
-    const next = submitHypothesis(activeRun)
-    set({ activeRun: next })
-    void saveState(get())
-  },
-
-  markEvidenceAction: (evidenceId, mark) => {
-    const { activeRun } = get()
-    if (!activeRun) return
-    const next = markEvidence(activeRun, evidenceId, mark)
-    set({ activeRun: next })
-    void saveState(get())
-  },
-
   updateSettings: (settings) => {
     const nextSettings = { ...get().settings, ...settings }
     set({ settings: nextSettings })
@@ -210,7 +177,6 @@ export const useGameStore = create<GameStore>((set, get) => ({
   },
 
   toggleSidebar: () => set({ sidebarOpen: !get().sidebarOpen }),
-  toggleEvidencePanel: () => set({ evidencePanelOpen: !get().evidencePanelOpen }),
 
   clearResult: () => set({ lastResult: null, activeRun: null }),
 
