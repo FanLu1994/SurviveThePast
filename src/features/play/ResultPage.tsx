@@ -2,6 +2,8 @@ import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { getLevelById, getNextLevelId } from '@/game/scenario-loader'
 import { useGameStore } from '@/stores/game-store'
 
+const GRADE_LABELS = { A: 'A 级', B: 'B 级', C: 'C 级', D: 'D 级' } as const
+
 export function ResultPage() {
   const navigate = useNavigate()
   const lastResult = useGameStore((state) => state.lastResult)
@@ -13,6 +15,7 @@ export function ResultPage() {
     return <Navigate to="/" replace />
   }
 
+  const level = getLevelById(lastResult.levelId)
   const cleared =
     lastResult.outcome === 'success' || lastResult.outcome === 'partial'
   const nextLevelId = getNextLevelId(lastResult.levelId)
@@ -41,8 +44,51 @@ export function ResultPage() {
 
       <div className="result-grid">
         <section className="archive-card">
+          <h3>生存结果</h3>
           <p>{lastResult.endingText}</p>
+          {cleared && lastResult.primarySurvival && (
+            <>
+              <p style={{ marginTop: '0.75rem' }}>
+                <strong>主存活方式：</strong>
+                {lastResult.primarySurvival}
+              </p>
+              {lastResult.secondarySurvival && (
+                <p>
+                  <strong>辅助方式：</strong>
+                  {lastResult.secondarySurvival}
+                </p>
+              )}
+              {lastResult.keyActions.length > 0 && (
+                <ul style={{ marginTop: '0.5rem', paddingLeft: '1.25rem' }}>
+                  {lastResult.keyActions.map((action) => (
+                    <li key={action}>{action}</li>
+                  ))}
+                </ul>
+              )}
+            </>
+          )}
         </section>
+
+        {cleared && lastResult.identityBackground && (
+          <section className="archive-card">
+            <h3>身份背景</h3>
+            <p>
+              <strong>{lastResult.identityLabel}</strong>
+            </p>
+            <p>谋生：{lastResult.identityBackground.livelihood}</p>
+            <p>社会位置：{lastResult.identityBackground.socialPosition}</p>
+            <p>依附关系：{lastResult.identityBackground.affiliation}</p>
+            <p>权利与限制：{lastResult.identityBackground.rightsAndLimits}</p>
+            <p>暴露原因：{lastResult.identityBackground.exposureReason}</p>
+          </section>
+        )}
+
+        {cleared && lastResult.historicalBackground && (
+          <section className="archive-card">
+            <h3>历史背景</h3>
+            <p>{lastResult.historicalBackground}</p>
+          </section>
+        )}
 
         <section className="archive-card">
           <h3>推理评价</h3>
@@ -81,6 +127,51 @@ export function ResultPage() {
           )}
         </section>
       </div>
+
+      {cleared && lastResult.relatedSources.length > 0 && level && (
+        <section className="archive-card" style={{ marginTop: '1rem' }}>
+          <h3>本局关联史料</h3>
+          <div className="archive-grid">
+            {lastResult.relatedSources.map((entry) => {
+              const source = level.sources.find((s) => s.id === entry.sourceId)
+              if (!source) return null
+              return (
+                <article className="archive-card" key={entry.sourceId}>
+                  <h4>
+                    {source.title}
+                    {entry.newlyUnlocked && (
+                      <span
+                        style={{
+                          marginLeft: '0.5rem',
+                          color: 'var(--color-text-muted)',
+                          fontSize: '0.85rem',
+                        }}
+                      >
+                        本局新增
+                      </span>
+                    )}
+                  </h4>
+                  <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem' }}>
+                    {GRADE_LABELS[source.grade]} ·{' '}
+                    {source.factType === 'historical'
+                      ? '史实'
+                      : source.factType === 'inference'
+                        ? '合理推演'
+                        : '剧情虚构'}
+                  </p>
+                  <p>{source.summary}</p>
+                  <p style={{ color: 'var(--color-text-muted)', fontSize: '0.85rem' }}>
+                    支持：{source.supports}
+                  </p>
+                  <p style={{ color: 'var(--color-text-muted)', fontSize: '0.85rem' }}>
+                    出处：{source.citation}（{source.locator}）
+                  </p>
+                </article>
+              )
+            })}
+          </div>
+        </section>
+      )}
 
       <section className="archive-card" style={{ marginTop: '1rem' }}>
         {cleared && nextLevel ? (

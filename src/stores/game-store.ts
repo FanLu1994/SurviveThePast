@@ -152,7 +152,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
     const dialogueHistory = [...get().dialogueHistory, historyLine]
 
     if (next.isComplete && next.endingId) {
-      const result = computeRunResult(level, next)
+      const result = computeRunResult(level, next, meta.unlockedSources)
       const ending = getEndingNode(level, next.endingId)
       const cleared =
         ending?.outcome === 'success' || ending?.outcome === 'partial'

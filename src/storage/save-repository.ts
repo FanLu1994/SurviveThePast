@@ -71,19 +71,42 @@ export function migrateSave(data: SaveData): SaveData {
     return data
   }
 
-  // 旧版存档（schema 1）没有关卡解锁进度，重置为仅解锁首关，避免凭空解锁后续关卡。
+  const base =
+    data.schemaVersion >= 2
+      ? {
+          settings: data.settings ?? DEFAULT_SETTINGS,
+          meta: {
+            unlockedSources: data.meta?.unlockedSources ?? [],
+            completedEndings: data.meta?.completedEndings ?? [],
+            completedIdentities: data.meta?.completedIdentities ?? [],
+            wrongHypotheses: data.meta?.wrongHypotheses ?? [],
+            unlockedLevels: data.meta?.unlockedLevels ?? [FIRST_LEVEL_ID],
+            completedLevels: data.meta?.completedLevels ?? [],
+          },
+        }
+      : {
+          settings: data.settings ?? DEFAULT_SETTINGS,
+          meta: {
+            unlockedSources: data.meta?.unlockedSources ?? [],
+            completedEndings: data.meta?.completedEndings ?? [],
+            completedIdentities: data.meta?.completedIdentities ?? [],
+            wrongHypotheses: data.meta?.wrongHypotheses ?? [],
+            unlockedLevels: [FIRST_LEVEL_ID],
+            completedLevels: [],
+          },
+        }
+
+  const activeRun = data.activeRun
+    ? {
+        ...data.activeRun,
+        choiceHistory: data.activeRun.choiceHistory ?? [],
+      }
+    : null
+
   return {
     ...createEmptySave(),
-    settings: data.settings ?? DEFAULT_SETTINGS,
-    meta: {
-      unlockedSources: data.meta?.unlockedSources ?? [],
-      completedEndings: data.meta?.completedEndings ?? [],
-      completedIdentities: data.meta?.completedIdentities ?? [],
-      wrongHypotheses: data.meta?.wrongHypotheses ?? [],
-      unlockedLevels: data.meta?.unlockedLevels ?? [FIRST_LEVEL_ID],
-      completedLevels: data.meta?.completedLevels ?? [],
-    },
-    activeRun: null,
+    ...base,
+    activeRun,
     savedAt: new Date().toISOString(),
   }
 }

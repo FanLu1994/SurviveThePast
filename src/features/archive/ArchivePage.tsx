@@ -2,6 +2,8 @@ import { Link } from 'react-router-dom'
 import { getArchiveSources } from '@/game/scenario-loader'
 import { useGameStore } from '@/stores/game-store'
 
+const GRADE_LABELS = { A: 'A 级', B: 'B 级', C: 'C 级', D: 'D 级' } as const
+
 export function ArchivePage() {
   const meta = useGameStore((state) => state.meta)
   const sources = getArchiveSources()
@@ -24,7 +26,7 @@ export function ArchivePage() {
               <p style={{ color: 'var(--color-text-muted)' }}>
                 {revealed ? (
                   <>
-                    {source.levelTitle} ·{' '}
+                    {source.levelTitle} · {GRADE_LABELS[source.grade]} ·{' '}
                     {source.factType === 'historical'
                       ? '史实'
                       : source.factType === 'inference'
@@ -39,7 +41,13 @@ export function ArchivePage() {
                 <>
                   <p>{source.summary}</p>
                   <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem' }}>
-                    出处：{source.citation}
+                    支持：{source.supports}
+                  </p>
+                  <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem' }}>
+                    不能证明：{source.cannotProve}
+                  </p>
+                  <p style={{ color: 'var(--color-text-muted)', fontSize: '0.9rem' }}>
+                    出处：{source.citation}（{source.locator}）
                   </p>
                 </>
               ) : (

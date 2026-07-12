@@ -4,11 +4,14 @@ import type {
   EndingDef,
   Hypothesis,
   LevelPack,
+  RelatedSourceEntry,
   RunResult,
   RunState,
   SceneNodeDef,
   Stats,
+  StrategyTag,
 } from './types'
+import { STRATEGY_LABELS } from './strategy-tags'
 import {
   DEFAULT_HYPOTHESIS,
   DEFAULT_STATS,
@@ -48,6 +51,7 @@ export function createInitialRun(level: LevelPack, identityId: string): RunState
     hypothesis: { ...DEFAULT_HYPOTHESIS },
     hypothesisSubmitted: false,
     history: [],
+    choiceHistory: [],
     unlockedSources: [],
     isComplete: false,
   }
@@ -231,6 +235,11 @@ export function chooseOption(
     next = applyEffects(next, choice.effects)
   }
 
+  next = {
+    ...next,
+    choiceHistory: [...next.choiceHistory, choiceId],
+  }
+
   next = enterNode(level, next, choice.next)
   return next
 }
@@ -262,8 +271,13 @@ export function markEvidence(
   }
 }
 
-export function computeRunResult(level: LevelPack, run: RunState): RunResult {
+export function computeRunResult(
+  level: LevelPack,
+  run: RunState,
+  previouslyUnlockedSources: string[] = [],
+): RunResult {
   const ending = run.endingId ? getEndingNode(level, run.endingId) : null
+  const cleared = ending?.outcome === 'success' || ending?.outcome === 'partial'
 
   const periodAccuracy = scoreField(
     run.hypothesis.period,
@@ -279,6 +293,14 @@ export function computeRunResult(level: LevelPack, run: RunState): RunResult {
     level.identities,
   )
 
+  const identity = level.identities.find((item) => item.id === run.identityId)
+  const survival = summarizeSurvivalStrategies(level, run)
+  const relatedSources = buildRelatedSources(
+    level,
+    run,
+    previouslyUnlockedSources,
+  )
+
   return {
     levelId: level.id,
     levelTitle: level.title,
@@ -291,7 +313,76 @@ export function computeRunResult(level: LevelPack, run: RunState): RunResult {
     unlockedSources: run.unlockedSources,
     correctAnswers: level.correctAnswers,
     playerHypothesis: run.hypothesis,
+    identityId: run.identityId,
+    identityLabel: identity?.label ?? '',
+    identityBackground: cleared ? (identity?.background ?? null) : null,
+    historicalBackground: cleared ? level.historicalBackground : null,
+    primarySurvival: cleared ? survival.primary : null,
+    secondarySurvival: cleared ? survival.secondary : null,
+    keyActions: cleared ? survival.keyActions : [],
+    relatedSources: cleared ? relatedSources : [],
   }
+}
+
+function summarizeSurvivalStrategies(level: LevelPack, run: RunState) {
+  const tagScores = new Map<StrategyTag, number>()
+  const keyActions: string[] = []
+
+  for (const choiceId of run.choiceHistory) {
+    const choice = findChoiceById(level, choiceId)
+    if (!choice) continue
+
+    if (choice.settlementNote && keyActions.length < 3) {
+      keyActions.push(choice.settlementNote)
+    }
+
+    for (const tag of choice.strategyTags ?? []) {
+      tagScores.set(tag, (tagScores.get(tag) ?? 0) + 1)
+    }
+  }
+
+  const ranked = [...tagScores.entries()].sort((a, b) => b[1] - a[1])
+  const primary = ranked[0] ? STRATEGY_LABELS[ranked[0][0]] : null
+  const secondary = ranked[1] ? STRATEGY_LABELS[ranked[1][0]] : null
+
+  return { primary, secondary, keyActions }
+}
+
+function findChoiceById(level: LevelPack, choiceId: string) {
+  for (const node of level.nodes) {
+    if (node.type !== 'scene') continue
+    const choice = node.choices.find((item) => item.id === choiceId)
+    if (choice) return choice
+  }
+  return null
+}
+
+function buildRelatedSources(
+  level: LevelPack,
+  run: RunState,
+  previouslyUnlockedSources: string[],
+): RelatedSourceEntry[] {
+  const related = new Set<string>()
+
+  const identity = level.identities.find((item) => item.id === run.identityId)
+  for (const sourceId of identity?.sourceIds ?? []) {
+    related.add(sourceId)
+  }
+
+  for (const item of run.evidence) {
+    if (!item.discovered) continue
+    const evidence = level.evidence.find((e) => e.id === item.evidenceId)
+    if (evidence) related.add(evidence.sourceId)
+  }
+
+  for (const sourceId of run.unlockedSources) {
+    related.add(sourceId)
+  }
+
+  return [...related].map((sourceId) => ({
+    sourceId,
+    newlyUnlocked: !previouslyUnlockedSources.includes(sourceId),
+  }))
 }
 
 function scoreField(playerValue: string, correctValue: string): number {

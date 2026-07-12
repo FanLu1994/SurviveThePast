@@ -3,6 +3,15 @@ import { z } from 'zod'
 const compareOpSchema = z.enum(['gte', 'lte', 'eq', 'gt', 'lt'])
 const statKeySchema = z.enum(['stamina', 'injury', 'wealth', 'exposure'])
 const factTypeSchema = z.enum(['historical', 'inference', 'fiction'])
+const sourceGradeSchema = z.enum(['A', 'B', 'C', 'D'])
+const strategyTagSchema = z.enum([
+  'rely_on_relations',
+  'follow_institution',
+  'exchange_resources',
+  'labor_trade',
+  'conceal_identity',
+  'avoid_transfer',
+])
 const evidenceStrengthSchema = z.enum(['strong', 'weak', 'misleading'])
 
 const conditionSchema: z.ZodType<unknown> = z.lazy(() =>
@@ -69,6 +78,8 @@ const choiceSchema = z.object({
   requiresCorrectHypothesis: z
     .enum(['period', 'region', 'identity', 'relation', 'crisis'])
     .optional(),
+  strategyTags: z.array(strategyTagSchema).optional(),
+  settlementNote: z.string().min(1).optional(),
 })
 
 const sceneNodeSchema = z.object({
@@ -99,6 +110,9 @@ export const levelPackSchema = z.object({
   eraLabel: z.string().min(1),
   year: z.number().int(),
   regionLabel: z.string().min(1),
+  oneLiner: z.string().min(1),
+  coreCrisis: z.string().min(1),
+  historicalBackground: z.string().min(1),
   startNodeId: z.string().min(1),
   correctAnswers: z.object({
     period: z.string().min(1),
@@ -113,6 +127,12 @@ export const levelPackSchema = z.object({
         citation: z.string().min(1),
         factType: factTypeSchema,
         summary: z.string().min(1),
+        grade: sourceGradeSchema,
+        author: z.string().min(1),
+        createdOrPublished: z.string().min(1),
+        locator: z.string().min(1),
+        supports: z.string().min(1),
+        cannotProve: z.string().min(1),
       }),
     )
     .min(1),
@@ -122,6 +142,14 @@ export const levelPackSchema = z.object({
         id: z.string().min(1),
         label: z.string().min(1),
         description: z.string().min(1),
+        background: z.object({
+          livelihood: z.string().min(1),
+          socialPosition: z.string().min(1),
+          affiliation: z.string().min(1),
+          rightsAndLimits: z.string().min(1),
+          exposureReason: z.string().min(1),
+        }),
+        sourceIds: z.array(z.string().min(1)).min(1),
         startingStats: z
           .object({
             stamina: z.number().optional(),
@@ -217,6 +245,15 @@ export function validateLevelPack(level: LevelPackInput): ValidationIssue[] {
         code: 'identity_not_in_answers',
         message: `身份 ${identity.id} 未列入 correctAnswers.identities`,
       })
+    }
+    for (const sourceId of identity.sourceIds) {
+      if (!sourceIds.has(sourceId)) {
+        issues.push({
+          levelId: pack.id,
+          code: 'missing_source',
+          message: `身份 ${identity.id} 引用不存在的来源 ${sourceId}`,
+        })
+      }
     }
   }
 

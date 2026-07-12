@@ -6,6 +6,16 @@ export type EvidenceMark = 'support' | 'conflict' | 'doubt' | 'unmarked'
 
 export type FactType = 'historical' | 'inference' | 'fiction'
 
+export type SourceGrade = 'A' | 'B' | 'C' | 'D'
+
+export type StrategyTag =
+  | 'rely_on_relations'
+  | 'follow_institution'
+  | 'exchange_resources'
+  | 'labor_trade'
+  | 'conceal_identity'
+  | 'avoid_transfer'
+
 export type CompareOp = 'gte' | 'lte' | 'eq' | 'gt' | 'lt'
 
 export interface Stats {
@@ -21,12 +31,28 @@ export interface SourceRef {
   citation: string
   factType: FactType
   summary: string
+  grade: SourceGrade
+  author: string
+  createdOrPublished: string
+  locator: string
+  supports: string
+  cannotProve: string
+}
+
+export interface IdentityBackground {
+  livelihood: string
+  socialPosition: string
+  affiliation: string
+  rightsAndLimits: string
+  exposureReason: string
 }
 
 export interface IdentityDef {
   id: string
   label: string
   description: string
+  background: IdentityBackground
+  sourceIds: string[]
   startingStats: Partial<Stats>
   flags: string[]
 }
@@ -137,6 +163,8 @@ export interface ChoiceDef {
   condition?: Condition
   effects?: Effect[]
   requiresCorrectHypothesis?: keyof Hypothesis
+  strategyTags?: StrategyTag[]
+  settlementNote?: string
 }
 
 export interface SceneNodeDef {
@@ -169,6 +197,9 @@ export interface LevelPack {
   eraLabel: string
   year: number
   regionLabel: string
+  oneLiner: string
+  coreCrisis: string
+  historicalBackground: string
   startNodeId: string
   correctAnswers: CorrectAnswers
   sources: SourceRef[]
@@ -193,6 +224,7 @@ export interface RunState {
   hypothesis: Hypothesis
   hypothesisSubmitted: boolean
   history: string[]
+  choiceHistory: string[]
   unlockedSources: string[]
   isComplete: boolean
   endingId?: string
@@ -223,6 +255,11 @@ export interface SaveData {
   savedAt: string
 }
 
+export interface RelatedSourceEntry {
+  sourceId: string
+  newlyUnlocked: boolean
+}
+
 export interface RunResult {
   levelId: string
   levelTitle: string
@@ -235,6 +272,14 @@ export interface RunResult {
   unlockedSources: string[]
   correctAnswers: CorrectAnswers
   playerHypothesis: Hypothesis
+  identityId: string
+  identityLabel: string
+  identityBackground: IdentityBackground | null
+  historicalBackground: string | null
+  primarySurvival: string | null
+  secondarySurvival: string | null
+  keyActions: string[]
+  relatedSources: RelatedSourceEntry[]
 }
 
 export const DEFAULT_STATS: Stats = {
@@ -260,4 +305,4 @@ export const DEFAULT_SETTINGS: GameSettings = {
   reducedMotion: false,
 }
 
-export const SAVE_SCHEMA_VERSION = 2
+export const SAVE_SCHEMA_VERSION = 3
