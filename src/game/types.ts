@@ -211,6 +211,8 @@ export interface MetaProgress {
   completedEndings: string[]
   completedIdentities: string[]
   wrongHypotheses: string[]
+  unlockedLevels: string[]
+  completedLevels: string[]
 }
 
 export interface SaveData {
@@ -222,6 +224,8 @@ export interface SaveData {
 }
 
 export interface RunResult {
+  levelId: string
+  levelTitle: string
   outcome: 'success' | 'failure' | 'partial'
   endingTitle: string
   endingText: string
@@ -256,4 +260,4 @@ export const DEFAULT_SETTINGS: GameSettings = {
   reducedMotion: false,
 }
 
-export const SAVE_SCHEMA_VERSION = 1
+export const SAVE_SCHEMA_VERSION = 2

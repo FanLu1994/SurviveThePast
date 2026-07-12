@@ -280,6 +280,8 @@ export function computeRunResult(level: LevelPack, run: RunState): RunResult {
   )
 
   return {
+    levelId: level.id,
+    levelTitle: level.title,
     outcome: ending?.outcome ?? 'failure',
     endingTitle: ending?.title ?? '未知结局',
     endingText: ending?.text ?? '旅程意外中断。',

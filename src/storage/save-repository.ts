@@ -8,6 +8,7 @@ import {
   DEFAULT_SETTINGS,
   SAVE_SCHEMA_VERSION,
 } from '@/game/types'
+import { FIRST_LEVEL_ID } from '@/game/scenario-loader'
 
 const DB_NAME = 'survive-the-past'
 const DB_VERSION = 1
@@ -57,6 +58,8 @@ export function createEmptySave(): SaveData {
       completedEndings: [],
       completedIdentities: [],
       wrongHypotheses: [],
+      unlockedLevels: [FIRST_LEVEL_ID],
+      completedLevels: [],
     },
     activeRun: null,
     savedAt: new Date().toISOString(),
@@ -68,10 +71,18 @@ export function migrateSave(data: SaveData): SaveData {
     return data
   }
 
+  // 旧版存档（schema 1）没有关卡解锁进度，重置为仅解锁首关，避免凭空解锁后续关卡。
   return {
     ...createEmptySave(),
     settings: data.settings ?? DEFAULT_SETTINGS,
-    meta: data.meta ?? createEmptySave().meta,
+    meta: {
+      unlockedSources: data.meta?.unlockedSources ?? [],
+      completedEndings: data.meta?.completedEndings ?? [],
+      completedIdentities: data.meta?.completedIdentities ?? [],
+      wrongHypotheses: data.meta?.wrongHypotheses ?? [],
+      unlockedLevels: data.meta?.unlockedLevels ?? [FIRST_LEVEL_ID],
+      completedLevels: data.meta?.completedLevels ?? [],
+    },
     activeRun: null,
     savedAt: new Date().toISOString(),
   }
@@ -116,12 +127,15 @@ export function mergeMetaProgress(
   meta: MetaProgress,
   run: RunState,
   endingId?: string,
+  levelClear?: { clearedLevelId: string; nextLevelId: string | null },
 ): MetaProgress {
   const next: MetaProgress = {
     unlockedSources: [...meta.unlockedSources],
     completedEndings: [...meta.completedEndings],
     completedIdentities: [...meta.completedIdentities],
     wrongHypotheses: [...meta.wrongHypotheses],
+    unlockedLevels: [...meta.unlockedLevels],
+    completedLevels: [...meta.completedLevels],
   }
 
   for (const sourceId of run.unlockedSources) {
@@ -137,6 +151,18 @@ export function mergeMetaProgress(
   const identityKey = `${run.levelId}:${run.identityId}`
   if (!next.completedIdentities.includes(identityKey)) {
     next.completedIdentities.push(identityKey)
+  }
+
+  if (levelClear) {
+    if (!next.completedLevels.includes(levelClear.clearedLevelId)) {
+      next.completedLevels.push(levelClear.clearedLevelId)
+    }
+    if (
+      levelClear.nextLevelId &&
+      !next.unlockedLevels.includes(levelClear.nextLevelId)
+    ) {
+      next.unlockedLevels.push(levelClear.nextLevelId)
+    }
   }
 
   return next

@@ -12,7 +12,7 @@ import {
   submitHypothesis,
   updateHypothesis,
 } from '@/game/engine'
-import { getLevelById, pickRandomLevel } from '@/game/scenario-loader'
+import { getLevelById, getNextLevelId } from '@/game/scenario-loader'
 import type {
   EvidenceMark,
   GameSettings,
@@ -42,7 +42,7 @@ interface GameStore {
   evidencePanelOpen: boolean
   dialogueHistory: string[]
   initialize: () => Promise<void>
-  startNewRun: () => void
+  startNewRun: (levelId: string) => void
   continueRun: () => boolean
   choose: (choiceId: string) => void
   setHypothesis: (hypothesis: Hypothesis) => void
@@ -108,8 +108,9 @@ export const useGameStore = create<GameStore>((set, get) => ({
     })
   },
 
-  startNewRun: () => {
-    const level = pickRandomLevel()
+  startNewRun: (levelId) => {
+    const level = getLevelById(levelId)
+    if (!level) return
     const identityId = pickRandomIdentity(level)
     const run = createInitialRun(level, identityId)
     const entered = enterNode(level, run, run.currentNodeId)
@@ -152,7 +153,18 @@ export const useGameStore = create<GameStore>((set, get) => ({
 
     if (next.isComplete && next.endingId) {
       const result = computeRunResult(level, next)
-      const mergedMeta = mergeMetaProgress(meta, next, next.endingId)
+      const ending = getEndingNode(level, next.endingId)
+      const cleared =
+        ending?.outcome === 'success' || ending?.outcome === 'partial'
+      const levelClear = cleared
+        ? { clearedLevelId: level.id, nextLevelId: getNextLevelId(level.id) }
+        : undefined
+      const mergedMeta = mergeMetaProgress(
+        meta,
+        next,
+        next.endingId,
+        levelClear,
+      )
       set({
         activeRun: next,
         lastResult: result,

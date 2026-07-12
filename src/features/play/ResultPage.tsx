@@ -1,8 +1,11 @@
-import { Link, Navigate } from 'react-router-dom'
+import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { getLevelById, getNextLevelId } from '@/game/scenario-loader'
 import { useGameStore } from '@/stores/game-store'
 
 export function ResultPage() {
+  const navigate = useNavigate()
   const lastResult = useGameStore((state) => state.lastResult)
+  const meta = useGameStore((state) => state.meta)
   const clearResult = useGameStore((state) => state.clearResult)
   const startNewRun = useGameStore((state) => state.startNewRun)
 
@@ -10,10 +13,32 @@ export function ResultPage() {
     return <Navigate to="/" replace />
   }
 
+  const cleared =
+    lastResult.outcome === 'success' || lastResult.outcome === 'partial'
+  const nextLevelId = getNextLevelId(lastResult.levelId)
+  const nextLevel = nextLevelId ? getLevelById(nextLevelId) : null
+  const nextUnlocked = nextLevelId
+    ? meta.unlockedLevels.includes(nextLevelId)
+    : false
+
+  const handleReplay = () => {
+    startNewRun(lastResult.levelId)
+    navigate('/play')
+  }
+
+  const handleNext = () => {
+    if (!nextLevelId || !nextUnlocked) return
+    startNewRun(nextLevelId)
+    navigate('/play')
+  }
+
   return (
     <main className="page">
       <h1 className="page-title">本局结算</h1>
-      <p className="page-subtitle">{lastResult.endingTitle}</p>
+      <p className="page-subtitle">
+        {lastResult.levelTitle}
+        {cleared ? ' · 已通关' : ' · 未通关'}
+      </p>
 
       <div className="result-grid">
         <section className="archive-card">
@@ -52,23 +77,41 @@ export function ResultPage() {
         </section>
       </div>
 
+      <section className="archive-card" style={{ marginTop: '1rem' }}>
+        {cleared && nextLevel ? (
+          <p>
+            通关成功，下一关「<strong>{nextLevel.title}</strong>」
+            {nextUnlocked ? '已开放。' : '即将开放。'}
+          </p>
+        ) : cleared && !nextLevel ? (
+          <p>你已通关目前所有关卡，感谢游玩。</p>
+        ) : (
+          <p>本局未通关，下一关尚未开放。可重玩本关再行尝试。</p>
+        )}
+      </section>
+
       <div className="button-row" style={{ marginTop: '1.5rem' }}>
+        {nextLevel && nextUnlocked && (
+          <button
+            className="btn btn-primary"
+            type="button"
+            onClick={handleNext}
+          >
+            进入下一关
+          </button>
+        )}
         <button
           className="btn btn-primary"
           type="button"
-          onClick={() => {
-            clearResult()
-            startNewRun()
-            window.location.href = '/play'
-          }}
+          onClick={handleReplay}
         >
-          再次穿越
+          重玩本关
         </button>
         <Link className="btn" to="/archive" onClick={() => clearResult()}>
           查看史料图鉴
         </Link>
         <Link className="btn btn-ghost" to="/" onClick={() => clearResult()}>
-          返回首页
+          返回选关
         </Link>
       </div>
     </main>
