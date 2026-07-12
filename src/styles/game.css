@@ -13,6 +13,21 @@
   --stage-accent: #9a6b52;
 }
 
+.theme-mid-tang {
+  --stage-bg: linear-gradient(180deg, #3d2e1f 0%, #1a1410 100%);
+  --stage-accent: #c49a3c;
+}
+
+.theme-early-ming {
+  --stage-bg: linear-gradient(180deg, #2a3a2e 0%, #121a14 100%);
+  --stage-accent: #6b8f71;
+}
+
+.theme-late-qing {
+  --stage-bg: linear-gradient(180deg, #2e3540 0%, #141820 100%);
+  --stage-accent: #7a6b5a;
+}
+
 .play-layout {
   min-height: 100vh;
   display: grid;
