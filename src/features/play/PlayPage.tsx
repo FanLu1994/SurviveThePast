@@ -1,4 +1,5 @@
 import { Link, Navigate, useNavigate } from 'react-router-dom'
+import { getBackgroundImageUrl } from '@/game/background-assets'
 import { getAvailableChoices, getSceneNode } from '@/game/engine'
 import { getLevelById } from '@/game/scenario-loader'
 import { EvidencePanel } from '@/features/evidence/EvidencePanel'
@@ -34,6 +35,7 @@ export function PlayPage() {
   }
 
   const choices = getAvailableChoices(activeRun, scene)
+  const backgroundUrl = getBackgroundImageUrl(scene.background)
 
   return (
     <div className={`play-layout theme-${level.theme}`}>
@@ -59,11 +61,17 @@ export function PlayPage() {
 
       <div className="play-main">
         <section className="play-stage-wrap">
-          <div className="stage">
+          <div
+            className={`stage${backgroundUrl ? ' stage-has-image' : ''}`}
+            style={
+              backgroundUrl
+                ? ({ '--stage-image': `url("${backgroundUrl}")` } as React.CSSProperties)
+                : undefined
+            }
+          >
             <div className="stage-content">
               <span className="stage-tag">历史情境</span>
               <h2 className="stage-title">{scene.title}</h2>
-              <div className="stage-background">背景：{scene.background}</div>
             </div>
           </div>
 

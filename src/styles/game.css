@@ -52,6 +52,12 @@
   position: relative;
 }
 
+.stage-has-image {
+  background-image: var(--stage-image), var(--stage-bg);
+  background-size: cover;
+  background-position: center;
+}
+
 .stage::after {
   content: '';
   position: absolute;
@@ -80,11 +86,6 @@
   font-family: var(--font-serif);
   font-size: clamp(1.4rem, 3vw, 2rem);
   margin: 0 0 var(--space-xs);
-}
-
-.stage-background {
-  color: var(--stage-accent);
-  font-size: 0.9rem;
 }
 
 .dialogue-panel {
