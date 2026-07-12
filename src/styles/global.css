@@ -1,0 +1,117 @@
+:root {
+  --color-bg: #14110f;
+  --color-bg-elevated: #1f1a17;
+  --color-bg-panel: #2a221d;
+  --color-text: #f2e8dc;
+  --color-text-muted: #b9a995;
+  --color-accent: #c08a54;
+  --color-accent-soft: rgba(192, 138, 84, 0.18);
+  --color-border: rgba(242, 232, 220, 0.12);
+  --color-danger: #b85c4b;
+  --color-success: #6f8f71;
+  --color-warning: #c49a3d;
+  --font-serif: 'Songti SC', 'Noto Serif SC', 'SimSun', serif;
+  --font-sans: 'PingFang SC', 'Microsoft YaHei', sans-serif;
+  --space-xs: 0.5rem;
+  --space-sm: 0.75rem;
+  --space-md: 1rem;
+  --space-lg: 1.5rem;
+  --space-xl: 2rem;
+  --radius-md: 10px;
+  --shadow-none: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  margin: 0;
+  min-height: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--color-bg);
+  color: var(--color-text);
+}
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+a {
+  color: inherit;
+}
+
+.app-shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.page {
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: var(--space-lg);
+}
+
+.page-title {
+  font-family: var(--font-serif);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  margin: 0 0 var(--space-sm);
+}
+
+.page-subtitle {
+  color: var(--color-text-muted);
+  margin: 0 0 var(--space-xl);
+  line-height: 1.7;
+}
+
+.button-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-sm);
+}
+
+.btn {
+  border: 1px solid var(--color-border);
+  background: var(--color-bg-panel);
+  color: var(--color-text);
+  padding: 0.75rem 1.1rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+}
+
+.btn:hover {
+  border-color: var(--color-accent);
+}
+
+.btn-primary {
+  background: var(--color-accent-soft);
+  border-color: var(--color-accent);
+}
+
+.btn-ghost {
+  background: transparent;
+}
+
+.warning-banner {
+  margin-bottom: var(--space-md);
+  padding: var(--space-sm) var(--space-md);
+  border: 1px solid var(--color-warning);
+  border-radius: var(--radius-md);
+  color: var(--color-warning);
+  background: rgba(196, 154, 61, 0.08);
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: var(--space-md);
+  }
+}
