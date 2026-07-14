@@ -1,0 +1,893 @@
+{
+  "id": "late-qing",
+  "title": "津门保甲",
+  "theme": "late-qing",
+  "eraLabel": "晚清",
+  "year": 1898,
+  "regionLabel": "天津",
+  "oneLiner": "你在街巷中醒来，客籍无铺保，必须在巡警查夜前找到客栈留宿。",
+  "coreCrisis": "客籍无铺保——晚清城市要求留宿者持有铺保或熟人作保，巡警与保甲双重查验，无保者难落脚过夜。",
+  "historicalBackground": "公元1898年，天津城厢仍行保甲制度，巡警查夜与客栈留宿规则并行。外来客籍须由铺保或熟人作保方可在客栈过夜。光绪通宝、银元与纸烟并存流通，街巷洋货招牌与中式铺面交错。失去铺保者只能依附同乡会、凭介绍信找客栈，或趁夜转移躲避查夜。",
+  "crossing": {
+    "background": "late-qing-street",
+    "leadText": "穿越失败。煤油气与河风搅在一起，远处巡夜的脚步踩得又稳又慢，像在提醒你：今晚没有铺保就很难躺下。",
+    "sceneText": "街巷灯火将明未明，客栈门口写着留宿规矩。洋货招牌与旧式铺面挤在同一条路上。你说不清自己掉进哪座口岸城厢，只知道客籍二字一旦被问住，便无处可歇。"
+  },
+  "startNodeId": "scene_awakening",
+  "correctAnswers": {
+    "period": "晚清",
+    "region": "天津",
+    "identities": [
+      "traveler",
+      "porter",
+      "merchant",
+      "hometown_member"
+    ]
+  },
+  "sources": [
+    {
+      "id": "lq_s1",
+      "title": "晚清保甲制度与城市管控研究",
+      "citation": "学界关于晚清保甲、巡警与客栈留宿规则的综合研究",
+      "factType": "inference",
+      "summary": "客籍留宿须铺保或熟人作保，巡警查夜与保甲登记并行。",
+      "grade": "B",
+      "author": "晚清史学界",
+      "createdOrPublished": "20—21世纪",
+      "locator": "保甲与客栈留宿相关章节",
+      "supports": "可推断无铺保者留宿受限，需依附关系或介绍信；巡警查夜符合制度逻辑。",
+      "cannotProve": "无法还原1898年天津某一街巷的实际执行细节，亦不能证明所有客栈一律严查。"
+    },
+    {
+      "id": "lq_s2",
+      "title": "光绪朝报刊与天津地方志",
+      "citation": "《申报》光绪二十四年天津通讯、天津县乡土志",
+      "factType": "historical",
+      "summary": "光绪年间天津城厢巡警查夜，客栈须登记客籍。",
+      "grade": "A",
+      "author": "申报馆、天津县署",
+      "createdOrPublished": "1898年前后",
+      "locator": "天津城厢治安与客栈管理相关记载",
+      "supports": "可证实光绪年间天津城厢巡警与客栈留宿登记并存，华界街巷管理趋严。",
+      "cannotProve": "无法证明1898年某一客栈的具体查验力度，亦不能据本条推断个人能否留宿。"
+    },
+    {
+      "id": "lq_s3",
+      "title": "晚清天津城市生活与物价",
+      "citation": "晚清天津城市生活与物价研究",
+      "factType": "historical",
+      "summary": "光绪通宝、银元与纸烟并存流通，城厢物价因货殖而异。",
+      "grade": "B",
+      "author": "近代城市史研究者",
+      "createdOrPublished": "20—21世纪",
+      "locator": "天津城厢物价与货币流通相关章节",
+      "supports": "可证实多种货币并存，城厢商业活跃，洋货与土货交错。",
+      "cannotProve": "无法给出1898年某一街巷的精确物价，亦不能据货币推断具体地段。"
+    }
+  ],
+  "identities": [
+    {
+      "id": "traveler",
+      "label": "无铺保的过路客",
+      "description": "你没有有效的铺保，只能寻找熟人作保或临时依附他人。",
+      "background": {
+        "livelihood": "无固定生计，靠帮工、帮佣或临时差事过日",
+        "socialPosition": "客籍过路者，铺保缺失或过期",
+        "affiliation": "无所依附，或临时混在街巷人群中",
+        "rightsAndLimits": "无权在客栈自由留宿，须铺保或熟人作保",
+        "exposureReason": "缺失铺保，无法应对巡警查夜"
+      },
+      "sourceIds": [
+        "lq_s1",
+        "lq_s2"
+      ],
+      "startingStats": {
+        "stamina": 55,
+        "wealth": 12,
+        "exposure": 25
+      },
+      "flags": [
+        "no_pubao"
+      ]
+    },
+    {
+      "id": "porter",
+      "label": "随货栈赶路的脚夫",
+      "description": "你熟悉街巷，却与货栈失散，需重新找到可依附的队伍。",
+      "background": {
+        "livelihood": "以肩挑背扛、随队运输为业",
+        "socialPosition": "依附货栈的底层劳力",
+        "affiliation": "与货栈失散，暂无所属队伍",
+        "rightsAndLimits": "熟悉街巷但不能独自留宿，需货栈头目或铺保作保",
+        "exposureReason": "独行脚夫身份可疑，缺少雇主信物或担保"
+      },
+      "sourceIds": [
+        "lq_s2",
+        "lq_s3"
+      ],
+      "startingStats": {
+        "stamina": 75,
+        "wealth": 10,
+        "exposure": 12
+      },
+      "flags": [
+        "knows_street"
+      ]
+    },
+    {
+      "id": "merchant",
+      "label": "持有介绍信的行商",
+      "description": "你携有介绍信或名片，但并不知道是否仍被本城承认。",
+      "background": {
+        "livelihood": "以行商、货殖为业",
+        "socialPosition": "低阶行商，非大铺掌柜",
+        "affiliation": "依附某号铺面或货栈的临时任务",
+        "rightsAndLimits": "凭介绍信可有限留宿，但需对答字号与去向",
+        "exposureReason": "介绍信若与店主所识不符，或答不上细节，立刻暴露"
+      },
+      "sourceIds": [
+        "lq_s1",
+        "lq_s3"
+      ],
+      "startingStats": {
+        "stamina": 65,
+        "wealth": 25,
+        "exposure": 15
+      },
+      "flags": [
+        "has_letter"
+      ]
+    },
+    {
+      "id": "hometown_member",
+      "label": "依附同乡会的寄住者",
+      "description": "你原本随同乡会入城，途中与引路人失散，需重新找到可依附的同乡。",
+      "background": {
+        "livelihood": "随同乡会帮工、帮佣",
+        "socialPosition": "同乡会寄住者，非本地居民",
+        "affiliation": "原随同乡会入城，途中与引路人失散",
+        "rightsAndLimits": "依附同乡会时可获庇护，但须对答会名与来历",
+        "exposureReason": "找不到引路人，无法证明现有依附关系"
+      },
+      "sourceIds": [
+        "lq_s1",
+        "lq_s2"
+      ],
+      "startingStats": {
+        "stamina": 60,
+        "wealth": 18,
+        "exposure": 10
+      },
+      "flags": [
+        "has_hometown_hint"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "lq_e1",
+      "title": "光绪通宝与纸烟",
+      "description": "街巷交易中光绪通宝、银元与纸烟并存，价格因铺面而异。",
+      "category": "货币与交易",
+      "strength": "strong",
+      "sourceId": "lq_s3",
+      "hints": {
+        "period": "晚清",
+        "region": "城厢"
+      }
+    },
+    {
+      "id": "lq_e2",
+      "title": "巡警与保甲",
+      "description": "街巷可见巡警与保甲公所，客栈须登记客籍。",
+      "category": "官制与法律",
+      "strength": "strong",
+      "sourceId": "lq_s2",
+      "hints": {
+        "period": "晚清"
+      }
+    },
+    {
+      "id": "lq_e3",
+      "title": "铺保作保",
+      "description": "客栈要求客籍出示铺保或熟人作保，无保者不得留宿。",
+      "category": "社会习俗",
+      "strength": "strong",
+      "sourceId": "lq_s1",
+      "hints": {
+        "identity": "需铺保作保"
+      }
+    },
+    {
+      "id": "lq_e4",
+      "title": "洋货招牌",
+      "description": "街巷洋货招牌与中式铺面交错，似为近代商埠风貌。",
+      "category": "文字与文书",
+      "strength": "weak",
+      "sourceId": "lq_s2",
+      "hints": {
+        "period": "晚清"
+      }
+    },
+    {
+      "id": "lq_e5",
+      "title": "行人口述",
+      "description": "有人说\"巡警查夜比往年更勤\"，又有人说\"租界那边规矩不同\"，信息互相补充。",
+      "category": "语言与称谓",
+      "strength": "misleading",
+      "sourceId": "lq_s1",
+      "hints": {
+        "period": "晚清"
+      }
+    },
+    {
+      "id": "lq_e6",
+      "title": "街巷与电报杆",
+      "description": "街巷宽阔、电报杆矗立，表明此地为大城商埠之一。",
+      "category": "交通与通信",
+      "strength": "strong",
+      "sourceId": "lq_s2",
+      "hints": {
+        "region": "大城商埠"
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "id": "scene_awakening",
+      "type": "scene",
+      "title": "街巷醒来",
+      "background": "late-qing-street",
+      "text": "你在城厢街巷边醒来。远处传来巡警哨声，行人议论\"铺保\"\"客籍\"。你不知道自己为何在此，但腹中饥饿，且天色向晚——你必须尽快弄清能否在客栈过夜。",
+      "revealEvidence": [
+        "lq_e2",
+        "lq_e6"
+      ],
+      "choices": [
+        {
+          "id": "c_follow_crowd",
+          "text": "随人流向客栈街移动",
+          "next": "scene_inn_street",
+          "strategyTags": [
+            "avoid_transfer"
+          ],
+          "settlementNote": "你选择随人流接近客栈街，以最低暴露代价摸清规矩。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": -8
+            }
+          ]
+        },
+        {
+          "id": "c_check_body",
+          "text": "先检查随身物品与衣物",
+          "next": "scene_inventory",
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "你暂缓前行，先确认身上是否还有可用凭证。"
+        }
+      ]
+    },
+    {
+      "id": "scene_inventory",
+      "type": "scene",
+      "title": "随身之物",
+      "background": "late-qing-street",
+      "text": "你的衣料并不华丽，却也不像寻常苦力。若你记得自己携带介绍信或同乡会引路，或许还能换取留宿；若没有，就必须依赖铺保作保。",
+      "choices": [
+        {
+          "id": "c_has_letter",
+          "text": "检查是否有介绍信或名片",
+          "next": "scene_inn_street",
+          "condition": {
+            "type": "flag",
+            "flag": "has_letter"
+          },
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你确认介绍信仍在，行商线由此展开。",
+          "effects": [
+            {
+              "type": "revealEvidence",
+              "evidenceId": "lq_e3"
+            }
+          ]
+        },
+        {
+          "id": "c_no_letter",
+          "text": "确认没有可用凭证，只能先找客栈落脚",
+          "next": "scene_inn_street",
+          "condition": {
+            "type": "flag",
+            "flag": "has_letter",
+            "value": false
+          },
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "你确认无凭证可用，只能以过路客身份试探。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": 5
+            },
+            {
+              "type": "revealEvidence",
+              "evidenceId": "lq_e5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene_inn_street",
+      "type": "scene",
+      "title": "客栈街",
+      "background": "late-qing-street",
+      "text": "客栈街有人以光绪通宝买纸烟，洋货招牌与中式铺面交错。客栈掌柜问你是哪里的\"客\"，有无铺保。你意识到，在这里，留宿资格比力气更重要。",
+      "revealEvidence": [
+        "lq_e1",
+        "lq_e4"
+      ],
+      "choices": [
+        {
+          "id": "c_claim_traveler",
+          "text": "自称过路客人，请求借宿",
+          "next": "scene_inn",
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "你以过路客人自称，换取进入客栈的机会。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": 8
+            }
+          ]
+        },
+        {
+          "id": "c_show_letter",
+          "text": "出示介绍信，称有货殖在身",
+          "next": "scene_inn",
+          "condition": {
+            "type": "flag",
+            "flag": "has_letter"
+          },
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你出示介绍信，以行商身份降低怀疑。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": -5
+            }
+          ]
+        },
+        {
+          "id": "c_find_hometown",
+          "text": "打听是否有人认得你的同乡会",
+          "next": "scene_inn",
+          "condition": {
+            "type": "flag",
+            "flag": "has_hometown_hint"
+          },
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "你沿同乡线打听引路人下落，寻求庇护。"
+        },
+        {
+          "id": "c_porter_offer",
+          "text": "主动帮货栈搬运货物，换一顿食",
+          "next": "scene_porter_labor",
+          "condition": {
+            "type": "flag",
+            "flag": "knows_street"
+          },
+          "strategyTags": [
+            "labor_trade"
+          ],
+          "settlementNote": "你以劳力换取信任，脚夫劳动线由此展开。"
+        }
+      ]
+    },
+    {
+      "id": "scene_inn",
+      "type": "scene",
+      "title": "客栈大堂",
+      "background": "late-qing-inn",
+      "speaker": "掌柜",
+      "text": "掌柜一边拨算盘一边打量你：\"近来巡警查得紧，无铺保者，最好莫乱说话。你若想在本城过夜，得先弄清查夜几时开始。\"",
+      "revealEvidence": [
+        "lq_e3"
+      ],
+      "choices": [
+        {
+          "id": "c_listen",
+          "text": "先听客栈中人议论城厢规矩",
+          "next": "scene_rumors",
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "你从客栈闲谈中获取城厢规矩碎片。",
+          "effects": [
+            {
+              "type": "revealEvidence",
+              "evidenceId": "lq_e5"
+            }
+          ]
+        },
+        {
+          "id": "c_buy_food",
+          "text": "用银元买烧饼充饥",
+          "next": "scene_rumors",
+          "strategyTags": [
+            "exchange_resources"
+          ],
+          "settlementNote": "你花费银元换得体力，继续收集线索。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "wealth",
+              "delta": -8
+            },
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene_rumors",
+      "type": "scene",
+      "title": "传闻与线索",
+      "background": "late-qing-inn",
+      "text": "有人提及\"巡警查夜\"，也有人只说\"保甲今日催客籍登记比往年更急\"。这些说法都不足以单独定年，但足以说明：你所在的不是可随意夜行的岁月。你必须选择下一步的生存策略。",
+      "choices": [
+        {
+          "id": "c_submit_hypothesis",
+          "text": "整理线索，形成对年代与身份的判断",
+          "next": "scene_decision",
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你整理已知线索，准备做出关键抉择。"
+        },
+        {
+          "id": "c_traveler_hide",
+          "text": "趁查夜前离开客栈，躲入街巷后巷",
+          "next": "scene_traveler_hide",
+          "condition": {
+            "type": "flag",
+            "flag": "no_pubao"
+          },
+          "strategyTags": [
+            "conceal_identity",
+            "avoid_transfer"
+          ],
+          "settlementNote": "你选择躲避查夜，无保躲避线由此展开。"
+        },
+        {
+          "id": "c_merchant_route",
+          "text": "向脚夫打听保甲公所，准备持介绍信登记",
+          "next": "scene_baojia_info",
+          "condition": {
+            "type": "flag",
+            "flag": "has_letter"
+          },
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你沿行商线打听保甲，准备凭介绍信登记。"
+        },
+        {
+          "id": "c_hometown_route",
+          "text": "按同乡会名号打听，寻铺保引荐",
+          "next": "scene_registration",
+          "condition": {
+            "type": "flag",
+            "flag": "has_hometown_hint"
+          },
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "你沿同乡线寻找铺保作保，直接求留宿。"
+        },
+        {
+          "id": "c_ask_baojia_any",
+          "text": "向掌柜打听巡警查夜几时开始",
+          "next": "scene_baojia_info"
+        }
+      ]
+    },
+    {
+      "id": "scene_baojia_info",
+      "type": "scene",
+      "title": "查夜消息",
+      "background": "late-qing-baojia",
+      "text": "保甲公所确在催客籍登记。无铺保者会被劝离客栈，持有介绍信者则需对得上字号与去向。脚夫们低声说，今日查夜比往年更早。",
+      "revealEvidence": [
+        "lq_e3"
+      ],
+      "choices": [
+        {
+          "id": "c_to_decision",
+          "text": "带着这些消息回去整理判断",
+          "next": "scene_decision",
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你掌握查夜情报，回到抉择节点。"
+        }
+      ]
+    },
+    {
+      "id": "scene_traveler_hide",
+      "type": "scene",
+      "title": "后巷藏身",
+      "background": "late-qing-baojia",
+      "text": "你在街巷后巷中缩着身子，远处传来巡警哨声。没有铺保，你不敢走客栈正路；但躲藏也意味着查夜后无处容身。你必须决定是继续躲，还是冒险混入下一波入城人群。",
+      "choices": [
+        {
+          "id": "c_hide_flee",
+          "text": "趁哨未响满沿小巷离开，避开客栈街",
+          "next": "ending_partial_flee",
+          "strategyTags": [
+            "avoid_transfer",
+            "conceal_identity"
+          ],
+          "settlementNote": "你沿小巷夜行，躲过当场查验但尚未立足。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": -18
+            },
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": -8
+            }
+          ]
+        },
+        {
+          "id": "c_hide_blend",
+          "text": "混入人群，尝试重新进入客栈街",
+          "next": "scene_decision",
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "你冒险混入人群，暴露风险上升。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": 12
+            }
+          ]
+        },
+        {
+          "id": "c_hide_caught",
+          "text": "后巷外有人举灯查问，你应答失当",
+          "next": "ending_exposed",
+          "condition": {
+            "type": "hypothesisMismatch",
+            "field": "period",
+            "value": "晚清"
+          },
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "你应答露出破绽，被当场扣留问话。"
+        }
+      ]
+    },
+    {
+      "id": "scene_porter_labor",
+      "type": "scene",
+      "title": "以力换食",
+      "background": "late-qing-street",
+      "text": "你帮货栈与街巷长者搬运货物，换来一顿烧饼与半日歇脚。对方不问你太多来历，只看你肯不肯出力。脚夫在商埠里，有时比介绍信更管用——但出力换不来铺保，只能换一时信任。",
+      "choices": [
+        {
+          "id": "c_labor_register",
+          "text": "继续出力，请求铺保作保留宿",
+          "next": "ending_success_belong",
+          "strategyTags": [
+            "labor_trade",
+            "rely_on_relations"
+          ],
+          "settlementNote": "你以劳动换取铺保作保，暂获留宿。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": -10
+            },
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": -12
+            }
+          ]
+        },
+        {
+          "id": "c_labor_move_on",
+          "text": "歇脚后继续随货栈转移",
+          "next": "scene_decision",
+          "strategyTags": [
+            "labor_trade"
+          ],
+          "settlementNote": "你随货栈继续前行，劳动线汇入抉择节点。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene_decision",
+      "type": "scene",
+      "title": "抉择",
+      "background": "late-qing-baojia",
+      "text": "查夜哨声渐近。你必须决定：是持介绍信登记留宿，还是留在客栈寻找铺保作保。若你对年代和身份判断有误，错误自称会立刻引来巡警怀疑。",
+      "choices": [
+        {
+          "id": "c_official_claim",
+          "text": "自称官府差遣，请求客栈庇护",
+          "next": "scene_official_route",
+          "requiresCorrectHypothesis": "period",
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你以官方身份自称，冒了暴露风险。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": 15
+            }
+          ]
+        },
+        {
+          "id": "c_local_hide",
+          "text": "留在客栈，先找铺保作保再留宿",
+          "next": "scene_registration",
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "你选择依附铺保，寻求留宿登记。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": -5
+            }
+          ]
+        },
+        {
+          "id": "c_use_letter",
+          "text": "持介绍信登记，按行商路线留宿",
+          "next": "scene_letter_route",
+          "condition": {
+            "type": "flag",
+            "flag": "has_letter"
+          },
+          "requiresCorrectHypothesis": "identity",
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你持介绍信登记，行商线进入最后阶段。"
+        }
+      ]
+    },
+    {
+      "id": "scene_official_route",
+      "type": "scene",
+      "title": "冒称差遣",
+      "background": "late-qing-baojia",
+      "text": "你以不符时宜的自称应对巡警盘查，吏员越听越疑。若你其实不了解当时制度细节，这一步几乎等于自证可疑。",
+      "choices": [
+        {
+          "id": "c_exposed",
+          "text": "强行要求留宿",
+          "next": "ending_exposed",
+          "condition": {
+            "type": "hypothesisMismatch",
+            "field": "period",
+            "value": "晚清"
+          },
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你强行要求留宿，因年代判断错误而暴露。"
+        },
+        {
+          "id": "c_recover",
+          "text": "改口称过路客人，请求暂留",
+          "next": "scene_registration",
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "你改口称过路客人，退回依附路线。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene_letter_route",
+      "type": "scene",
+      "title": "持介绍信登记",
+      "background": "late-qing-inn",
+      "text": "介绍信样式与掌柜所识相符，你得以登记留宿。但若你并不真正理解信中所代表的字号，前方仍可能因答不上细节而暴露。",
+      "choices": [
+        {
+          "id": "c_success_letter",
+          "text": "按介绍信指示完成留宿登记",
+          "next": "ending_success_letter",
+          "condition": {
+            "type": "hypothesisMatch",
+            "field": "period",
+            "value": "晚清"
+          },
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你凭介绍信完成登记，行商线达成留宿。"
+        },
+        {
+          "id": "c_fail_letter",
+          "text": "继续冒名登记",
+          "next": "ending_exposed",
+          "condition": {
+            "type": "hypothesisMismatch",
+            "field": "period",
+            "value": "晚清"
+          },
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "你冒名登记，因判断失误而被识破。"
+        }
+      ]
+    },
+    {
+      "id": "scene_registration",
+      "type": "scene",
+      "title": "铺保作保",
+      "background": "late-qing-inn",
+      "text": "你帮街巷长者搬运货物，换取一晚歇脚。对方不问你太多，只问你是否愿意请铺保作保、在客栈登记为\"客籍\"。这是商埠里最常见的过夜方式——依附线在此收束。",
+      "choices": [
+        {
+          "id": "c_register",
+          "text": "接受作保，暂时留宿此客栈",
+          "next": "ending_success_belong",
+          "strategyTags": [
+            "rely_on_relations",
+            "follow_institution"
+          ],
+          "settlementNote": "你接受铺保作保，依附线达成留宿。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": -15
+            }
+          ]
+        },
+        {
+          "id": "c_refuse_register",
+          "text": "拒绝作保，查夜前离开街巷",
+          "next": "ending_partial_flee",
+          "strategyTags": [
+            "avoid_transfer"
+          ],
+          "settlementNote": "你拒绝作保离开街巷，暂脱险但未立足。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": -20
+            },
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ending_success_belong",
+      "type": "ending",
+      "title": "暂得留宿",
+      "outcome": "success",
+      "score": 82,
+      "text": "你在客栈登记为客籍，暂时获得了可被本城承认的过夜资格。查夜哨响起时，你已在铺位歇下。",
+      "unlockSources": [
+        "lq_s1",
+        "lq_s2"
+      ]
+    },
+    {
+      "id": "ending_success_letter",
+      "type": "ending",
+      "title": "介绍信留宿",
+      "outcome": "success",
+      "score": 82,
+      "text": "你凭介绍信完成留宿登记，并在查夜前找到了可歇脚的铺位。你仍不知明日几何，但至少没有被当场识破。",
+      "unlockSources": [
+        "lq_s1",
+        "lq_s3"
+      ]
+    },
+    {
+      "id": "ending_partial_flee",
+      "type": "ending",
+      "title": "查夜前离去",
+      "outcome": "partial",
+      "score": 48,
+      "text": "你在查夜哨响起前离开街巷，躲过了当场查验，但饥饿与疲惫仍在累积。你活了下来，却仍未真正立足。",
+      "unlockSources": [
+        "lq_s3"
+      ]
+    },
+    {
+      "id": "ending_exposed",
+      "type": "ending",
+      "title": "来历败露",
+      "outcome": "failure",
+      "score": 18,
+      "text": "你的说法与时代细节对不上，巡警将你扣下问话。在缺少铺保的情况下，这通常意味着失去在本城过夜的能力。",
+      "unlockSources": [
+        "lq_s1"
+      ]
+    },
+    {
+      "id": "ending_exhaustion",
+      "type": "ending",
+      "title": "力竭倒毙",
+      "outcome": "failure",
+      "score": 18,
+      "text": "你在街巷倒下，再未醒来。体力与银元和留宿资格一样，都是生存必需品。"
+    },
+    {
+      "id": "ending_critical_injury",
+      "type": "ending",
+      "title": "伤重不治",
+      "outcome": "failure",
+      "score": 18,
+      "text": "伤病耗尽了你最后一点行动能力。你未能走到下一个可以留宿的地方。"
+    },
+    {
+      "id": "ending_exposed_stat",
+      "type": "ending",
+      "title": "嫌疑缠身",
+      "outcome": "failure",
+      "score": 18,
+      "text": "周围人对你的怀疑已到无法掩饰的地步。你已无法再以任何身份自如行动。"
+    }
+  ]
+}

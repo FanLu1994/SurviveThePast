@@ -1,0 +1,1059 @@
+{
+  "id": "northern-song",
+  "title": "汴京客途",
+  "theme": "northern-song",
+  "eraLabel": "北宋",
+  "year": 1085,
+  "regionLabel": "汴京",
+  "oneLiner": "1085年汴京城门外，一个没有行业担保的外来者，必须在查验趋严前找到落脚与就业的凭据。",
+  "coreCrisis": "入城后数日内若无行会或店主担保，将无法合法留在行市谋生，并可能被逐出邸店。",
+  "historicalBackground": "公元1085年，北宋都城是一座人口百万级的商业城市。交子与铜钱并用，行市、邸店与夜市构成了高度城市化的日常。外来人口要在此留城谋生，通常需要行业行会、店主或熟人提供担保，否则难以长期在行市接活、在邸店安住。本关危机正源于这一制度性障碍，而非单纯的财物短缺。",
+  "crossing": {
+    "background": "northern-song-gate",
+    "leadText": "你再次没能回到原处。耳边先是车马与叫卖，随后才是自己的呼吸。",
+    "sceneText": "城门外人潮拥挤，邸店幌子远近错落。铜钱与纸券的气息混在尘土里。这里像一座永不歇市的都会入口——没有担保，就很难在里头真正站住。"
+  },
+  "startNodeId": "scene_city_gate",
+  "correctAnswers": {
+    "period": "北宋",
+    "region": "汴京",
+    "identities": [
+      "servant",
+      "merchant_apprentice",
+      "traveler",
+      "craftsman"
+    ]
+  },
+  "sources": [
+    {
+      "id": "ns_s1",
+      "title": "东京梦华录",
+      "citation": "孟元老《东京梦华录》",
+      "factType": "historical",
+      "summary": "追忆北宋都城商业繁盛，行市、邸店、夜市与行业规矩并存。",
+      "grade": "A",
+      "author": "孟元老",
+      "createdOrPublished": "约1147年成书（南宋初追忆北宋东京）",
+      "locator": "卷三 诸楼茶坊、卷八 街市",
+      "supports": "北宋都城商业高度发达，存在行市分类、邸店住宿与夜市经营等城市生活细节。",
+      "cannotProve": "1085年这一特定年份的物价、治安松紧程度，或某一外来个体是否真实遇见过某位店主。"
+    },
+    {
+      "id": "ns_s2",
+      "title": "宋会要辑稿·食货",
+      "citation": "《宋会要辑稿》食货相关条目",
+      "factType": "historical",
+      "summary": "北宋铜钱、交子并用，城市商业与货币管理有明确制度记载。",
+      "grade": "A",
+      "author": "徐松（辑）",
+      "createdOrPublished": "清代辑录宋代官修《宋会要》残稿",
+      "locator": "食货卷 钱币、交子相关条",
+      "supports": "北宋时期铜钱与交子可并用，官府对商业与货币流通有制度性管理。",
+      "cannotProve": "个别铺户是否严格执行担保惯例，或某城门当日的查验松紧程度。"
+    },
+    {
+      "id": "ns_s3",
+      "title": "宋代城市行会研究",
+      "citation": "学界关于宋代行会、行业担保与雇役的综合研究",
+      "factType": "inference",
+      "summary": "外来工匠、学徒与雇役入城谋生，通常需行老、店主或熟人引见担保。",
+      "grade": "B",
+      "author": "学界综合研究（全汉騋等学者方向）",
+      "createdOrPublished": "20世纪以降现代学术研究",
+      "locator": "行会组织、外来劳动力与行业准入相关章节",
+      "supports": "宋代城市行业中，外来者短期零工或许可行，长期留城则多需行业或熟人担保。",
+      "cannotProve": "某一城门、某一行业在1085年的具体执法尺度，或某次个体求保是否成功。"
+    }
+  ],
+  "identities": [
+    {
+      "id": "servant",
+      "label": "随主入城的仆役",
+      "description": "你从外地随主人入城，却在人群失散，需找到旧主或新雇主。",
+      "background": {
+        "livelihood": "依附主家，以听役、跑腿、看守行李为常业，本人无独立行业身份。",
+        "socialPosition": "处于主仆关系下游，社会可见度低，但脱离主人后几乎无从证明来历。",
+        "affiliation": "原依附某外地来城的雇主，持有主人信物，却与主人失散。",
+        "rightsAndLimits": "可凭信物证明“曾随主入城”，却不能独自在行市立户或长期接活；需尽快找到旧主或新雇主续上依附关系。",
+        "exposureReason": "无主仆同行、独自在城门口徘徊，且答不出主人现居何处，极易被当作逃仆或流寓无籍之人。"
+      },
+      "sourceIds": [
+        "ns_s1",
+        "ns_s3"
+      ],
+      "startingStats": {
+        "stamina": 60,
+        "wealth": 10,
+        "exposure": 18
+      },
+      "flags": [
+        "has_master_token"
+      ]
+    },
+    {
+      "id": "merchant_apprentice",
+      "label": "商铺学徒",
+      "description": "你识得一些行市规矩，但缺少独立担保，无法自行开业或长期留铺。",
+      "background": {
+        "livelihood": "在商铺学艺帮工，熟悉货价、交子与行市惯例，尚未取得独立营业资格。",
+        "socialPosition": "介于伙计与学徒之间，比仆役更易接触交易，但仍受店主与行规约束。",
+        "affiliation": "原属外地商帮一脉，识得行业名目，却未携带本铺正式保状。",
+        "rightsAndLimits": "可凭手艺与行业知识短期帮工，若要长期留城，仍需行老或店主作保。",
+        "exposureReason": "自称识得行市，却拿不出铺保或师承文书，容易被怀疑冒认学徒、骗取信任。"
+      },
+      "sourceIds": [
+        "ns_s1",
+        "ns_s2",
+        "ns_s3"
+      ],
+      "startingStats": {
+        "stamina": 65,
+        "wealth": 22,
+        "exposure": 12
+      },
+      "flags": [
+        "knows_trade"
+      ]
+    },
+    {
+      "id": "traveler",
+      "label": "初到都城的外地客人",
+      "description": "你带有路引和少量铜钱，却不熟悉这座城市的行业规矩与担保惯例。",
+      "background": {
+        "livelihood": "外地来客，短期依赖路引、铜钱与客栈落脚，无固定行业或雇主。",
+        "socialPosition": "名义上为过境客人，社会位置模糊，既非行会成员，也无本地亲属。",
+        "affiliation": "外地来城，持有路引，与本地行会、邸店无既有关联。",
+        "rightsAndLimits": "凭路引可短期入城、住店，若要留城谋生则与外来雇役同样面临担保门槛。",
+        "exposureReason": "路引只能证明来意，不能代替行业担保；长住无保，会被店主与行老追问来历。"
+      },
+      "sourceIds": [
+        "ns_s1",
+        "ns_s2"
+      ],
+      "startingStats": {
+        "stamina": 70,
+        "wealth": 25,
+        "exposure": 20
+      },
+      "flags": [
+        "has_travel_permit"
+      ]
+    },
+    {
+      "id": "craftsman",
+      "label": "寻活的工匠",
+      "description": "你凭手艺谋生，但需先找到行会认可才能稳定接活、在城中安住。",
+      "background": {
+        "livelihood": "以木工、泥水、修缮等手艺换食，习惯按件计酬、随铺帮工。",
+        "socialPosition": "有一技之长的雇役，比纯体力零工更受行市需要，但仍非行会正式成员。",
+        "affiliation": "外地工匠，师承在外，尚未取得本地行会引保或行老认可。",
+        "rightsAndLimits": "可做短期零活，长期留城接活须行老或店主担保，否则只能辗转各铺。",
+        "exposureReason": "独自携工具入城，若无担保，会被怀疑私接私活、坏了行规。"
+      },
+      "sourceIds": [
+        "ns_s1",
+        "ns_s3"
+      ],
+      "startingStats": {
+        "stamina": 68,
+        "wealth": 16,
+        "exposure": 14
+      },
+      "flags": [
+        "has_skill"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "ns_e1",
+      "title": "交子与铜钱",
+      "description": "市肆中既见铜钱，又见交子，说明商业高度发达，货币制度复杂。",
+      "category": "货币与交易",
+      "strength": "strong",
+      "sourceId": "ns_s2",
+      "hints": {
+        "period": "北宋"
+      }
+    },
+    {
+      "id": "ns_e2",
+      "title": "州桥夜市",
+      "description": "夜市直至三更，酒楼、邸店、行市鳞次栉比，像是天下数一数二的通都。",
+      "category": "城市与建筑",
+      "strength": "strong",
+      "sourceId": "ns_s1",
+      "hints": {
+        "region": "北宋都城"
+      }
+    },
+    {
+      "id": "ns_e3",
+      "title": "行会引见",
+      "description": "外来工匠和学徒需由行老或店主担保，方可长期留城，否则只能做零工。",
+      "category": "社会习俗",
+      "strength": "strong",
+      "sourceId": "ns_s3",
+      "hints": {
+        "identity": "需担保"
+      }
+    },
+    {
+      "id": "ns_e4",
+      "title": "历书纪年",
+      "description": "书坊新印的历书上镌有当朝年号，其中第二字与常见年号用字不同；酒肆里有人低声说，这是今上改元后的第八个年头。",
+      "category": "文字与文书",
+      "strength": "strong",
+      "sourceId": "ns_s2",
+      "hints": {
+        "period": "北宋中后期"
+      }
+    },
+    {
+      "id": "ns_e5",
+      "title": "辽使传闻",
+      "description": "酒肆中有人谈论“北界使节”，语气像是陈年旧事，容易误以为是更晚的边事。",
+      "category": "语言与称谓",
+      "strength": "misleading",
+      "sourceId": "ns_s1",
+      "hints": {
+        "period": "北宋"
+      }
+    },
+    {
+      "id": "ns_e6",
+      "title": "漕运入城",
+      "description": "漕船沿城内河道入城，码头、粮仓与行市相连，说明此城为水运枢纽。",
+      "category": "交通与通信",
+      "strength": "weak",
+      "sourceId": "ns_s1",
+      "hints": {
+        "region": "水运都会"
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "id": "scene_city_gate",
+      "type": "scene",
+      "title": "入城",
+      "background": "northern-song-gate",
+      "text": "你在城门外被问起来意。城内外人声鼎沸，漕船沿河道入城，市肆招牌与行市名称显示这是一座高度商业化的城市。你不记得自己为何在此，但必须先入城。",
+      "revealEvidence": [
+        "ns_e2",
+        "ns_e6"
+      ],
+      "choices": [
+        {
+          "id": "c_enter_with_permit",
+          "text": "出示路引，称来城探亲",
+          "next": "scene_market",
+          "condition": {
+            "type": "flag",
+            "flag": "has_travel_permit"
+          },
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "凭路引入城，先走制度认可的正当来意。"
+        },
+        {
+          "id": "c_enter_with_token",
+          "text": "出示主人信物，称随主入城",
+          "next": "scene_market",
+          "condition": {
+            "type": "flag",
+            "flag": "has_master_token"
+          },
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "以主仆信物证明来意，试图续上原有依附关系。"
+        },
+        {
+          "id": "c_enter_work",
+          "text": "称来寻行业活计，先去作坊口",
+          "next": "scene_craftsman_work",
+          "condition": {
+            "type": "flag",
+            "flag": "has_skill"
+          },
+          "strategyTags": [
+            "labor_trade"
+          ],
+          "settlementNote": "以手艺入城，优先寻找能立刻换食的零活。"
+        },
+        {
+          "id": "c_enter_generic",
+          "text": "称来投亲靠友，先找地方落脚",
+          "next": "scene_market",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": 6
+            }
+          ],
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "含糊说明来意，先混入行市再作打算。"
+        }
+      ]
+    },
+    {
+      "id": "scene_market",
+      "type": "scene",
+      "title": "行市之中",
+      "background": "northern-song-market",
+      "text": "你在行市中看到交子与铜钱并用，历书与告示上的纪年格式，都透着当朝规矩。繁华不等于自由——每个行业都有自己的引保与行规。",
+      "revealEvidence": [
+        "ns_e1",
+        "ns_e4"
+      ],
+      "choices": [
+        {
+          "id": "c_find_inn",
+          "text": "先找邸店住下，再打听消息",
+          "next": "scene_inn",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "wealth",
+              "delta": -8
+            },
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": 8
+            }
+          ],
+          "strategyTags": [
+            "exchange_resources"
+          ],
+          "settlementNote": "花钱换落脚与体力，先稳住阵脚再打听。"
+        },
+        {
+          "id": "c_find_guild",
+          "text": "直接去行会口打听担保",
+          "next": "scene_guild",
+          "condition": {
+            "type": "flag",
+            "flag": "knows_trade"
+          },
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "按行市规矩直奔行会，尝试取得行业认可。"
+        },
+        {
+          "id": "c_craftsman_from_market",
+          "text": "沿作坊街打听零活",
+          "next": "scene_craftsman_work",
+          "condition": {
+            "type": "flag",
+            "flag": "has_skill"
+          },
+          "strategyTags": [
+            "labor_trade"
+          ],
+          "settlementNote": "不入邸店，先以手艺换一口饭与消息。"
+        },
+        {
+          "id": "c_ask_around",
+          "text": "在市肆中打听消息",
+          "next": "scene_inn",
+          "effects": [
+            {
+              "type": "revealEvidence",
+              "evidenceId": "ns_e5"
+            }
+          ],
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "借酒肆闲谈补线索，也承担了听错传闻的风险。"
+        }
+      ]
+    },
+    {
+      "id": "scene_craftsman_work",
+      "type": "scene",
+      "title": "作坊街口",
+      "background": "northern-song-market",
+      "speaker": "铺掌",
+      "text": "铺掌打量你带来的工具，又看一眼街上渐密的巡卒：“短活可以给你，长久留人得行老作保。你先修这扇铺门，我看你手稳不稳。”",
+      "revealEvidence": [
+        "ns_e3"
+      ],
+      "choices": [
+        {
+          "id": "c_craft_repair",
+          "text": "接下修缮，以工换当日食宿",
+          "next": "scene_guild",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": -10
+            },
+            {
+              "type": "modifyStat",
+              "stat": "wealth",
+              "delta": 6
+            },
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": -4
+            }
+          ],
+          "strategyTags": [
+            "labor_trade"
+          ],
+          "settlementNote": "以手艺换食宿与口碑，为求行会担保铺路。"
+        },
+        {
+          "id": "c_craft_piecework",
+          "text": "只做按件零活，不求长久留铺",
+          "next": "scene_inn",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": -8
+            },
+            {
+              "type": "modifyStat",
+              "stat": "wealth",
+              "delta": 10
+            }
+          ],
+          "strategyTags": [
+            "labor_trade",
+            "exchange_resources"
+          ],
+          "settlementNote": "按件换钱，先攒一点本钱再决定去留。"
+        },
+        {
+          "id": "c_craft_ask_guild",
+          "text": "请铺掌引荐行老",
+          "next": "scene_guild",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": -6
+            },
+            {
+              "type": "setFlag",
+              "flag": "has_shop_intro",
+              "value": true
+            }
+          ],
+          "strategyTags": [
+            "rely_on_relations",
+            "follow_institution"
+          ],
+          "settlementNote": "借铺掌面子求见行老，把零活关系转成制度担保。"
+        }
+      ]
+    },
+    {
+      "id": "scene_inn",
+      "type": "scene",
+      "title": "邸店",
+      "background": "northern-song-inn",
+      "speaker": "店主",
+      "text": "店主打量你的衣着：“客官若是短住，钱够就行；若要留城谋生，得找行老作保。近来查得紧，外来无保人者，夜里也不安稳。”",
+      "revealEvidence": [
+        "ns_e3"
+      ],
+      "choices": [
+        {
+          "id": "c_rest",
+          "text": "先住下，整理已有线索",
+          "next": "scene_hypothesis",
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "按店主规矩付费住下，暂缓行动以整理判断。"
+        },
+        {
+          "id": "c_seek_master",
+          "text": "按信物上所写地址寻找旧主",
+          "next": "scene_master",
+          "condition": {
+            "type": "flag",
+            "flag": "has_master_token"
+          },
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "持信物寻主，试图恢复主仆依附以解无保之困。"
+        },
+        {
+          "id": "c_inn_labor",
+          "text": "帮店主搬运货物，换一晚宽限",
+          "next": "scene_hypothesis",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": -12
+            },
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": -5
+            }
+          ],
+          "strategyTags": [
+            "labor_trade"
+          ],
+          "settlementNote": "以体力换店主宽限，争取多一日寻保时间。"
+        }
+      ]
+    },
+    {
+      "id": "scene_master",
+      "type": "scene",
+      "title": "寻主",
+      "background": "northern-song-street",
+      "speaker": "门房",
+      "text": "你按信物找到一处宅门。门房接过木牌细看，脸色却沉下来：“你家主人数日前已离城，去向只说是北上公干。这牌子能证明你曾随他入城，却不能替你长久作保。”巷口有人探头张望，像是在等你的下文。",
+      "choices": [
+        {
+          "id": "c_master_ask_door",
+          "text": "细问主人离城前后的动静与同行",
+          "next": "scene_patron_search",
+          "effects": [
+            {
+              "type": "revealEvidence",
+              "evidenceId": "ns_e3"
+            },
+            {
+              "type": "setFlag",
+              "flag": "master_departed",
+              "value": true
+            }
+          ],
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "从门房处确认旧主已离城，转而寻找主人旧识。"
+        },
+        {
+          "id": "c_master_visit_shop",
+          "text": "持信物去相邻染铺，问是否认得主人",
+          "next": "scene_patron_search",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": -6
+            },
+            {
+              "type": "setFlag",
+              "flag": "has_patron_lead",
+              "value": true
+            }
+          ],
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "借信物叩开旧识之门，把失散仆役转成熟人引见。"
+        },
+        {
+          "id": "c_master_labor_nearby",
+          "text": "在宅门外巷口帮工换消息，再作打算",
+          "next": "scene_hypothesis",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": -10
+            },
+            {
+              "type": "modifyStat",
+              "stat": "wealth",
+              "delta": 5
+            }
+          ],
+          "strategyTags": [
+            "labor_trade"
+          ],
+          "settlementNote": "旧主已去，改以短工换消息，先求自立再谋新依附。"
+        },
+        {
+          "id": "c_master_return_inn",
+          "text": "暂回邸店，整理线索后再谋出路",
+          "next": "scene_inn",
+          "strategyTags": [
+            "avoid_transfer"
+          ],
+          "settlementNote": "暂缓寻主，回邸店重整判断，避免在宅门久留生疑。"
+        }
+      ]
+    },
+    {
+      "id": "scene_patron_search",
+      "type": "scene",
+      "title": "旧识引见",
+      "background": "northern-song-street",
+      "speaker": "染铺掌柜",
+      "text": "染铺掌柜认得信物上的记号的：“你主人曾在我这里结账，人虽走了，我倒能给你写一封短引，让你先去行市做几日帮工。只是长久留城，还得行老点头。”",
+      "choices": [
+        {
+          "id": "c_patron_accept",
+          "text": "接受短引，先去行市帮工",
+          "next": "scene_hypothesis",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": -10
+            },
+            {
+              "type": "setFlag",
+              "flag": "has_short_intro",
+              "value": true
+            }
+          ],
+          "strategyTags": [
+            "rely_on_relations",
+            "follow_institution"
+          ],
+          "settlementNote": "借旧识短引入行市，以关系换短期合法帮工资格。"
+        },
+        {
+          "id": "c_patron_decline",
+          "text": "谢绝引见，自行另寻雇主",
+          "next": "scene_hypothesis",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": 4
+            }
+          ],
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "拒绝熟人牵线，宁可独自承担无保风险。"
+        }
+      ]
+    },
+    {
+      "id": "scene_guild",
+      "type": "scene",
+      "title": "行会口",
+      "background": "northern-song-market",
+      "speaker": "行老",
+      "text": "行老问你师承何处、可曾做过何种活计，又是否有人引见。你能答上来，便有机会获得短期担保；答不上来，只能做零工，或者另请铺掌写保。",
+      "choices": [
+        {
+          "id": "c_guild_accept",
+          "text": "以手艺与引见换短期担保",
+          "next": "scene_hypothesis",
+          "condition": {
+            "type": "flag",
+            "flag": "has_shop_intro",
+            "value": false
+          },
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": -8
+            }
+          ],
+          "strategyTags": [
+            "follow_institution",
+            "labor_trade"
+          ],
+          "settlementNote": "以技艺配合行规，换得行会短期担保。"
+        },
+        {
+          "id": "c_guild_with_intro",
+          "text": "出示铺掌引见，求行老作保",
+          "next": "scene_hypothesis",
+          "condition": {
+            "type": "flag",
+            "flag": "has_shop_intro"
+          },
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": -12
+            },
+            {
+              "type": "setFlag",
+              "flag": "has_guild_bond",
+              "value": true
+            }
+          ],
+          "strategyTags": [
+            "follow_institution",
+            "rely_on_relations"
+          ],
+          "settlementNote": "凭铺掌引见取得行老担保，正式接入行业规矩。"
+        },
+        {
+          "id": "c_guild_trade_knowledge",
+          "text": "以识货能力帮行老理账，换一封保书",
+          "next": "scene_hypothesis",
+          "condition": {
+            "type": "flag",
+            "flag": "knows_trade"
+          },
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "wealth",
+              "delta": -5
+            },
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": -10
+            },
+            {
+              "type": "setFlag",
+              "flag": "has_guild_bond",
+              "value": true
+            }
+          ],
+          "strategyTags": [
+            "exchange_resources",
+            "follow_institution"
+          ],
+          "settlementNote": "花钱与识货能力换行老保书，走行业制度通道。"
+        },
+        {
+          "id": "c_guild_reject",
+          "text": "放弃担保，回邸店另作打算",
+          "next": "scene_inn",
+          "strategyTags": [
+            "avoid_transfer"
+          ],
+          "settlementNote": "行会门槛太高，退回邸店另谋他路。"
+        }
+      ]
+    },
+    {
+      "id": "scene_hypothesis",
+      "type": "scene",
+      "title": "整理判断",
+      "background": "northern-song-inn",
+      "text": "交子、历书纪年、漕运入城与行市引保，都指向一座特定的城市与时代。若你把这里当成任意“古代繁华都市”，接下来每一步都会付出代价。",
+      "choices": [
+        {
+          "id": "c_to_plan",
+          "text": "决定下一步生存策略",
+          "next": "scene_plan"
+        }
+      ]
+    },
+    {
+      "id": "scene_plan",
+      "type": "scene",
+      "title": "谋生抉择",
+      "background": "northern-song-market",
+      "text": "你可以尝试留城靠担保谋生，也可以趁夜离开以避免暴露。若你误判时代，贸然使用不合时宜的称谓或制度知识，会立刻引起怀疑。",
+      "choices": [
+        {
+          "id": "c_stay_guild",
+          "text": "留城，凭行业规矩求保",
+          "next": "scene_stay_route",
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "选择留城走行业担保路线，承担被查的风险。"
+        },
+        {
+          "id": "c_stay_relations",
+          "text": "留城，先靠熟人引见稳住脚跟",
+          "next": "scene_stay_route",
+          "condition": {
+            "type": "flag",
+            "flag": "has_short_intro"
+          },
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "凭旧识短引留城，以关系网争取立足时间。"
+        },
+        {
+          "id": "c_claim_official",
+          "text": "自称京官亲属，要求特殊待遇",
+          "next": "scene_wrong_claim",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": 12
+            }
+          ],
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "以虚假权贵身份强闯规矩，暴露风险陡增。"
+        },
+        {
+          "id": "c_leave_city",
+          "text": "趁夜离城，另寻生路",
+          "next": "scene_leave_route",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": -15
+            }
+          ],
+          "strategyTags": [
+            "avoid_transfer"
+          ],
+          "settlementNote": "回避城中担保压力，以体力换城外脱身。"
+        }
+      ]
+    },
+    {
+      "id": "scene_wrong_claim",
+      "type": "scene",
+      "title": "不当自称",
+      "background": "northern-song-street",
+      "text": "你的说法带有明显的时代错位——市民或许听不懂你口中的“朝廷制度”，却听得懂你语气中的不当自信。巡卒已经向这边看了一眼。",
+      "choices": [
+        {
+          "id": "c_wrong_fail",
+          "text": "坚持原说法",
+          "next": "ending_exposed",
+          "condition": {
+            "type": "hypothesisMismatch",
+            "field": "period",
+            "value": "北宋"
+          },
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "执意冒认权贵，在错误时代判断下彻底暴露。"
+        },
+        {
+          "id": "c_wrong_recover",
+          "text": "改口称外地客人，退回行市",
+          "next": "scene_stay_route",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": 8
+            }
+          ],
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "及时改口降级自称，勉强回到留城路线。"
+        }
+      ]
+    },
+    {
+      "id": "scene_stay_route",
+      "type": "scene",
+      "title": "留城",
+      "background": "northern-song-market",
+      "text": "你在行市做零工，渐渐有人愿意为你作保。若你对这座城与所处时代的判断正确，留下比盲目离开更稳妥；若判断有误，留下只会把破绽放大。",
+      "choices": [
+        {
+          "id": "c_stay_success",
+          "text": "接受担保，在城中立足",
+          "next": "ending_success_stay",
+          "condition": {
+            "type": "hypothesisMatch",
+            "field": "region",
+            "value": "汴京"
+          },
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "判断地域正确，担保生效，在城中站稳脚跟。"
+        },
+        {
+          "id": "c_stay_servant_success",
+          "text": "凭短引续上帮工，等候旧主消息",
+          "next": "ending_success_patron",
+          "condition": {
+            "type": "flag",
+            "flag": "has_short_intro"
+          },
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "以旧识引见续上帮工，在关系网中暂得容身。"
+        },
+        {
+          "id": "c_stay_craftsman_success",
+          "text": "凭行老担保，在行市接稳定活计",
+          "next": "ending_success_craftsman",
+          "condition": {
+            "type": "flag",
+            "flag": "has_guild_bond"
+          },
+          "strategyTags": [
+            "labor_trade",
+            "follow_institution"
+          ],
+          "settlementNote": "以手艺配合行会担保，换得稳定活计。"
+        },
+        {
+          "id": "c_stay_partial",
+          "text": "勉强留下，但始终提心吊胆",
+          "next": "ending_partial_stay",
+          "strategyTags": [
+            "labor_trade"
+          ],
+          "settlementNote": "无充分担保硬留城中，活下却难安。"
+        }
+      ]
+    },
+    {
+      "id": "scene_leave_route",
+      "type": "scene",
+      "title": "离城",
+      "background": "northern-song-gate",
+      "text": "你趁夜出城，躲过了行市担保的压力，却必须在城外自行解决食宿。身后城池灯火未灭，前方只有陌生道路。",
+      "choices": [
+        {
+          "id": "c_leave_end",
+          "text": "继续赶路，先求脱险",
+          "next": "ending_partial_leave",
+          "strategyTags": [
+            "avoid_transfer"
+          ],
+          "settlementNote": "以离城回避担保困局，先求脱险再谋后着。"
+        },
+        {
+          "id": "c_leave_with_money",
+          "text": "带剩余铜钱去下一座镇店落脚",
+          "next": "ending_partial_road",
+          "condition": {
+            "type": "stat",
+            "stat": "wealth",
+            "op": "gte",
+            "value": 10
+          },
+          "strategyTags": [
+            "avoid_transfer",
+            "exchange_resources"
+          ],
+          "settlementNote": "以钱财换城外落脚点，部分化解无保危机。"
+        }
+      ]
+    },
+    {
+      "id": "ending_success_stay",
+      "type": "ending",
+      "title": "城中立足",
+      "outcome": "success",
+      "score": 82,
+      "text": "你在汴京获得担保，找到了可继续谋生的位置。繁华之城从不是无主之地，但你终于在其中站住了脚。",
+      "unlockSources": [
+        "ns_s1",
+        "ns_s3"
+      ]
+    },
+    {
+      "id": "ending_success_patron",
+      "type": "ending",
+      "title": "引见续命",
+      "outcome": "success",
+      "score": 82,
+      "text": "你凭旧识短引在行市帮工，虽未能立刻找回旧主，却重新接上了依附关系。在这座城市里，有人肯为你写引，就意味着还能活下去。",
+      "unlockSources": [
+        "ns_s1",
+        "ns_s3"
+      ]
+    },
+    {
+      "id": "ending_success_craftsman",
+      "type": "ending",
+      "title": "行会接活",
+      "outcome": "success",
+      "score": 82,
+      "text": "行老点头之后，你终于在行市接上了稳定活计。手艺在这座城市有用，但光凭手艺还不够，规矩与担保同样决定生死。",
+      "unlockSources": [
+        "ns_s2",
+        "ns_s3"
+      ]
+    },
+    {
+      "id": "ending_partial_stay",
+      "type": "ending",
+      "title": "悬居城中",
+      "outcome": "partial",
+      "score": 48,
+      "text": "你留在汴京，却始终没有完全融入。你活了下来，但随时可能被新的查验打乱安排。",
+      "unlockSources": [
+        "ns_s2"
+      ]
+    },
+    {
+      "id": "ending_partial_leave",
+      "type": "ending",
+      "title": "夜出城郭",
+      "outcome": "partial",
+      "score": 48,
+      "text": "你离开了这座城，躲过了城里的担保压力，却仍未找到真正安身之处。",
+      "unlockSources": [
+        "ns_s1"
+      ]
+    },
+    {
+      "id": "ending_partial_road",
+      "type": "ending",
+      "title": "镇店暂息",
+      "outcome": "partial",
+      "score": 48,
+      "text": "你在城外镇店花铜钱买了一夜安稳。危机暂缓，但长路仍在前方，你还未真正在这时代立足。",
+      "unlockSources": [
+        "ns_s2"
+      ]
+    },
+    {
+      "id": "ending_exposed",
+      "type": "ending",
+      "title": "行市起疑",
+      "outcome": "failure",
+      "score": 18,
+      "text": "你的说法与这座城的日常规矩格格不入，行市中人开始对你避而远之。在讲究担保的城市里，被怀疑往往意味着失去一切。",
+      "unlockSources": [
+        "ns_s3"
+      ]
+    },
+    {
+      "id": "ending_exhaustion",
+      "type": "ending",
+      "title": "力竭",
+      "outcome": "failure",
+      "score": 18,
+      "text": "你在拥挤的行市与邸店之间耗尽最后一丝体力，再未能撑到下一个可容身之处。"
+    },
+    {
+      "id": "ending_critical_injury",
+      "type": "ending",
+      "title": "伤病",
+      "outcome": "failure",
+      "score": 18,
+      "text": "伤病让你无法继续行动。繁华之城不会为无法行动的人停留。"
+    },
+    {
+      "id": "ending_exposed_stat",
+      "type": "ending",
+      "title": "嫌疑",
+      "outcome": "failure",
+      "score": 18,
+      "text": "关于你的议论已经扩散，行市与邸店都不再欢迎你。"
+    }
+  ]
+}

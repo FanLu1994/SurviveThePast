@@ -9,7 +9,7 @@ import {
   getSceneNode,
   pickRandomIdentity,
 } from '@/game/engine'
-import { getLevelById, getNextLevelId } from '@/game/scenario-loader'
+import { getAllLevels, getLevelById, getNextLevelId, loadAllLevels } from '@/game/scenario-loader'
 import type {
   GameSettings,
   MetaProgress,
@@ -53,6 +53,7 @@ function computeStatDelta(before: Stats, after: Stats): StatDelta | null {
 
 interface GameStore {
   initialized: boolean
+  levelsError: string | null
   storageAvailable: boolean
   storageWarning: string | null
   settings: GameSettings
@@ -103,10 +104,18 @@ function resolveStatFailure(levelId: string, run: RunState): RunState | null {
 
 export const useGameStore = create<GameStore>((set, get) => ({
   initialized: false,
+  levelsError: null,
   storageAvailable: true,
   storageWarning: null,
   settings: DEFAULT_SETTINGS,
-  meta: createEmptySave().meta,
+  meta: {
+    unlockedSources: [],
+    completedEndings: [],
+    completedIdentities: [],
+    wrongHypotheses: [],
+    unlockedLevels: [],
+    completedLevels: [],
+  },
   activeRun: null,
   lastResult: null,
   sidebarOpen: false,
@@ -114,11 +123,27 @@ export const useGameStore = create<GameStore>((set, get) => ({
   lastStatDelta: null,
 
   initialize: async () => {
+    const levelIssues = await loadAllLevels()
+    if (levelIssues.length > 0 || getAllLevels().length === 0) {
+      const message =
+        levelIssues.length > 0
+          ? levelIssues.map((issue) => `[${issue.levelId}] ${issue.message}`).join('；')
+          : '未加载到任何关卡内容'
+      set({
+        initialized: true,
+        levelsError: message,
+        storageAvailable: false,
+        storageWarning: '关卡内容加载失败，游戏无法启动。',
+      })
+      return
+    }
+
     const storageAvailable = await isStorageAvailable()
     const save = storageAvailable ? await loadSave() : null
 
     set({
       initialized: true,
+      levelsError: null,
       storageAvailable,
       storageWarning: storageAvailable ? null : '浏览器存储不可用，本次进度无法保存。',
       settings: save?.settings ?? DEFAULT_SETTINGS,

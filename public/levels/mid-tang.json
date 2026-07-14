@@ -1,0 +1,893 @@
+{
+  "id": "mid-tang",
+  "title": "长安客寄",
+  "theme": "mid-tang",
+  "eraLabel": "盛唐",
+  "year": 742,
+  "regionLabel": "长安",
+  "oneLiner": "你在坊门外醒来，没有本坊户籍。天黑前得找个愿意替你作保的人家，不然今晚就得睡墙外。",
+  "coreCrisis": "你没户籍、没保人。这里天一黑就关坊门、禁夜行，外来人过不了夜，闭坊后要么被撵走，要么被扣下盘问。",
+  "historicalBackground": "公元742年，长安还在行坊市制。全城分成一个个坊，靠打鼓报时；天黑关坊门，想在坊里过夜，要么有本坊户籍，要么找个人替你作保。街市上开元通宝到处在花，胡商、驿使来来往往，看着热闹——可热闹归热闹，天一黑，没在坊正那儿登记过的外来人，就只能被坊门吏员往外赶，或者扣下盘问。",
+  "crossing": {
+    "background": "mid-tang-fang",
+    "leadText": "眼前的光又碎又合。你重重摔在硬土上，膝盖磕进砖缝，生疼——又一次穿越，还是没回成。",
+    "sceneText": "面前一堵夯土坊墙高得压人，报时的鼓还没敲。街上有人急着赶路，有人四处打听今晚能睡哪。日头已经偏西——天一黑就关坊门，到时候没户籍、没保人的，一律撵到墙外。"
+  },
+  "startNodeId": "scene_awakening",
+  "correctAnswers": {
+    "period": "盛唐",
+    "region": "长安",
+    "identities": [
+      "lodger",
+      "porter",
+      "messenger",
+      "servant"
+    ]
+  },
+  "sources": [
+    {
+      "id": "mt_s1",
+      "title": "唐六典·尚书省",
+      "citation": "《唐六典》卷六 尚书省",
+      "factType": "historical",
+      "summary": "唐代京城分坊而居，各坊打鼓报时，天黑关坊门、禁止夜里在街上走动。",
+      "grade": "A",
+      "author": "李林甫等",
+      "createdOrPublished": "738年",
+      "locator": "卷六 尚书省 左右金吾卫条",
+      "supports": "能证明唐代京城确实实行坊市制、按鼓声宵禁，坊门由吏员负责开关和盘查。",
+      "cannotProve": "证明不了742年某座坊门查得到底有多严，也不能据此断定某个人能不能留下过夜。"
+    },
+    {
+      "id": "mt_s2",
+      "title": "唐代坊市制度与寄住管理研究",
+      "citation": "学界关于唐代坊正、保人与寄住登记的综合研究",
+      "factType": "inference",
+      "summary": "外来人要留在坊里过夜，得先找个保人担保，再到坊正那儿登记。",
+      "grade": "B",
+      "author": "唐史学界",
+      "createdOrPublished": "20—21世纪",
+      "locator": "坊市寄住与保人制度相关章节",
+      "supports": "能推断出没本坊户籍的人得有保人担保才能过夜，去坊正处登记是常见做法。",
+      "cannotProve": "还原不了742年某座坊具体怎么执行，也不能说所有坊都一样查得严。"
+    },
+    {
+      "id": "mt_s3",
+      "title": "开元通宝与长安物价",
+      "citation": "唐代开元通宝流通与京师物价记载",
+      "factType": "historical",
+      "summary": "开元通宝是当时通用的钱，市面上东西的价钱各不相同。",
+      "grade": "A",
+      "author": "唐代经济史研究者",
+      "createdOrPublished": "唐代（文献成书年代不一）",
+      "locator": "开元通宝流通与物价相关记载",
+      "supports": "能证明开元通宝是主要流通的钱，市集上买卖热闹。",
+      "cannotProve": "给不出742年某个市集的确切物价，也没法靠一枚钱就推断出具体是哪座坊。"
+    }
+  ],
+  "identities": [
+    {
+      "id": "lodger",
+      "label": "没户籍的外乡借宿人",
+      "description": "你没有本坊户籍，只能找人替你作保，或者先临时投靠个能收留你的人。",
+      "background": {
+        "livelihood": "没个固定营生，靠打零工、帮佣、接点散活儿糊口",
+        "socialPosition": "外来借宿的人，没在本坊正式落籍",
+        "affiliation": "没什么可投靠的，暂时混在市集的人堆里",
+        "rightsAndLimits": "不能在本坊随便过夜，得有保人担保才能借宿",
+        "exposureReason": "既没本坊户籍又没保人，坊门一盘查就露馅"
+      },
+      "sourceIds": [
+        "mt_s2",
+        "mt_s1"
+      ],
+      "startingStats": {
+        "stamina": 55,
+        "wealth": 10,
+        "exposure": 25
+      },
+      "flags": [
+        "no_fang_hukou"
+      ]
+    },
+    {
+      "id": "porter",
+      "label": "跟商队进城的脚夫",
+      "description": "你认得市集里的路，可跟商队走散了，得再找一支肯收你的队伍搭上。",
+      "background": {
+        "livelihood": "肩挑背扛、跟着队伍运货为生",
+        "socialPosition": "靠着商队讨生活的底层力工",
+        "affiliation": "和商队走散了，眼下没了归属的队伍",
+        "rightsAndLimits": "路熟归路熟，可一个人还是没法借宿，得商队头目或保人担保",
+        "exposureReason": "单独一个脚夫最惹眼，又拿不出雇主的信物或担保"
+      },
+      "sourceIds": [
+        "mt_s1",
+        "mt_s3"
+      ],
+      "startingStats": {
+        "stamina": 75,
+        "wealth": 12,
+        "exposure": 12
+      },
+      "flags": [
+        "knows_market"
+      ]
+    },
+    {
+      "id": "messenger",
+      "label": "揣着过所的跑腿差役",
+      "description": "你身上带着过所文书，可心里没底——不知道这坊里还认不认。",
+      "background": {
+        "livelihood": "送公文、传口信跑腿为生",
+        "socialPosition": "打下手的差役，算不上朝廷正经命官",
+        "affiliation": "临时听官府或驿馆差遣办事",
+        "rightsAndLimits": "凭过所能走一些地方，但得对上文书的格式、说清要去哪儿",
+        "exposureReason": "过所要是和吏员见惯的样式对不上，或细节答不出来，当场就露馅"
+      },
+      "sourceIds": [
+        "mt_s2",
+        "mt_s3"
+      ],
+      "startingStats": {
+        "stamina": 65,
+        "wealth": 18,
+        "exposure": 15
+      },
+      "flags": [
+        "has_document"
+      ]
+    },
+    {
+      "id": "servant",
+      "label": "跟着主家进坊的仆人",
+      "description": "你本来是跟着主家进坊的，半道跟主人走散了，得重新找个能投靠的主家。",
+      "background": {
+        "livelihood": "伺候主家，干杂活、随身跟差",
+        "socialPosition": "卖身给主家的仆人，不是能自由落籍的人",
+        "affiliation": "本是随主家进坊，半路跟主人走散了",
+        "rightsAndLimits": "跟着主家时有人罩着，但得说得清主家的名号和来历",
+        "exposureReason": "找不到主家，就没法证明自己眼下投靠着谁"
+      },
+      "sourceIds": [
+        "mt_s1",
+        "mt_s2"
+      ],
+      "startingStats": {
+        "stamina": 60,
+        "wealth": 15,
+        "exposure": 10
+      },
+      "flags": [
+        "has_master_hint"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "mt_e1",
+      "title": "开元通宝和胡饼",
+      "description": "市集上买卖用的还是开元通宝，同样一个胡饼，这家那家要价不一样。",
+      "category": "货币与交易",
+      "strength": "strong",
+      "sourceId": "mt_s3",
+      "hints": {
+        "period": "盛唐",
+        "region": "京师"
+      }
+    },
+    {
+      "id": "mt_e2",
+      "title": "坊门和鼓声",
+      "description": "坊门的吏员打鼓报时，天一黑就关坊门，路上的人要么进坊借宿，要么趁早离开。",
+      "category": "官制与法律",
+      "strength": "strong",
+      "sourceId": "mt_s1",
+      "hints": {
+        "period": "盛唐"
+      }
+    },
+    {
+      "id": "mt_e3",
+      "title": "得有保人担保",
+      "description": "坊正那儿要外来人拿出保人担保，没保人的一律不许过夜。",
+      "category": "社会习俗",
+      "strength": "strong",
+      "sourceId": "mt_s2",
+      "hints": {
+        "identity": "需保人作保"
+      }
+    },
+    {
+      "id": "mt_e4",
+      "title": "市集招牌",
+      "description": "市集上铺子的招牌，字写得规整体面，透着一股太平年月大城的气派。",
+      "category": "文字与文书",
+      "strength": "weak",
+      "sourceId": "mt_s1",
+      "hints": {
+        "period": "盛唐"
+      }
+    },
+    {
+      "id": "mt_e5",
+      "title": "路人的闲话",
+      "description": "有人念叨\"圣人万寿\"，也有人说\"今年胡商比往年多\"，几句话凑一块儿能听出些门道。",
+      "category": "语言与称谓",
+      "strength": "misleading",
+      "sourceId": "mt_s2",
+      "hints": {
+        "period": "盛唐"
+      }
+    },
+    {
+      "id": "mt_e6",
+      "title": "宽街和里坊",
+      "description": "街道宽得出奇，坊墙又高又长，看这架势是座大城里的坊。",
+      "category": "交通与通信",
+      "strength": "strong",
+      "sourceId": "mt_s1",
+      "hints": {
+        "region": "大城诸坊"
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "id": "scene_awakening",
+      "type": "scene",
+      "title": "坊外醒来",
+      "background": "mid-tang-fang",
+      "text": "你在坊墙外的市集边上醒过来。远处有鼓声，路过的人张口就是\"使君\"\"坊正\"。你不知道自己怎么到这儿的，只知道肚子饿得发慌，太阳又在往下沉——趁天没黑，得先弄明白今晚能不能在这坊里落脚。",
+      "revealEvidence": [
+        "mt_e2",
+        "mt_e6"
+      ],
+      "choices": [
+        {
+          "id": "c_follow_crowd",
+          "text": "跟着人流往坊门走",
+          "next": "scene_fang_gate",
+          "strategyTags": [
+            "avoid_transfer"
+          ],
+          "settlementNote": "你跟着人流往坊门凑，想尽量不惹眼地把这儿的规矩摸清楚。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": -8
+            }
+          ]
+        },
+        {
+          "id": "c_check_body",
+          "text": "先摸摸身上带了什么",
+          "next": "scene_inventory",
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "你先没急着走，摸了摸身上，看还有没有能用得上的凭证。"
+        }
+      ]
+    },
+    {
+      "id": "scene_inventory",
+      "type": "scene",
+      "title": "随身之物",
+      "background": "mid-tang-fang",
+      "text": "你身上的衣料算不上华贵，可也不像种地的庄稼人。要是还记得自己带着过所、或是主家的信物，兴许能换个过夜的地方；要是什么都没有，就只能指望有人替你作保了。",
+      "choices": [
+        {
+          "id": "c_has_doc",
+          "text": "翻翻看有没有过所或信物",
+          "next": "scene_fang_gate",
+          "condition": {
+            "type": "flag",
+            "flag": "has_document"
+          },
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你确认过所还在，往后就能顺着这份文书想办法。",
+          "effects": [
+            {
+              "type": "revealEvidence",
+              "evidenceId": "mt_e3"
+            }
+          ]
+        },
+        {
+          "id": "c_no_doc",
+          "text": "身上什么凭证都没有，只能先找地方落脚",
+          "next": "scene_fang_gate",
+          "condition": {
+            "type": "flag",
+            "flag": "has_document",
+            "value": false
+          },
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "你确认身上没一样能用的凭证，只能先装成过路的探探路。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": 5
+            },
+            {
+              "type": "revealEvidence",
+              "evidenceId": "mt_e5"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene_fang_gate",
+      "type": "scene",
+      "title": "坊门外",
+      "background": "mid-tang-fang",
+      "text": "坊门外有人掏开元通宝买胡饼，市集上一片热闹。守门的吏员上下打量你，问你是打哪儿来的\"客\"，有没有本坊户籍、有没有人作保。你这才明白：在这地方，有没有过夜的资格，比你有多大力气还要紧。",
+      "revealEvidence": [
+        "mt_e1",
+        "mt_e4"
+      ],
+      "choices": [
+        {
+          "id": "c_claim_traveler",
+          "text": "就说自己是过路的，讨个宿",
+          "next": "scene_inn",
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "你说自己是过路的，好歹换来进市集的机会。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": 8
+            }
+          ]
+        },
+        {
+          "id": "c_show_document",
+          "text": "拿出过所，说自己有公务在身",
+          "next": "scene_inn",
+          "condition": {
+            "type": "flag",
+            "flag": "has_document"
+          },
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你亮出过所，摆出办差的身份，让对方少些疑心。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": -5
+            }
+          ]
+        },
+        {
+          "id": "c_find_master",
+          "text": "打听打听有没有人认得你主家",
+          "next": "scene_inn",
+          "condition": {
+            "type": "flag",
+            "flag": "has_master_hint"
+          },
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "你顺着投靠这条路打听主家的下落，想找个人罩着。"
+        },
+        {
+          "id": "c_porter_offer",
+          "text": "主动帮商队搬货，换一顿饭",
+          "next": "scene_porter_labor",
+          "condition": {
+            "type": "flag",
+            "flag": "knows_market"
+          },
+          "strategyTags": [
+            "labor_trade"
+          ],
+          "settlementNote": "你出把力气换点信任，脚夫做工这条路就此走起。"
+        }
+      ]
+    },
+    {
+      "id": "scene_inn",
+      "type": "scene",
+      "title": "市口邸店",
+      "background": "mid-tang-inn",
+      "speaker": "店主",
+      "text": "店主一边擦桌子一边打量你：\"这阵子坊门查得紧，没保人担保的，话可别乱说。你要真想在这坊里过夜，先得摸清楚闭坊鼓几时敲。\"",
+      "revealEvidence": [
+        "mt_e3"
+      ],
+      "choices": [
+        {
+          "id": "c_listen",
+          "text": "先听店里的人聊坊市的规矩",
+          "next": "scene_rumors",
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "你从店里的闲聊里，拼凑出些坊市规矩的零碎门道。",
+          "effects": [
+            {
+              "type": "revealEvidence",
+              "evidenceId": "mt_e5"
+            }
+          ]
+        },
+        {
+          "id": "c_buy_food",
+          "text": "掏开元通宝买个胡饼垫垫肚子",
+          "next": "scene_rumors",
+          "strategyTags": [
+            "exchange_resources"
+          ],
+          "settlementNote": "你花几个钱换回力气，接着打听。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "wealth",
+              "delta": -5
+            },
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene_rumors",
+      "type": "scene",
+      "title": "传闻与线索",
+      "background": "mid-tang-inn",
+      "text": "有人念叨\"圣人万寿\"，也有人只说\"坊正今天催着登记，比往年都急\"。这些话单拎出哪一句都定不准是哪一年，可凑一块儿就够说明一件事：你落脚的这年月，可不是能随便夜里出门的太平世道。接下来怎么活，你得拿个主意了。",
+      "choices": [
+        {
+          "id": "c_submit_hypothesis",
+          "text": "把线索捋一捋，拿定年代和身份的判断",
+          "next": "scene_decision",
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你把手头的线索捋清楚，准备下这步关键的决定。"
+        },
+        {
+          "id": "c_lodger_hide",
+          "text": "趁关坊门前溜出邸店，躲进市集后巷",
+          "next": "scene_lodger_hide",
+          "condition": {
+            "type": "flag",
+            "flag": "no_fang_hukou"
+          },
+          "strategyTags": [
+            "conceal_identity",
+            "avoid_transfer"
+          ],
+          "settlementNote": "你打算躲开盘查，没户籍东躲西藏这条路就此走起。"
+        },
+        {
+          "id": "c_messenger_route",
+          "text": "找脚夫打听坊正在哪，准备拿过所去登记",
+          "next": "scene_curfew_info",
+          "condition": {
+            "type": "flag",
+            "flag": "has_document"
+          },
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你顺着文书这条路打听坊正，准备凭过所去登记。"
+        },
+        {
+          "id": "c_servant_master",
+          "text": "报出主家名号打听，想请坊正引荐",
+          "next": "scene_registration",
+          "condition": {
+            "type": "flag",
+            "flag": "has_master_hint"
+          },
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "你顺着投靠这条路找人作保，直接讨个过夜的地方。"
+        },
+        {
+          "id": "c_ask_curfew_any",
+          "text": "问问店主，闭坊鼓几时敲",
+          "next": "scene_curfew_info"
+        }
+      ]
+    },
+    {
+      "id": "scene_curfew_info",
+      "type": "scene",
+      "title": "闭坊消息",
+      "background": "mid-tang-curfew",
+      "text": "坊正那儿果然在催着登记。没保人担保的会被劝到坊外去，带过所的呢，得对得上文书的样式、说得清要去哪儿。几个脚夫压着嗓子说，今天闭坊鼓比往年敲得还早。",
+      "revealEvidence": [
+        "mt_e3"
+      ],
+      "choices": [
+        {
+          "id": "c_to_decision",
+          "text": "揣着这些消息回去，拿主意",
+          "next": "scene_decision",
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你打听清了闭坊的门道，回到要下决定的当口。"
+        }
+      ]
+    },
+    {
+      "id": "scene_lodger_hide",
+      "type": "scene",
+      "title": "后巷藏身",
+      "background": "mid-tang-curfew",
+      "text": "你缩在市集后巷里，远处闭坊的鼓声一声声传来。没保人担保，你不敢走坊门那条正道；可这么躲着，等门一关，同样没个落脚的地方。是接着躲，还是赌一把混进下一拨进坊的人里——你得赶紧拿主意。",
+      "choices": [
+        {
+          "id": "c_hide_flee",
+          "text": "趁鼓还没敲完，顺小巷溜走，绕开坊门",
+          "next": "ending_partial_flee",
+          "strategyTags": [
+            "avoid_transfer",
+            "conceal_identity"
+          ],
+          "settlementNote": "你摸着小巷连夜走，躲过了当场盘查，可还是没能安顿下来。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": -18
+            },
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": -8
+            }
+          ]
+        },
+        {
+          "id": "c_hide_blend",
+          "text": "混进进坊的人群，想再进市集里",
+          "next": "scene_decision",
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "你冒险扎进人堆，被人盯上的风险也跟着涨了。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": 12
+            }
+          ]
+        },
+        {
+          "id": "c_hide_caught",
+          "text": "巷口有人举着火把盘问，你答岔了",
+          "next": "ending_exposed",
+          "condition": {
+            "type": "hypothesisMismatch",
+            "field": "period",
+            "value": "盛唐"
+          },
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "你答话露了怯，当场被扣下盘问。"
+        }
+      ]
+    },
+    {
+      "id": "scene_porter_labor",
+      "type": "scene",
+      "title": "以力换食",
+      "background": "mid-tang-fang",
+      "text": "你替商队和市集里的老者搬货，换来一个胡饼、半天歇脚。人家没多问你的来历，只看你肯不肯下力气。太平年月里，一个肯干活的脚夫，有时候比一纸过所还好使——可力气换不来本坊户籍，最多换人家一时半会儿的信得过。",
+      "choices": [
+        {
+          "id": "c_labor_register",
+          "text": "接着干，求人替你作保、留下过夜",
+          "next": "ending_success_belong",
+          "strategyTags": [
+            "labor_trade",
+            "rely_on_relations"
+          ],
+          "settlementNote": "你用力气换来一个保人担保，总算能暂住下来。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": -10
+            },
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": -12
+            }
+          ]
+        },
+        {
+          "id": "c_labor_move_on",
+          "text": "歇够了，接着跟商队进坊",
+          "next": "scene_decision",
+          "strategyTags": [
+            "labor_trade"
+          ],
+          "settlementNote": "你跟着商队接着走，做工这条路汇回要下决定的当口。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene_decision",
+      "type": "scene",
+      "title": "抉择",
+      "background": "mid-tang-curfew",
+      "text": "闭坊的鼓声越来越近。你得拿定主意：是拿过所去登记过夜，还是留在市集里另找个人作保。要是你把年代、身份猜错了，一开口自报家门，立马就会招来坊正的疑心。",
+      "choices": [
+        {
+          "id": "c_official_claim",
+          "text": "自称是朝廷的属吏，请坊正照应",
+          "next": "scene_official_route",
+          "requiresCorrectHypothesis": "period",
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你冒称官身，也把暴露的风险担了下来。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": 15
+            }
+          ]
+        },
+        {
+          "id": "c_local_hide",
+          "text": "留在市集，先找个保人担保再过夜",
+          "next": "scene_registration",
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "你打算靠个保人担保，去把过夜的登记办下来。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": -5
+            }
+          ]
+        },
+        {
+          "id": "c_use_document",
+          "text": "拿过所去登记，走文书这条正路过夜",
+          "next": "scene_document_route",
+          "condition": {
+            "type": "flag",
+            "flag": "has_document"
+          },
+          "requiresCorrectHypothesis": "identity",
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你拿过所去登记，文书这条路走到了最后一步。"
+        }
+      ]
+    },
+    {
+      "id": "scene_official_route",
+      "type": "scene",
+      "title": "冒称官吏",
+      "background": "mid-tang-curfew",
+      "text": "你报出的名头跟这年月对不上，坊正盘问着，脸色越听越不对。你要是压根不懂当时官府那套门道，这一开口，几乎就是把\"我可疑\"写在了脸上。",
+      "choices": [
+        {
+          "id": "c_exposed",
+          "text": "硬着头皮，非要留下过夜",
+          "next": "ending_exposed",
+          "condition": {
+            "type": "hypothesisMismatch",
+            "field": "period",
+            "value": "盛唐"
+          },
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你硬要留下，却因把年代猜错，当场露了馅。"
+        },
+        {
+          "id": "c_recover",
+          "text": "赶紧改口说是过路的，求人家让你暂留",
+          "next": "scene_registration",
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "你改口说自己是过路的，退回找人作保这条路。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene_document_route",
+      "type": "scene",
+      "title": "持过所登记",
+      "background": "mid-tang-curfew",
+      "text": "过所的样式跟坊正见惯的对得上，你顺顺当当登了记、有了过夜的地方。可你要是并不真懂这份文书背后担着什么差事，往后一旦细节答不上来，还是可能露馅。",
+      "choices": [
+        {
+          "id": "c_success_doc",
+          "text": "照过所上写的，把过夜登记办妥",
+          "next": "ending_success_document",
+          "condition": {
+            "type": "hypothesisMatch",
+            "field": "period",
+            "value": "盛唐"
+          },
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你凭过所办妥了登记，文书这条路换来了过夜的地方。"
+        },
+        {
+          "id": "c_fail_doc",
+          "text": "接着冒名把登记办下去",
+          "next": "ending_exposed",
+          "condition": {
+            "type": "hypothesisMismatch",
+            "field": "period",
+            "value": "盛唐"
+          },
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "你冒名硬登记，终因判断出了错被人识破。"
+        }
+      ]
+    },
+    {
+      "id": "scene_registration",
+      "type": "scene",
+      "title": "保人作保",
+      "background": "mid-tang-inn",
+      "text": "你替市集里的老者搬了货，换来一晚歇脚。人家没多问，只问你愿不愿意请个保人担保，到坊正那儿登记做个\"寄住客\"。太平年月里，这是外来人过夜最寻常的法子——投靠这条路，走到这儿就有了着落。",
+      "choices": [
+        {
+          "id": "c_register",
+          "text": "答应让人作保，先在这坊里住下",
+          "next": "ending_success_belong",
+          "strategyTags": [
+            "rely_on_relations",
+            "follow_institution"
+          ],
+          "settlementNote": "你接了这份担保，投靠这条路总算换来一处过夜的地方。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": -15
+            }
+          ]
+        },
+        {
+          "id": "c_refuse_register",
+          "text": "不肯让人作保，赶在关坊门前出坊",
+          "next": "ending_partial_flee",
+          "strategyTags": [
+            "avoid_transfer"
+          ],
+          "settlementNote": "你不肯让人作保，出了坊，暂时脱了险，可还是没能落脚。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": -20
+            },
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": 10
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ending_success_belong",
+      "type": "ending",
+      "title": "暂得寄住",
+      "outcome": "success",
+      "score": 82,
+      "text": "你在坊正那儿登了记，做了个寄住客，今晚在这坊里过夜，总算是被认下了。闭坊鼓敲响的时候，你已经在邸店里躺下了。",
+      "unlockSources": [
+        "mt_s1",
+        "mt_s2"
+      ]
+    },
+    {
+      "id": "ending_success_document",
+      "type": "ending",
+      "title": "过所登记",
+      "outcome": "success",
+      "score": 82,
+      "text": "你靠着过所办妥了过夜的登记，赶在关坊门前寻到一家能歇脚的邸店。明天会怎样你还没底，但至少这一回没被当场识破。",
+      "unlockSources": [
+        "mt_s2",
+        "mt_s3"
+      ]
+    },
+    {
+      "id": "ending_partial_flee",
+      "type": "ending",
+      "title": "闭坊前离去",
+      "outcome": "partial",
+      "score": 48,
+      "text": "你赶在闭坊鼓敲响前出了坊，躲过了当场盘查，可肚子越来越饿、人越来越乏。你是活下来了，却还没能真正扎下根。",
+      "unlockSources": [
+        "mt_s3"
+      ]
+    },
+    {
+      "id": "ending_exposed",
+      "type": "ending",
+      "title": "来历败露",
+      "outcome": "failure",
+      "score": 18,
+      "text": "你说的话跟这年月的细节处处对不上，坊正把你扣下盘问。身边又没个保人担保，这样一来，今晚多半是别想在这坊里过夜了。",
+      "unlockSources": [
+        "mt_s2"
+      ]
+    },
+    {
+      "id": "ending_exhaustion",
+      "type": "ending",
+      "title": "力竭倒毙",
+      "outcome": "failure",
+      "score": 18,
+      "text": "你在市集上一头栽倒，再没醒过来。力气跟吃食、跟过夜的资格一样，都是活命少不了的东西。"
+    },
+    {
+      "id": "ending_critical_injury",
+      "type": "ending",
+      "title": "伤重不治",
+      "outcome": "failure",
+      "score": 18,
+      "text": "伤病把你最后一点力气也耗光了。你没能撑到下一个能过夜的地方。"
+    },
+    {
+      "id": "ending_exposed_stat",
+      "type": "ending",
+      "title": "嫌疑缠身",
+      "outcome": "failure",
+      "score": 18,
+      "text": "周围人盯你的眼神，已经藏不住的疑心了。到这份上，你不管顶着哪个身份，都别想再自在地走动。"
+    }
+  ]
+}

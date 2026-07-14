@@ -1,0 +1,1047 @@
+{
+  "id": "jiaqing-cloth",
+  "title": "晒场色样",
+  "theme": "jiaqing-cloth",
+  "eraLabel": "清嘉庆十一年",
+  "year": 1806,
+  "regionLabel": "江南市镇",
+  "oneLiner": "布行晒场弄丢客人色样布角，须在掌柜申时点货前找回或补救。",
+  "coreCrisis": "色样丢失——点货对不上样，按号规须赔布、记过，再犯可被辞号。",
+  "historicalBackground": "嘉庆中叶江南市镇布业仍以号规约束学徒与伙计。色样（样布）用于对色对货，是染整与收发中的日常物件，并非朝廷大典。本关讲述的是晒场上弄丢一小角布头之后，如何在点货死线前按行业规矩收场——史书未必记，号里却天天可能发生。",
+  "crossing": {
+    "background": "cloth-yard",
+    "leadText": "眩晕先于意识到来。耳中像有人把整座城的声响揉成一团，再猛地扯开。你知道自己又穿越失败了——这一次，落点更近地面。",
+    "sceneText": "热气贴着皮肤。竹架、布疋、绳上炭笔写就的竹签，还有墙根半截碎缸里的日影。这是某个市镇的晒场边，午后未散，申时将至。空气里有浆布与尘土的味道，远处隐约有人喊收夹子。"
+  },
+  "startNodeId": "scene_yard",
+  "correctAnswers": {
+    "period": "清中叶",
+    "region": "江南市镇",
+    "identities": [
+      "apprentice",
+      "yard_hand",
+      "runner",
+      "junior_clerk"
+    ]
+  },
+  "sources": [
+    {
+      "id": "jc_s1",
+      "title": "清代市镇与棉布业研究",
+      "citation": "明清江南市镇及棉布、染整行业研究综述",
+      "factType": "inference",
+      "summary": "江南市镇布行、染坊分工常见，学徒与伙计受号规约束。",
+      "grade": "B",
+      "author": "明清经济史学界",
+      "createdOrPublished": "20—21世纪",
+      "locator": "江南市镇与棉布业相关章节",
+      "supports": "可支持「市镇布行存在学徒、号规与对货习惯」的设定。",
+      "cannotProve": "无法证明嘉庆十一年某县某号的真实人事与当日点货细节。"
+    },
+    {
+      "id": "jc_s2",
+      "title": "染作与样布习惯",
+      "citation": "传统染整业中样布、色号用于校对深浅的行业记述",
+      "factType": "inference",
+      "summary": "以小片样布标定色泽、供对货核对，是染整与布号常见做法。",
+      "grade": "B",
+      "author": "手工业史与染整史研究者",
+      "createdOrPublished": "近现代整理",
+      "locator": "样布、对色、号规相关记述",
+      "supports": "可支持「丢失色样会阻碍对货、须找回或按色注补样」的危机逻辑。",
+      "cannotProve": "无法还原该镇「三七号」「沈客」等具体虚构名目。"
+    },
+    {
+      "id": "jc_s3",
+      "title": "清代制钱日常流通",
+      "citation": "清中叶制钱作为市镇小额交易通货的研究",
+      "factType": "historical",
+      "summary": "市镇茶摊、短工、小额人情往来多以制钱计。",
+      "grade": "B",
+      "author": "清代货币史研究者",
+      "createdOrPublished": "近现代研究",
+      "locator": "制钱流通与市镇物价相关章节",
+      "supports": "可证实制钱为市镇日常小额通货之一。",
+      "cannotProve": "无法给出该茶摊当日确切茶价。"
+    }
+  ],
+  "identities": [
+    {
+      "id": "apprentice",
+      "label": "跟缸学手的学徒",
+      "description": "你跟过染缸，勉强记得若干色号深浅，却最怕掌柜点货。",
+      "background": {
+        "livelihood": "在布行学徒，干晒场、递样、打杂",
+        "socialPosition": "号内最下层学徒，月例微薄",
+        "affiliation": "依附本号掌柜与司账",
+        "rightsAndLimits": "可进晒场与号屋外间，不可擅自改账",
+        "exposureReason": "色样在你手上丢失，号规首先问你"
+      },
+      "sourceIds": [
+        "jc_s1",
+        "jc_s2"
+      ],
+      "startingStats": {
+        "stamina": 65,
+        "wealth": 10,
+        "exposure": 12
+      },
+      "flags": [
+        "knows_color"
+      ]
+    },
+    {
+      "id": "yard_hand",
+      "label": "晒场杂工",
+      "description": "你熟风向与绳位，知道角布爱往哪边飘。",
+      "background": {
+        "livelihood": "晒场收放布疋、夹签、看绳",
+        "socialPosition": "雇工，不算正式学徒",
+        "affiliation": "听晒场老周调度",
+        "rightsAndLimits": "晒场自由走动，进柜台说话份量轻",
+        "exposureReason": "你负责的绳档出了空，老周会先骂你"
+      },
+      "sourceIds": [
+        "jc_s1",
+        "jc_s2"
+      ],
+      "startingStats": {
+        "stamina": 75,
+        "wealth": 8,
+        "exposure": 10
+      },
+      "flags": [
+        "knows_yard"
+      ]
+    },
+    {
+      "id": "runner",
+      "label": "跑街送样的伙计",
+      "description": "你常送样到邻号，认得染坊伙计与茶摊的嘴。",
+      "background": {
+        "livelihood": "往来本号与邻号送样、传话",
+        "socialPosition": "跑腿伙计，靠腿脚与人情",
+        "affiliation": "本号差遣，也欠邻号几个人情",
+        "rightsAndLimits": "外头路熟，号内账目插不上手",
+        "exposureReason": "色样若在你转手时丢，两边都要问"
+      },
+      "sourceIds": [
+        "jc_s1",
+        "jc_s3"
+      ],
+      "startingStats": {
+        "stamina": 70,
+        "wealth": 14,
+        "exposure": 8
+      },
+      "flags": [
+        "knows_neighbors"
+      ]
+    },
+    {
+      "id": "junior_clerk",
+      "label": "帮司账打杂的小写",
+      "description": "你识得草账上的色注，却更怕担责。",
+      "background": {
+        "livelihood": "誊抄、递账、打杂，偶尔看管柜台",
+        "socialPosition": "司账身边的下手",
+        "affiliation": "紧跟司账老陈",
+        "rightsAndLimits": "可翻当日草账，不可替掌柜作主",
+        "exposureReason": "编号在账，实物丢了，老陈会把火撒你身上"
+      },
+      "sourceIds": [
+        "jc_s1",
+        "jc_s2"
+      ],
+      "startingStats": {
+        "stamina": 60,
+        "wealth": 12,
+        "exposure": 10
+      },
+      "flags": [
+        "access_ledger"
+      ]
+    }
+  ],
+  "evidence": [
+    {
+      "id": "jc_e1",
+      "title": "竹签炭笔编号",
+      "description": "晒绳上夹着炭笔写的编号签，空档处原夹着客人色样布角。",
+      "category": "劳动与谋生方式",
+      "strength": "strong",
+      "sourceId": "jc_s2",
+      "hints": {
+        "identity": "号内管货之人"
+      }
+    },
+    {
+      "id": "jc_e2",
+      "title": "草账色注",
+      "description": "草账写着客姓与「青，偏深，忌发红」一类色注，供对样核对。",
+      "category": "文字与文书",
+      "strength": "strong",
+      "sourceId": "jc_s2",
+      "hints": {
+        "identity": "能接触账册"
+      }
+    },
+    {
+      "id": "jc_e3",
+      "title": "制钱茶钱",
+      "description": "茶摊以制钱论碗，铜钱在桌上叮当作响。",
+      "category": "货币与交易",
+      "strength": "strong",
+      "sourceId": "jc_s3",
+      "hints": {
+        "period": "清中叶",
+        "region": "市镇"
+      }
+    },
+    {
+      "id": "jc_e4",
+      "title": "掌柜司账学徒",
+      "description": "号内人称掌柜、司账、学徒，事务按号规层层问责。",
+      "category": "语言与称谓",
+      "strength": "strong",
+      "sourceId": "jc_s1",
+      "hints": {
+        "period": "明清市镇行业",
+        "identity": "布行中人"
+      }
+    },
+    {
+      "id": "jc_e5",
+      "title": "洋布闲话",
+      "description": "有人随口说「如今洋布便宜，丢了再买一块便是」。这话救不了有编号的色样。",
+      "category": "社会习俗",
+      "strength": "misleading",
+      "sourceId": "jc_s1",
+      "hints": {
+        "period": "清中后期传闻"
+      }
+    },
+    {
+      "id": "jc_e6",
+      "title": "靛气与染坊",
+      "description": "邻号染坊靛气扑鼻，伙计能按描述重裁小片样布，但要工钱或人情。",
+      "category": "城市、乡村与建筑空间",
+      "strength": "weak",
+      "sourceId": "jc_s2",
+      "hints": {
+        "region": "江南市镇手工业"
+      }
+    }
+  ],
+  "nodes": [
+    {
+      "id": "scene_yard",
+      "type": "scene",
+      "title": "晒绳空档",
+      "background": "cloth-yard",
+      "text": "午后的晒场热气还未散尽。竹架上青白布疋垂着，绳上夹着写了炭笔编号的竹签。你负责看管的那一档里，客人留下的色样布角——本来夹在签下——不见了。日影已经爬过墙根的半截碎缸。再拖下去，申时掌柜回号点货，这一档对不上样，按号规就要有人扛。",
+      "revealEvidence": [
+        "jc_e1",
+        "jc_e4"
+      ],
+      "choices": [
+        {
+          "id": "c_search_rope",
+          "text": "立刻沿晒绳一根根翻找",
+          "next": "scene_rope",
+          "strategyTags": [
+            "labor_trade"
+          ],
+          "settlementNote": "你弯腰沿绳翻找，从晒场工序入手。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": -6
+            }
+          ]
+        },
+        {
+          "id": "c_ask_zhou",
+          "text": "先喊晒场老周问过",
+          "next": "scene_zhou",
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "你向老周打听角布常往哪边去。"
+        },
+        {
+          "id": "c_to_ledger",
+          "text": "先溜回号屋，翻草账对编号",
+          "next": "scene_counter",
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你先回号屋找色注，准备补救。",
+          "condition": {
+            "type": "flag",
+            "flag": "access_ledger"
+          }
+        },
+        {
+          "id": "c_to_counter_any",
+          "text": "回号屋找司账想办法",
+          "next": "scene_counter",
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "你回号屋求助司账。"
+        }
+      ]
+    },
+    {
+      "id": "scene_rope",
+      "type": "scene",
+      "title": "绳下泥印",
+      "background": "cloth-yard",
+      "text": "你弯腰顺着绳下翻。碎布头、线头、一只干硬的草鞋印。东头风口的泥地上有一小撮新印，像有轻巧脚步拐进巷里。远处老周收着夹子，骂了一句「又给人捡了去」。",
+      "choices": [
+        {
+          "id": "c_rope_alley",
+          "text": "顺着泥印追向巷口",
+          "next": "scene_alley",
+          "strategyTags": [
+            "labor_trade"
+          ],
+          "settlementNote": "你追向巷口，寻找刮落或被捡走的色样。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": -5
+            }
+          ]
+        },
+        {
+          "id": "c_rope_tea",
+          "text": "去茶摊问有没有人拿着布头",
+          "next": "scene_tea",
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "你转到茶摊打探闲话。"
+        },
+        {
+          "id": "c_rope_counter",
+          "text": "认栽，回号里想别的法子",
+          "next": "scene_counter",
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你暂停寻找，回号屋另想补救。"
+        }
+      ]
+    },
+    {
+      "id": "scene_zhou",
+      "type": "scene",
+      "title": "老周的嘴",
+      "background": "cloth-yard",
+      "text": "老周啐了口唾沫：「风大时，角布爱往巷口飘。茶摊那一带的娃娃也爱捡花布玩。你自己惹的，别扯上我。」他顿了顿又说：「掌柜申时准到。对不上，赔的是你月例。」",
+      "choices": [
+        {
+          "id": "c_zhou_tea",
+          "text": "去茶摊打听",
+          "next": "scene_tea",
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "你按老周的指向去茶摊。"
+        },
+        {
+          "id": "c_zhou_alley",
+          "text": "先去巷口风口翻",
+          "next": "scene_alley",
+          "strategyTags": [
+            "labor_trade"
+          ],
+          "settlementNote": "你去巷口翻找可能刮落的布角。",
+          "condition": {
+            "type": "flag",
+            "flag": "knows_yard"
+          }
+        },
+        {
+          "id": "c_zhou_alley_any",
+          "text": "还是去巷口看看",
+          "next": "scene_alley",
+          "strategyTags": [
+            "labor_trade"
+          ],
+          "settlementNote": "你去巷口碰运气。"
+        },
+        {
+          "id": "c_zhou_counter",
+          "text": "回号屋想补救",
+          "next": "scene_counter",
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你回号屋准备用色注或人情补救。"
+        }
+      ]
+    },
+    {
+      "id": "scene_tea",
+      "type": "scene",
+      "title": "半碗粗茶",
+      "background": "cloth-tea",
+      "text": "巷口茶摊支着旧布棚，铜壶咕嘟着。摊妇一边倒茶一边说：先前有个穿短打的后生捏着一小片布往染坊方向去；又有人说是东头娃娃捡了「花布」。桌上搁着几枚制钱，茶钱论碗。另有人随口接话：「如今洋布便宜，丢了再买一块便是。」",
+      "revealEvidence": [
+        "jc_e3",
+        "jc_e5"
+      ],
+      "choices": [
+        {
+          "id": "c_tea_dye",
+          "text": "追染坊方向",
+          "next": "scene_dye",
+          "strategyTags": [
+            "labor_trade"
+          ],
+          "settlementNote": "你循短打后生的方向去染坊。"
+        },
+        {
+          "id": "c_tea_alley",
+          "text": "按娃娃传言去东头巷口",
+          "next": "scene_alley",
+          "strategyTags": [
+            "labor_trade"
+          ],
+          "settlementNote": "你按闲话去东头巷口。"
+        },
+        {
+          "id": "c_tea_pay",
+          "text": "多给几文，求摊妇说细点",
+          "next": "scene_tea_detail",
+          "strategyTags": [
+            "exchange_resources"
+          ],
+          "settlementNote": "你花钱买更准确的方向。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "wealth",
+              "delta": -4
+            }
+          ]
+        },
+        {
+          "id": "c_tea_counter",
+          "text": "回号屋",
+          "next": "scene_counter",
+          "strategyTags": [
+            "avoid_transfer"
+          ],
+          "settlementNote": "你离开茶摊回号。"
+        }
+      ]
+    },
+    {
+      "id": "scene_tea_detail",
+      "type": "scene",
+      "title": "茶钱换来的话",
+      "background": "cloth-tea",
+      "text": "摊妇把制钱收进竹筒：「往染坊去的那个，袖口沾了靛点子，像是邻号跑腿。东头娃娃手里那片，我瞅着倒像破鞋垫，未必是你们号里的。」话被说破，路线也清楚了。",
+      "choices": [
+        {
+          "id": "c_detail_dye",
+          "text": "去邻号染坊",
+          "next": "scene_dye",
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "你确认染坊方向后赶去。"
+        },
+        {
+          "id": "c_detail_alley",
+          "text": "仍去巷口确认有没有原角",
+          "next": "scene_alley",
+          "strategyTags": [
+            "labor_trade"
+          ],
+          "settlementNote": "你仍不放心，去巷口翻找。"
+        }
+      ]
+    },
+    {
+      "id": "scene_alley",
+      "type": "scene",
+      "title": "墙根布毛",
+      "background": "cloth-alley",
+      "text": "巷口墙根粘着一线同色的布毛，像从更大一片上刮下的。再往前是泥地与鸡啄的痕。柴堆旁似乎有什么被风掀动。",
+      "choices": [
+        {
+          "id": "c_alley_find",
+          "text": "在柴堆旁仔细翻找",
+          "next": "scene_found",
+          "strategyTags": [
+            "labor_trade"
+          ],
+          "settlementNote": "你在柴堆旁找回脏了的色样布角。",
+          "condition": {
+            "type": "flag",
+            "flag": "knows_yard"
+          },
+          "effects": [
+            {
+              "type": "setFlag",
+              "flag": "has_swatch",
+              "value": true
+            },
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": -8
+            }
+          ]
+        },
+        {
+          "id": "c_alley_find_any",
+          "text": "把柴堆翻个底朝天",
+          "next": "scene_alley_miss",
+          "strategyTags": [
+            "labor_trade"
+          ],
+          "settlementNote": "你耗尽力气，却只摸到破布与鸡毛。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": -16
+            }
+          ]
+        },
+        {
+          "id": "c_alley_dye",
+          "text": "找不到完整的，转去染坊求补",
+          "next": "scene_dye",
+          "strategyTags": [
+            "exchange_resources"
+          ],
+          "settlementNote": "你放弃在巷口死翻，改去求补样。"
+        },
+        {
+          "id": "c_alley_counter",
+          "text": "回号屋说明情况",
+          "next": "scene_counter",
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "你空手回号，准备求情或补样。"
+        }
+      ]
+    },
+    {
+      "id": "scene_alley_miss",
+      "type": "scene",
+      "title": "空翻一场",
+      "background": "cloth-alley",
+      "text": "柴堆翻乱了，只有线头、鸡毛和半截湿草鞋。日影更短。没有原角，得另想办法。",
+      "choices": [
+        {
+          "id": "c_miss_dye",
+          "text": "赶去染坊求补",
+          "next": "scene_dye",
+          "strategyTags": [
+            "exchange_resources"
+          ],
+          "settlementNote": "空翻之后你改去染坊。"
+        },
+        {
+          "id": "c_miss_counter",
+          "text": "回号屋求司账",
+          "next": "scene_counter",
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "你空手回号求助。"
+        }
+      ]
+    },
+    {
+      "id": "scene_found",
+      "type": "scene",
+      "title": "脏了的布角",
+      "background": "cloth-alley",
+      "text": "布角边已经脏了，炭笔痕还在。夹回原签大致能过眼，只是掌柜若较真，仍可能挑刺。日影更短，收绳的喊声从晒场传来。",
+      "choices": [
+        {
+          "id": "c_found_return",
+          "text": "立刻夹回晒场原签，赶去点货",
+          "next": "scene_decision",
+          "strategyTags": [
+            "follow_institution",
+            "labor_trade"
+          ],
+          "settlementNote": "你持原角色样回到点货关口。"
+        },
+        {
+          "id": "c_found_wash",
+          "text": "想先洗净再送，耽搁片刻",
+          "next": "scene_decision",
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "你耽搁清洗，时间更紧，暴露感上升。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "stamina",
+              "delta": -5
+            },
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": 8
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene_dye",
+      "type": "scene",
+      "title": "染坊求补",
+      "background": "cloth-dye",
+      "text": "染坊里靛气扑鼻。伙计听你说完，敲着木桶：「没有原角，只能按你说的深浅重裁一小片。说得准，我帮你；说飘了，掌柜一眼就能看出来。工钱或者——你们司账老陈欠我一顿酒，看你讨不讨得到他的脸。」",
+      "revealEvidence": [
+        "jc_e6"
+      ],
+      "choices": [
+        {
+          "id": "c_dye_memory",
+          "text": "凭记忆把「青，偏深，忌发红」说清楚",
+          "next": "scene_patch_ok",
+          "condition": {
+            "type": "flag",
+            "flag": "knows_color"
+          },
+          "strategyTags": [
+            "labor_trade"
+          ],
+          "settlementNote": "你凭学徒记忆补得合格色样。",
+          "effects": [
+            {
+              "type": "setFlag",
+              "flag": "has_patch",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "c_dye_pay",
+          "text": "掏私房钱，买一块近似的布头充数",
+          "next": "scene_patch_bad",
+          "strategyTags": [
+            "exchange_resources"
+          ],
+          "settlementNote": "你买了近似布头，色差风险极高。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "wealth",
+              "delta": -8
+            },
+            {
+              "type": "setFlag",
+              "flag": "has_bad_patch",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "c_dye_favor",
+          "text": "先回号求司账出面说人情",
+          "next": "scene_counter",
+          "condition": {
+            "type": "flag",
+            "flag": "knows_neighbors"
+          },
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "你打算用邻号人情托司账。"
+        },
+        {
+          "id": "c_dye_back",
+          "text": "先回号屋翻色注再来",
+          "next": "scene_counter",
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你回号抄色注，再图补样。"
+        }
+      ]
+    },
+    {
+      "id": "scene_patch_ok",
+      "type": "scene",
+      "title": "补样入手",
+      "background": "cloth-dye",
+      "text": "伙计按你说的深浅裁下一小片，用指甲弹了弹：「凑合能骗过匆忙的眼。掌柜若把原账翻出来对光看，仍可能挑。你自己掂量。」",
+      "choices": [
+        {
+          "id": "c_patch_go",
+          "text": "带着补样赶回点货",
+          "next": "scene_decision",
+          "strategyTags": [
+            "labor_trade",
+            "follow_institution"
+          ],
+          "settlementNote": "你持合格补样进入点货。"
+        }
+      ]
+    },
+    {
+      "id": "scene_patch_bad",
+      "type": "scene",
+      "title": "近似的布头",
+      "background": "cloth-dye",
+      "text": "市上买来的布头颜色接近，却缺了炭笔痕与号里的夹磨痕迹。你捏在手里，总觉得发飘。",
+      "choices": [
+        {
+          "id": "c_bad_go",
+          "text": "硬着头皮拿去点货",
+          "next": "scene_decision",
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "你企图用近似布头蒙混点货。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": 12
+            }
+          ]
+        },
+        {
+          "id": "c_bad_abort",
+          "text": "还是回号求司账暂压",
+          "next": "scene_counter",
+          "strategyTags": [
+            "rely_on_relations"
+          ],
+          "settlementNote": "你不敢蒙混，改求暂压。"
+        }
+      ]
+    },
+    {
+      "id": "scene_counter",
+      "type": "scene",
+      "title": "草账与柜台",
+      "background": "cloth-shop",
+      "text": "号屋柜台擦得发亮。司账老陈盯着草账：「这一档，客姓沈，色样注的是『青，偏深，忌发红』。你把角弄丢，我可不能替你挨。掌柜的脚步……」外面日影更短。",
+      "revealEvidence": [
+        "jc_e2",
+        "jc_e4"
+      ],
+      "choices": [
+        {
+          "id": "c_counter_copy",
+          "text": "抄下色注，再去染坊求补",
+          "next": "scene_dye_with_note",
+          "strategyTags": [
+            "follow_institution"
+          ],
+          "settlementNote": "你抄下色注作为补样依据。",
+          "effects": [
+            {
+              "type": "setFlag",
+              "flag": "has_color_note",
+              "value": true
+            }
+          ]
+        },
+        {
+          "id": "c_counter_plea",
+          "text": "求老陈在掌柜前暂压一晚，愿扣月例",
+          "next": "scene_decision",
+          "strategyTags": [
+            "rely_on_relations",
+            "exchange_resources"
+          ],
+          "settlementNote": "你换得暂压机会，代价是月例。",
+          "effects": [
+            {
+              "type": "setFlag",
+              "flag": "has_plea",
+              "value": true
+            },
+            {
+              "type": "modifyStat",
+              "stat": "wealth",
+              "delta": -6
+            }
+          ]
+        },
+        {
+          "id": "c_counter_lie",
+          "text": "谎称色样还在晒场未干，拖过今日",
+          "next": "scene_decision",
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "你准备向掌柜撒谎拖延。",
+          "effects": [
+            {
+              "type": "setFlag",
+              "flag": "will_lie",
+              "value": true
+            },
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": 15
+            }
+          ]
+        },
+        {
+          "id": "c_counter_search",
+          "text": "再出去找实物",
+          "next": "scene_tea",
+          "strategyTags": [
+            "labor_trade"
+          ],
+          "settlementNote": "你再次出门寻找色样。"
+        }
+      ]
+    },
+    {
+      "id": "scene_dye_with_note",
+      "type": "scene",
+      "title": "凭色注补裁",
+      "background": "cloth-dye",
+      "text": "你把草账上的色注念给染坊伙计听。他哼了一声，裁下一片：「有字据好办事。拿去吧——工钱记在老陈酒账上。」",
+      "revealEvidence": [
+        "jc_e6"
+      ],
+      "choices": [
+        {
+          "id": "c_note_patch",
+          "text": "收下补样，赶回点货",
+          "next": "scene_decision",
+          "strategyTags": [
+            "follow_institution",
+            "rely_on_relations"
+          ],
+          "settlementNote": "你凭色注取得补样。",
+          "effects": [
+            {
+              "type": "setFlag",
+              "flag": "has_patch",
+              "value": true
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "scene_decision",
+      "type": "scene",
+      "title": "申时将至",
+      "background": "cloth-shop",
+      "text": "晒场开始收绳。远处传来掌柜熟悉的咳嗽声。他进门掸了掸袖上的灰，目光扫向那一档空签：「色样呢？对货。」你必须立刻交出说法——或实物，或补样，或人情，或一句谎话。",
+      "choices": [
+        {
+          "id": "c_present_swatch",
+          "text": "呈上找回的原角色样",
+          "next": "ending_success_swatch",
+          "condition": {
+            "type": "flag",
+            "flag": "has_swatch"
+          },
+          "strategyTags": [
+            "labor_trade",
+            "follow_institution"
+          ],
+          "settlementNote": "你呈上原角，点货过关。"
+        },
+        {
+          "id": "c_present_patch",
+          "text": "呈上按色注补裁的样布",
+          "next": "ending_success_patch",
+          "condition": {
+            "type": "flag",
+            "flag": "has_patch"
+          },
+          "strategyTags": [
+            "labor_trade",
+            "follow_institution"
+          ],
+          "settlementNote": "你用合格补样对过沈客之货。"
+        },
+        {
+          "id": "c_present_plea",
+          "text": "请司账开口，求暂压记过",
+          "next": "ending_partial_plea",
+          "condition": {
+            "type": "flag",
+            "flag": "has_plea"
+          },
+          "strategyTags": [
+            "rely_on_relations",
+            "exchange_resources"
+          ],
+          "settlementNote": "你以月例换得暂压，今夜过关。"
+        },
+        {
+          "id": "c_present_bad",
+          "text": "呈上市上买的近似布头",
+          "next": "ending_fail_color",
+          "condition": {
+            "type": "flag",
+            "flag": "has_bad_patch"
+          },
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "近似布头骗不过掌柜。"
+        },
+        {
+          "id": "c_present_lie",
+          "text": "坚持说色样未干，改拿别档充数",
+          "next": "ending_fail_lie",
+          "condition": {
+            "type": "flag",
+            "flag": "will_lie"
+          },
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "隐瞒与充数当场败露。"
+        },
+        {
+          "id": "c_present_empty",
+          "text": "什么都没有，只能低头认罚",
+          "next": "ending_fail_empty",
+          "strategyTags": [
+            "avoid_transfer"
+          ],
+          "settlementNote": "你空手面对点货，按号规受罚。"
+        },
+        {
+          "id": "c_wrong_era_talk",
+          "text": "用一套不像本号规矩的说辞硬撑",
+          "next": "ending_fail_lie",
+          "condition": {
+            "type": "hypothesisMismatch",
+            "field": "period",
+            "value": "清中叶"
+          },
+          "strategyTags": [
+            "conceal_identity"
+          ],
+          "settlementNote": "你的说辞与号规对不上，嫌疑加重。",
+          "effects": [
+            {
+              "type": "modifyStat",
+              "stat": "exposure",
+              "delta": 20
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "ending_success_swatch",
+      "type": "ending",
+      "title": "色样归位",
+      "outcome": "success",
+      "score": 90,
+      "text": "掌柜捏起布角对了对光，又瞅一眼草账，哼了一声：「脏是脏了，号还在。夹回去。」沈客的货对上了样。你在号里又熬过了一天——没有英雄，只有没被辞掉的学徒与伙计。",
+      "unlockSources": [
+        "jc_s1",
+        "jc_s2"
+      ]
+    },
+    {
+      "id": "ending_success_patch",
+      "type": "ending",
+      "title": "补样过关",
+      "outcome": "partial",
+      "score": 68,
+      "text": "补样经得起匆忙一瞥。掌柜叮嘱司账把酒账与染坊的人情记下，又警告你：「再丢，月例不够赔。」你保住了位置，也欠下了号里与邻号的账——色样终究不是原物，号规上仍算一记软伤。",
+      "unlockSources": [
+        "jc_s2",
+        "jc_s1"
+      ]
+    },
+    {
+      "id": "ending_partial_plea",
+      "type": "ending",
+      "title": "暂压记过",
+      "outcome": "partial",
+      "score": 40,
+      "text": "老陈硬着头皮圆场。掌柜允你次日补样，却当众记下过，并扣了月例。今夜你还能睡在号里，明天仍要面对沈客的布。",
+      "unlockSources": [
+        "jc_s1",
+        "jc_s3"
+      ]
+    },
+    {
+      "id": "ending_fail_color",
+      "type": "ending",
+      "title": "色差翻车",
+      "outcome": "failure",
+      "score": 22,
+      "text": "掌柜把布头扔回柜台：「这不是我们夹出去的。」号规无情。你赔了布，也丢了脸，当晚被打发卷铺盖。",
+      "unlockSources": [
+        "jc_s2"
+      ]
+    },
+    {
+      "id": "ending_fail_lie",
+      "type": "ending",
+      "title": "隐瞒败露",
+      "outcome": "failure",
+      "score": 12,
+      "text": "别档的布角骗不过看了一辈子疋头的眼。掌柜当场结清工钱，命你出门。市镇不大，这张嘴会比你的腿跑得更快。",
+      "unlockSources": [
+        "jc_s1"
+      ]
+    },
+    {
+      "id": "ending_fail_empty",
+      "type": "ending",
+      "title": "按号规受罚",
+      "outcome": "failure",
+      "score": 15,
+      "text": "你既无原角，也无补样，又无说得过去的人情。按号规赔布记过之后，掌柜仍嫌你碍眼——你被辞出号，站在晒场空绳下，日影已经很长。",
+      "unlockSources": [
+        "jc_s1",
+        "jc_s2"
+      ]
+    },
+    {
+      "id": "ending_exhaustion",
+      "type": "ending",
+      "title": "晒场力竭",
+      "outcome": "failure",
+      "score": 5,
+      "text": "翻绳、跑巷、求人，体力先一步垮掉。点货的梆子响起来时，你已说不清色样在哪。"
+    },
+    {
+      "id": "ending_critical_injury",
+      "type": "ending",
+      "title": "伤病缠身",
+      "outcome": "failure",
+      "score": 8,
+      "text": "伤病拖住你，来不及在死线前把事情办完。号规不等病人。"
+    },
+    {
+      "id": "ending_exposed_stat",
+      "type": "ending",
+      "title": "嫌疑满号",
+      "outcome": "failure",
+      "score": 10,
+      "text": "号里人人疑你手脚不干净。即便色样还在，你也很难再以原来的身份在柜台前站稳。"
+    }
+  ]
+}

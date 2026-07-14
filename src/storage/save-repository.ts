@@ -8,7 +8,7 @@ import {
   DEFAULT_SETTINGS,
   SAVE_SCHEMA_VERSION,
 } from '@/game/types'
-import { FIRST_LEVEL_ID } from '@/game/scenario-loader'
+import { getFirstLevelId } from '@/game/scenario-loader'
 
 const DB_NAME = 'survive-the-past'
 const DB_VERSION = 1
@@ -58,7 +58,7 @@ export function createEmptySave(): SaveData {
       completedEndings: [],
       completedIdentities: [],
       wrongHypotheses: [],
-      unlockedLevels: [FIRST_LEVEL_ID],
+      unlockedLevels: [getFirstLevelId()],
       completedLevels: [],
     },
     activeRun: null,
@@ -89,7 +89,7 @@ export function migrateSave(data: SaveData): SaveData {
             completedEndings: data.meta?.completedEndings ?? [],
             completedIdentities: data.meta?.completedIdentities ?? [],
             wrongHypotheses: data.meta?.wrongHypotheses ?? [],
-            unlockedLevels: data.meta?.unlockedLevels ?? [FIRST_LEVEL_ID],
+            unlockedLevels: data.meta?.unlockedLevels ?? [getFirstLevelId()],
             completedLevels: data.meta?.completedLevels ?? [],
           },
         }
@@ -100,7 +100,7 @@ export function migrateSave(data: SaveData): SaveData {
             completedEndings: data.meta?.completedEndings ?? [],
             completedIdentities: data.meta?.completedIdentities ?? [],
             wrongHypotheses: data.meta?.wrongHypotheses ?? [],
-            unlockedLevels: [FIRST_LEVEL_ID],
+            unlockedLevels: [getFirstLevelId()],
             completedLevels: [],
           },
         }
