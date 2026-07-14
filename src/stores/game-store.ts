@@ -10,7 +10,14 @@ import {
   pickRandomIdentity,
 } from '@/game/engine'
 import { getLevelById, getNextLevelId } from '@/game/scenario-loader'
-import type { GameSettings, MetaProgress, RunResult, RunState } from '@/game/types'
+import type {
+  GameSettings,
+  MetaProgress,
+  RunResult,
+  RunState,
+  StatKey,
+  Stats,
+} from '@/game/types'
 import { DEFAULT_SETTINGS } from '@/game/types'
 import {
   createEmptySave,
@@ -19,6 +26,30 @@ import {
   mergeMetaProgress,
   persistGameState,
 } from '@/storage/save-repository'
+
+export interface StatDelta {
+  deltas: Partial<Record<StatKey, number>>
+  seq: number
+}
+
+let statDeltaSeq = 0
+
+function computeStatDelta(before: Stats, after: Stats): StatDelta | null {
+  const keys: StatKey[] = ['stamina', 'injury', 'wealth', 'exposure']
+  const deltas: Partial<Record<StatKey, number>> = {}
+
+  for (const key of keys) {
+    const delta = after[key] - before[key]
+    if (delta !== 0) {
+      deltas[key] = delta
+    }
+  }
+
+  if (Object.keys(deltas).length === 0) return null
+
+  statDeltaSeq += 1
+  return { deltas, seq: statDeltaSeq }
+}
 
 interface GameStore {
   initialized: boolean
@@ -30,6 +61,7 @@ interface GameStore {
   lastResult: RunResult | null
   sidebarOpen: boolean
   dialogueHistory: string[]
+  lastStatDelta: StatDelta | null
   initialize: () => Promise<void>
   startNewRun: (levelId: string) => void
   continueRun: () => boolean
@@ -37,6 +69,7 @@ interface GameStore {
   choose: (choiceId: string) => void
   updateSettings: (settings: Partial<GameSettings>) => void
   toggleSidebar: () => void
+  clearStatDelta: () => void
   clearResult: () => void
   abandonRun: () => Promise<void>
 }
@@ -78,6 +111,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
   lastResult: null,
   sidebarOpen: false,
   dialogueHistory: [],
+  lastStatDelta: null,
 
   initialize: async () => {
     const storageAvailable = await isStorageAvailable()
@@ -105,6 +139,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
       lastResult: null,
       dialogueHistory: [],
       sidebarOpen: false,
+      lastStatDelta: null,
     })
 
     void saveState(get())
@@ -134,6 +169,7 @@ export const useGameStore = create<GameStore>((set, get) => ({
     const scene = getSceneNode(level, activeRun.currentNodeId)
     if (!scene) return
 
+    const statsBefore = { ...activeRun.stats }
     let next = chooseOption(level, activeRun, choiceId)
     const statFailure = resolveStatFailure(level.id, next)
     if (statFailure) {
@@ -161,12 +197,14 @@ export const useGameStore = create<GameStore>((set, get) => ({
         lastResult: result,
         meta: mergedMeta,
         dialogueHistory,
+        lastStatDelta: null,
       })
       void saveState({ ...get(), meta: mergedMeta, activeRun: null })
       return
     }
 
-    set({ activeRun: next, dialogueHistory })
+    const lastStatDelta = computeStatDelta(statsBefore, next.stats)
+    set({ activeRun: next, dialogueHistory, lastStatDelta })
     void saveState(get())
   },
 
@@ -178,10 +216,12 @@ export const useGameStore = create<GameStore>((set, get) => ({
 
   toggleSidebar: () => set({ sidebarOpen: !get().sidebarOpen }),
 
-  clearResult: () => set({ lastResult: null, activeRun: null }),
+  clearStatDelta: () => set({ lastStatDelta: null }),
+
+  clearResult: () => set({ lastResult: null, activeRun: null, lastStatDelta: null }),
 
   abandonRun: async () => {
-    set({ activeRun: null, lastResult: null, dialogueHistory: [] })
+    set({ activeRun: null, lastResult: null, dialogueHistory: [], lastStatDelta: null })
     await saveState(get())
   },
 }))

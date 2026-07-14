@@ -232,10 +232,65 @@
 
 .stat-row {
   display: grid;
-  grid-template-columns: 4rem 1fr 2.5rem;
+  grid-template-columns: 4.5rem 1fr auto;
+  grid-template-rows: auto auto;
   align-items: center;
-  gap: var(--space-sm);
+  gap: var(--space-xs) var(--space-sm);
   font-size: 0.92rem;
+}
+
+.stat-label {
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+  line-height: 1.2;
+}
+
+.stat-value {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.15rem;
+  min-width: 2.5rem;
+  font-variant-numeric: tabular-nums;
+}
+
+.stat-hint {
+  grid-column: 1 / -1;
+  margin: 0;
+  font-size: 0.78rem;
+  color: var(--color-text-muted);
+  line-height: 1.35;
+}
+
+.stat-danger-tag {
+  font-size: 0.68rem;
+  color: var(--color-danger);
+  font-weight: 600;
+}
+
+.stat-row-warn .stat-label,
+.stat-row-critical .stat-label {
+  color: var(--color-danger);
+}
+
+.stat-row-critical .stat-value {
+  font-weight: 700;
+  color: var(--color-danger);
+}
+
+.stat-delta-badge {
+  font-size: 0.75rem;
+  font-weight: 600;
+  line-height: 1;
+}
+
+.stat-delta-positive {
+  color: var(--color-accent);
+}
+
+.stat-delta-negative {
+  color: var(--color-danger);
 }
 
 .stat-bar {
@@ -248,6 +303,91 @@
 .stat-bar-fill {
   height: 100%;
   background: var(--color-accent);
+  transition: width 0.35s ease, background 0.25s ease;
+}
+
+.stat-delta-toast {
+  margin: 0 0 var(--space-md);
+  padding: 0.55rem 0.85rem;
+  border-radius: var(--radius-md);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  background: rgba(0, 0, 0, 0.35);
+  color: var(--color-text);
+  font-size: 0.92rem;
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  animation: stat-delta-toast-in 0.28s ease, stat-delta-toast-out 0.45s ease 2.1s forwards;
+}
+
+.stat-delta-toast-static {
+  animation: none;
+}
+
+@keyframes stat-delta-toast-in {
+  from {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes stat-delta-toast-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes stat-row-flash {
+  0%,
+  100% {
+    background: transparent;
+  }
+  35% {
+    background: rgba(255, 255, 255, 0.08);
+  }
+}
+
+@keyframes stat-bar-pulse {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.55;
+  }
+}
+
+.stat-row-flash {
+  animation: stat-row-flash 0.7s ease;
+}
+
+.stat-bar-pulse .stat-bar-fill {
+  animation: stat-bar-pulse 1.4s ease-in-out infinite;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .stat-delta-toast {
+    animation: none;
+  }
+
+  .stat-row-flash {
+    animation: none;
+    background: rgba(255, 255, 255, 0.06);
+  }
+
+  .stat-bar-pulse .stat-bar-fill {
+    animation: none;
+  }
+
+  .stat-bar-fill {
+    transition: none;
+  }
 }
 
 .evidence-drawer {

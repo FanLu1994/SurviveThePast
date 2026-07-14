@@ -2,6 +2,7 @@ import { Link, Navigate, useNavigate } from 'react-router-dom'
 import { getBackgroundImageUrl } from '@/game/background-assets'
 import { getAvailableChoices, getSceneNode } from '@/game/engine'
 import { getLevelById, getLevelIndex } from '@/game/scenario-loader'
+import { StatDeltaToast } from '@/features/play/StatDeltaToast'
 import { StatusPanel } from '@/features/play/StatusPanel'
 import { useGameStore } from '@/stores/game-store'
 import type { CSSProperties } from 'react'
@@ -76,6 +77,7 @@ export function PlayPage() {
           <div className="dialogue-panel">
             {scene.speaker && <div className="speaker">{scene.speaker}</div>}
             <p className="dialogue-text">{scene.text}</p>
+            <StatDeltaToast />
             <div className="choice-list">
               {choices.map((choice) => (
                 <button
