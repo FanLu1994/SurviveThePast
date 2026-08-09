@@ -1,1047 +1,506 @@
 {
   "id": "jiaqing-cloth",
-  "title": "晒场色样",
-  "theme": "jiaqing-cloth",
-  "eraLabel": "清嘉庆十一年",
-  "year": 1806,
-  "regionLabel": "江南市镇",
-  "oneLiner": "布行晒场弄丢客人色样布角，须在掌柜申时点货前找回或补救。",
-  "coreCrisis": "色样丢失——点货对不上样，按号规须赔布、记过，再犯可被辞号。",
-  "historicalBackground": "嘉庆中叶江南市镇布业仍以号规约束学徒与伙计。色样（样布）用于对色对货，是染整与收发中的日常物件，并非朝廷大典。本关讲述的是晒场上弄丢一小角布头之后，如何在点货死线前按行业规矩收场——史书未必记，号里却天天可能发生。",
+  "title": "开考之前",
+  "theme": "early-republic",
+  "eraLabel": "1977 年冬",
+  "year": 1977,
+  "regionLabel": "华东县城",
+  "oneLiner": "恢复高考后的第一场考试就要开考，你的准考证却在进城途中不见了。",
+  "coreCrisis": "准考证遗失——考场即将关门，必须找回证件或让招考办核实身份。",
+  "historicalBackground": "1977 年恢复高等学校招生考试后，来自工厂、农村、学校和知青点的年轻人重新得到凭考试进入大学的机会。各地考试时间与办法并不完全相同，许多人要从乡镇赶到县城应考。本关不讲宏大会议，而讲一个所有现代人都熟悉的早晨：重要考试就要开始，证件却不见了。人物与县城为虚构，恢复高考、冬季应试和多种社会身份考生共同赴考的背景有史实依据。",
   "crossing": {
-    "background": "cloth-yard",
-    "leadText": "眩晕先于意识到来。耳中像有人把整座城的声响揉成一团，再猛地扯开。你知道自己又穿越失败了——这一次，落点更近地面。",
-    "sceneText": "热气贴着皮肤。竹架、布疋、绳上炭笔写就的竹签，还有墙根半截碎缸里的日影。这是某个市镇的晒场边，午后未散，申时将至。空气里有浆布与尘土的味道，远处隐约有人喊收夹子。"
+    "background": "early-republic-station",
+    "leadText": "刺耳的刹车声把你从眩晕里拽出来。你扶住座椅，手心全是冷汗。窗外没有高楼，也没有手机信号，只有一座挤满自行车和旧客车的县城车站。",
+    "sceneText": "车门一开，冷雨和人声一起灌进来。有人抱着书，有人攥着透明文具袋，所有人都朝同一个方向跑。你低头摸向贴身口袋：那只装着准考证的牛皮纸信封，不见了。广播里说，县一中考场四十分钟后停止入场。"
   },
-  "startNodeId": "scene_yard",
+  "startNodeId": "scene_bus",
   "correctAnswers": {
-    "period": "清中叶",
-    "region": "江南市镇",
-    "identities": [
-      "apprentice",
-      "yard_hand",
-      "runner",
-      "junior_clerk"
-    ]
+    "period": "1977年恢复高考",
+    "region": "华东县城",
+    "identities": ["educated_youth", "factory_worker", "village_teacher", "recent_graduate"]
   },
   "sources": [
     {
-      "id": "jc_s1",
-      "title": "清代市镇与棉布业研究",
-      "citation": "明清江南市镇及棉布、染整行业研究综述",
-      "factType": "inference",
-      "summary": "江南市镇布行、染坊分工常见，学徒与伙计受号规约束。",
-      "grade": "B",
-      "author": "明清经济史学界",
-      "createdOrPublished": "20—21世纪",
-      "locator": "江南市镇与棉布业相关章节",
-      "supports": "可支持「市镇布行存在学徒、号规与对货习惯」的设定。",
-      "cannotProve": "无法证明嘉庆十一年某县某号的真实人事与当日点货细节。"
-    },
-    {
-      "id": "jc_s2",
-      "title": "染作与样布习惯",
-      "citation": "传统染整业中样布、色号用于校对深浅的行业记述",
-      "factType": "inference",
-      "summary": "以小片样布标定色泽、供对货核对，是染整与布号常见做法。",
-      "grade": "B",
-      "author": "手工业史与染整史研究者",
-      "createdOrPublished": "近现代整理",
-      "locator": "样布、对色、号规相关记述",
-      "supports": "可支持「丢失色样会阻碍对货、须找回或按色注补样」的危机逻辑。",
-      "cannotProve": "无法还原该镇「三七号」「沈客」等具体虚构名目。"
-    },
-    {
-      "id": "jc_s3",
-      "title": "清代制钱日常流通",
-      "citation": "清中叶制钱作为市镇小额交易通货的研究",
+      "id": "exam_s1",
+      "title": "关于一九七七年高等学校招生工作的意见",
+      "citation": "1977 年恢复高等学校招生考试相关政策文件与公开史料",
       "factType": "historical",
-      "summary": "市镇茶摊、短工、小额人情往来多以制钱计。",
+      "summary": "1977 年恢复以统一考试、择优录取为核心的高校招生制度，招生对象包括工人、农民、知青、复员军人、干部和应届毕业生等。",
+      "grade": "A",
+      "author": "教育主管部门",
+      "createdOrPublished": "1977 年",
+      "locator": "招生对象与考试办法相关条目",
+      "supports": "可支持不同社会身份的年轻人共同报名应考，以及考试改变个人前途的时代背景。",
+      "cannotProve": "不能证明本关虚构县城、考点和具体考生的经历。"
+    },
+    {
+      "id": "exam_s2",
+      "title": "恢复高考亲历口述与地方档案",
+      "citation": "各地 1977 年高考亲历者回忆及地方招生史料汇编",
+      "factType": "inference",
+      "summary": "不少考生在短时间内复习，从农村、工厂或知青点赶往县城考点；各省考试日期、科目和组织细节存在差别。",
       "grade": "B",
-      "author": "清代货币史研究者",
-      "createdOrPublished": "近现代研究",
-      "locator": "制钱流通与市镇物价相关章节",
-      "supports": "可证实制钱为市镇日常小额通货之一。",
-      "cannotProve": "无法给出该茶摊当日确切茶价。"
+      "author": "地方档案机构与亲历者",
+      "createdOrPublished": "1977 年后整理",
+      "locator": "报名、赴考与考场组织相关记述",
+      "supports": "可支持冬日赶考、县城考点、单位或学校协助核验身份等剧情推演。",
+      "cannotProve": "不同地区执行细节不一，不能把本关流程视为全国统一规定。"
+    },
+    {
+      "id": "exam_s3",
+      "title": "二十世纪七十年代末县城交通与通信资料",
+      "citation": "地方志中的公路客运、邮电与县城公共服务记载",
+      "factType": "inference",
+      "summary": "县乡交通主要依靠班车、自行车与步行，公共电话和即时通信能力有限。",
+      "grade": "B",
+      "author": "地方志编纂机构",
+      "createdOrPublished": "地方志后期整理",
+      "locator": "交通、邮电与教育卷",
+      "supports": "可支持班车进城、无法即时联系和必须当面跑手续的环境。",
+      "cannotProve": "不能还原某县某日的班车线路、票价和天气。"
     }
   ],
   "identities": [
     {
-      "id": "apprentice",
-      "label": "跟缸学手的学徒",
-      "description": "你跟过染缸，勉强记得若干色号深浅，却最怕掌柜点货。",
+      "id": "educated_youth",
+      "label": "返城应考的知青",
+      "description": "你从公社坐最早一班车进城，介绍信和准考证一直贴身放着。",
       "background": {
-        "livelihood": "在布行学徒，干晒场、递样、打杂",
-        "socialPosition": "号内最下层学徒，月例微薄",
-        "affiliation": "依附本号掌柜与司账",
-        "rightsAndLimits": "可进晒场与号屋外间，不可擅自改账",
-        "exposureReason": "色样在你手上丢失，号规首先问你"
+        "livelihood": "在公社劳动，利用夜晚复习",
+        "socialPosition": "下乡知识青年",
+        "affiliation": "所在公社知青点",
+        "rightsAndLimits": "有报名资格与介绍信，但县城里没有熟人",
+        "exposureReason": "错过这场考试，下一次机会何时到来无人知道"
       },
-      "sourceIds": [
-        "jc_s1",
-        "jc_s2"
-      ],
-      "startingStats": {
-        "stamina": 65,
-        "wealth": 10,
-        "exposure": 12
-      },
-      "flags": [
-        "knows_color"
-      ]
+      "sourceIds": ["exam_s1", "exam_s2"],
+      "startingStats": {"stamina": 68, "wealth": 8, "exposure": 8},
+      "flags": ["has_intro_letter"]
     },
     {
-      "id": "yard_hand",
-      "label": "晒场杂工",
-      "description": "你熟风向与绳位，知道角布爱往哪边飘。",
+      "id": "factory_worker",
+      "label": "请假赶考的工人",
+      "description": "车间给你开了证明，同班师傅的侄女恰好在县一中工作。",
       "background": {
-        "livelihood": "晒场收放布疋、夹签、看绳",
-        "socialPosition": "雇工，不算正式学徒",
-        "affiliation": "听晒场老周调度",
-        "rightsAndLimits": "晒场自由走动，进柜台说话份量轻",
-        "exposureReason": "你负责的绳档出了空，老周会先骂你"
+        "livelihood": "县属工厂一线工人",
+        "socialPosition": "有固定单位的青年工人",
+        "affiliation": "县纺织厂",
+        "rightsAndLimits": "单位证明齐全，但请假只批到考试结束",
+        "exposureReason": "无故缺考不仅失去机会，回厂也难解释"
       },
-      "sourceIds": [
-        "jc_s1",
-        "jc_s2"
-      ],
-      "startingStats": {
-        "stamina": 75,
-        "wealth": 8,
-        "exposure": 10
-      },
-      "flags": [
-        "knows_yard"
-      ]
+      "sourceIds": ["exam_s1", "exam_s2"],
+      "startingStats": {"stamina": 74, "wealth": 14, "exposure": 6},
+      "flags": ["knows_teacher"]
     },
     {
-      "id": "runner",
-      "label": "跑街送样的伙计",
-      "description": "你常送样到邻号，认得染坊伙计与茶摊的嘴。",
+      "id": "village_teacher",
+      "label": "乡村代课教师",
+      "description": "你替学生上课多年，熟悉学校办事方式，也带着公社盖章的证明。",
       "background": {
-        "livelihood": "往来本号与邻号送样、传话",
-        "socialPosition": "跑腿伙计，靠腿脚与人情",
-        "affiliation": "本号差遣，也欠邻号几个人情",
-        "rightsAndLimits": "外头路熟，号内账目插不上手",
-        "exposureReason": "色样若在你转手时丢，两边都要问"
+        "livelihood": "在公社小学代课",
+        "socialPosition": "基层教育工作者",
+        "affiliation": "公社小学",
+        "rightsAndLimits": "懂学校规矩，却不是县一中的正式教职工",
+        "exposureReason": "这是你从讲台另一边走进大学的机会"
       },
-      "sourceIds": [
-        "jc_s1",
-        "jc_s3"
-      ],
-      "startingStats": {
-        "stamina": 70,
-        "wealth": 14,
-        "exposure": 8
-      },
-      "flags": [
-        "knows_neighbors"
-      ]
+      "sourceIds": ["exam_s1", "exam_s2"],
+      "startingStats": {"stamina": 65, "wealth": 10, "exposure": 7},
+      "flags": ["knows_school_process", "has_intro_letter"]
     },
     {
-      "id": "junior_clerk",
-      "label": "帮司账打杂的小写",
-      "description": "你识得草账上的色注，却更怕担责。",
+      "id": "recent_graduate",
+      "label": "刚离校的高中毕业生",
+      "description": "你住在县城边缘，报名表底联还夹在复习笔记里。",
       "background": {
-        "livelihood": "誊抄、递账、打杂，偶尔看管柜台",
-        "socialPosition": "司账身边的下手",
-        "affiliation": "紧跟司账老陈",
-        "rightsAndLimits": "可翻当日草账，不可替掌柜作主",
-        "exposureReason": "编号在账，实物丢了，老陈会把火撒你身上"
+        "livelihood": "在家劳动并准备考试",
+        "socialPosition": "高中毕业生",
+        "affiliation": "原就读中学",
+        "rightsAndLimits": "熟悉县城道路，但缺少单位出面",
+        "exposureReason": "家里把能找到的复习资料都给了你"
       },
-      "sourceIds": [
-        "jc_s1",
-        "jc_s2"
-      ],
-      "startingStats": {
-        "stamina": 60,
-        "wealth": 12,
-        "exposure": 10
-      },
-      "flags": [
-        "access_ledger"
-      ]
+      "sourceIds": ["exam_s1", "exam_s3"],
+      "startingStats": {"stamina": 72, "wealth": 9, "exposure": 9},
+      "flags": ["has_registration_stub", "knows_shortcut"]
     }
   ],
   "evidence": [
     {
-      "id": "jc_e1",
-      "title": "竹签炭笔编号",
-      "description": "晒绳上夹着炭笔写的编号签，空档处原夹着客人色样布角。",
-      "category": "劳动与谋生方式",
+      "id": "exam_e1",
+      "title": "同车人的复习资料",
+      "description": "有人抱着中学课本，有人拿着油印题，封面上写着数理化和政治。",
+      "category": "教育与知识",
       "strength": "strong",
-      "sourceId": "jc_s2",
-      "hints": {
-        "identity": "号内管货之人"
-      }
+      "sourceId": "exam_s2",
+      "hints": {"period": "1977年恢复高考", "identity": "高考考生"}
     },
     {
-      "id": "jc_e2",
-      "title": "草账色注",
-      "description": "草账写着客姓与「青，偏深，忌发红」一类色注，供对样核对。",
+      "id": "exam_e2",
+      "title": "多种单位介绍信",
+      "description": "排队的人来自工厂、公社、学校和知青点，手里的证明盖着不同公章。",
+      "category": "制度与身份",
+      "strength": "strong",
+      "sourceId": "exam_s1",
+      "hints": {"period": "1977年", "region": "县城考点"}
+    },
+    {
+      "id": "exam_e3",
+      "title": "冬季开考通知",
+      "description": "校门口红纸通知写着本地区考试日期和入场时间，落款是一九七七年十二月。",
       "category": "文字与文书",
       "strength": "strong",
-      "sourceId": "jc_s2",
-      "hints": {
-        "identity": "能接触账册"
-      }
+      "sourceId": "exam_s1",
+      "hints": {"period": "1977年冬"}
     },
     {
-      "id": "jc_e3",
-      "title": "制钱茶钱",
-      "description": "茶摊以制钱论碗，铜钱在桌上叮当作响。",
-      "category": "货币与交易",
-      "strength": "strong",
-      "sourceId": "jc_s3",
-      "hints": {
-        "period": "清中叶",
-        "region": "市镇"
-      }
-    },
-    {
-      "id": "jc_e4",
-      "title": "掌柜司账学徒",
-      "description": "号内人称掌柜、司账、学徒，事务按号规层层问责。",
-      "category": "语言与称谓",
-      "strength": "strong",
-      "sourceId": "jc_s1",
-      "hints": {
-        "period": "明清市镇行业",
-        "identity": "布行中人"
-      }
-    },
-    {
-      "id": "jc_e5",
-      "title": "洋布闲话",
-      "description": "有人随口说「如今洋布便宜，丢了再买一块便是」。这话救不了有编号的色样。",
-      "category": "社会习俗",
-      "strength": "misleading",
-      "sourceId": "jc_s1",
-      "hints": {
-        "period": "清中后期传闻"
-      }
-    },
-    {
-      "id": "jc_e6",
-      "title": "靛气与染坊",
-      "description": "邻号染坊靛气扑鼻，伙计能按描述重裁小片样布，但要工钱或人情。",
-      "category": "城市、乡村与建筑空间",
+      "id": "exam_e4",
+      "title": "老式长途客车",
+      "description": "班车从公社一路颠进县城，错过一班就很难及时补救。",
+      "category": "交通与通信",
       "strength": "weak",
-      "sourceId": "jc_s2",
-      "hints": {
-        "region": "江南市镇手工业"
-      }
+      "sourceId": "exam_s3",
+      "hints": {"region": "县城与乡镇之间"}
+    },
+    {
+      "id": "exam_e5",
+      "title": "收音机里的大学消息",
+      "description": "候车室有人说昨晚收音机讲了大学招生，却把外省的考试日期说成了今天。",
+      "category": "社会信息",
+      "strength": "misleading",
+      "sourceId": "exam_s2",
+      "hints": {"period": "二十世纪七十年代末"}
     }
   ],
   "nodes": [
     {
-      "id": "scene_yard",
+      "id": "scene_bus",
       "type": "scene",
-      "title": "晒绳空档",
-      "background": "cloth-yard",
-      "text": "午后的晒场热气还未散尽。竹架上青白布疋垂着，绳上夹着写了炭笔编号的竹签。你负责看管的那一档里，客人留下的色样布角——本来夹在签下——不见了。日影已经爬过墙根的半截碎缸。再拖下去，申时掌柜回号点货，这一档对不上样，按号规就要有人扛。",
-      "revealEvidence": [
-        "jc_e1",
-        "jc_e4"
-      ],
+      "title": "信封不见了",
+      "background": "early-republic-station",
+      "text": "长途车刚停稳，车里的人便抱着书往外挤。你下意识摸向棉衣内袋，只摸到一道裂开的线口。装有准考证的牛皮纸信封不见了。四十分钟前，你曾起身帮一位抱孩子的妇女挪行李；二十分钟前，售票员又查过车票。雨越下越大，县一中四十分钟后停止入场。",
+      "revealEvidence": ["exam_e1", "exam_e4"],
       "choices": [
-        {
-          "id": "c_search_rope",
-          "text": "立刻沿晒绳一根根翻找",
-          "next": "scene_rope",
-          "strategyTags": [
-            "labor_trade"
-          ],
-          "settlementNote": "你弯腰沿绳翻找，从晒场工序入手。",
-          "effects": [
-            {
-              "type": "modifyStat",
-              "stat": "stamina",
-              "delta": -6
-            }
-          ]
-        },
-        {
-          "id": "c_ask_zhou",
-          "text": "先喊晒场老周问过",
-          "next": "scene_zhou",
-          "strategyTags": [
-            "rely_on_relations"
-          ],
-          "settlementNote": "你向老周打听角布常往哪边去。"
-        },
-        {
-          "id": "c_to_ledger",
-          "text": "先溜回号屋，翻草账对编号",
-          "next": "scene_counter",
-          "strategyTags": [
-            "follow_institution"
-          ],
-          "settlementNote": "你先回号屋找色注，准备补救。",
-          "condition": {
-            "type": "flag",
-            "flag": "access_ledger"
-          }
-        },
-        {
-          "id": "c_to_counter_any",
-          "text": "回号屋找司账想办法",
-          "next": "scene_counter",
-          "strategyTags": [
-            "rely_on_relations"
-          ],
-          "settlementNote": "你回号屋求助司账。"
-        }
+        {"id": "c_search_bus", "text": "马上回车厢，从座位下一寸寸找", "next": "scene_bus_search", "effects": [{"type": "modifyStat", "stat": "stamina", "delta": -5}], "strategyTags": ["labor_trade"], "settlementNote": "你先确认最可能遗失证件的现场。"},
+        {"id": "c_ask_conductor", "text": "拦住售票员，请她回忆谁碰过座位", "next": "scene_conductor", "strategyTags": ["rely_on_relations"], "settlementNote": "你借助车上工作人员缩小范围。"},
+        {"id": "c_run_school", "text": "不找了，先设法赶往考点说明情况", "next": "scene_depart_station", "strategyTags": ["follow_institution"], "settlementNote": "你选择把有限时间留给正式核验。"}
       ]
     },
     {
-      "id": "scene_rope",
+      "id": "scene_bus_search",
       "type": "scene",
-      "title": "绳下泥印",
-      "background": "cloth-yard",
-      "text": "你弯腰顺着绳下翻。碎布头、线头、一只干硬的草鞋印。东头风口的泥地上有一小撮新印，像有轻巧脚步拐进巷里。远处老周收着夹子，骂了一句「又给人捡了去」。",
+      "title": "湿漉漉的座位",
+      "background": "early-republic-station",
+      "text": "座位下只有瓜子壳和一只湿手套。你在椅背木刺上发现一点牛皮纸屑，裂口正对着过道。后排乘客说，刚才清车的人捡起过一个信封，可能送去了候车室值班台。也可能，有人顺手拿走了。",
       "choices": [
-        {
-          "id": "c_rope_alley",
-          "text": "顺着泥印追向巷口",
-          "next": "scene_alley",
-          "strategyTags": [
-            "labor_trade"
-          ],
-          "settlementNote": "你追向巷口，寻找刮落或被捡走的色样。",
-          "effects": [
-            {
-              "type": "modifyStat",
-              "stat": "stamina",
-              "delta": -5
-            }
-          ]
-        },
-        {
-          "id": "c_rope_tea",
-          "text": "去茶摊问有没有人拿着布头",
-          "next": "scene_tea",
-          "strategyTags": [
-            "rely_on_relations"
-          ],
-          "settlementNote": "你转到茶摊打探闲话。"
-        },
-        {
-          "id": "c_rope_counter",
-          "text": "认栽，回号里想别的法子",
-          "next": "scene_counter",
-          "strategyTags": [
-            "follow_institution"
-          ],
-          "settlementNote": "你暂停寻找，回号屋另想补救。"
-        }
+        {"id": "c_to_lost_found", "text": "去候车室值班台找失物", "next": "scene_lost_found", "strategyTags": ["follow_institution"]},
+        {"id": "c_search_passengers", "text": "追出去逐个问刚才的乘客", "next": "scene_platform", "effects": [{"type": "modifyStat", "stat": "stamina", "delta": -9}], "strategyTags": ["labor_trade"]},
+        {"id": "c_bus_to_school", "text": "不能再耗，立刻设法去考点", "next": "scene_depart_station", "strategyTags": ["avoid_transfer"]}
       ]
     },
     {
-      "id": "scene_zhou",
+      "id": "scene_conductor",
       "type": "scene",
-      "title": "老周的嘴",
-      "background": "cloth-yard",
-      "text": "老周啐了口唾沫：「风大时，角布爱往巷口飘。茶摊那一带的娃娃也爱捡花布玩。你自己惹的，别扯上我。」他顿了顿又说：「掌柜申时准到。对不上，赔的是你月例。」",
+      "title": "售票员的记忆",
+      "background": "early-republic-station",
+      "text": "售票员把票夹往腋下一塞：‘你帮人挪包时，信封掉到过道上，我看清车的小吴捡起来了。值班台在候车室东头。’她又看了一眼墙上的钟，提醒你从车站跑到县一中至少要十五分钟。",
       "choices": [
-        {
-          "id": "c_zhou_tea",
-          "text": "去茶摊打听",
-          "next": "scene_tea",
-          "strategyTags": [
-            "rely_on_relations"
-          ],
-          "settlementNote": "你按老周的指向去茶摊。"
-        },
-        {
-          "id": "c_zhou_alley",
-          "text": "先去巷口风口翻",
-          "next": "scene_alley",
-          "strategyTags": [
-            "labor_trade"
-          ],
-          "settlementNote": "你去巷口翻找可能刮落的布角。",
-          "condition": {
-            "type": "flag",
-            "flag": "knows_yard"
-          }
-        },
-        {
-          "id": "c_zhou_alley_any",
-          "text": "还是去巷口看看",
-          "next": "scene_alley",
-          "strategyTags": [
-            "labor_trade"
-          ],
-          "settlementNote": "你去巷口碰运气。"
-        },
-        {
-          "id": "c_zhou_counter",
-          "text": "回号屋想补救",
-          "next": "scene_counter",
-          "strategyTags": [
-            "follow_institution"
-          ],
-          "settlementNote": "你回号屋准备用色注或人情补救。"
-        }
+        {"id": "c_conductor_desk", "text": "去值班台报姓名和考点", "next": "scene_lost_found", "strategyTags": ["follow_institution", "rely_on_relations"]},
+        {"id": "c_conductor_witness", "text": "请售票员写下失物经过，带去考点作证", "next": "scene_depart_station", "condition": {"type": "flag", "flag": "knows_teacher"}, "effects": [{"type": "setFlag", "flag": "has_witness", "value": true}], "strategyTags": ["rely_on_relations"]},
+        {"id": "c_conductor_school", "text": "记住线索，先设法赶往考点", "next": "scene_depart_station", "strategyTags": ["avoid_transfer"]}
       ]
     },
     {
-      "id": "scene_tea",
+      "id": "scene_platform",
       "type": "scene",
-      "title": "半碗粗茶",
-      "background": "cloth-tea",
-      "text": "巷口茶摊支着旧布棚，铜壶咕嘟着。摊妇一边倒茶一边说：先前有个穿短打的后生捏着一小片布往染坊方向去；又有人说是东头娃娃捡了「花布」。桌上搁着几枚制钱，茶钱论碗。另有人随口接话：「如今洋布便宜，丢了再买一块便是。」",
-      "revealEvidence": [
-        "jc_e3",
-        "jc_e5"
-      ],
+      "title": "雨中的人群",
+      "background": "early-republic-street",
+      "text": "你追到站外，雨伞和自行车把路堵得水泄不通。抱孩子的妇女认出你，说她看见清车员把信封交进候车室。一个热心考生指给你去县一中的近路。时间只剩二十五分钟。",
       "choices": [
-        {
-          "id": "c_tea_dye",
-          "text": "追染坊方向",
-          "next": "scene_dye",
-          "strategyTags": [
-            "labor_trade"
-          ],
-          "settlementNote": "你循短打后生的方向去染坊。"
-        },
-        {
-          "id": "c_tea_alley",
-          "text": "按娃娃传言去东头巷口",
-          "next": "scene_alley",
-          "strategyTags": [
-            "labor_trade"
-          ],
-          "settlementNote": "你按闲话去东头巷口。"
-        },
-        {
-          "id": "c_tea_pay",
-          "text": "多给几文，求摊妇说细点",
-          "next": "scene_tea_detail",
-          "strategyTags": [
-            "exchange_resources"
-          ],
-          "settlementNote": "你花钱买更准确的方向。",
-          "effects": [
-            {
-              "type": "modifyStat",
-              "stat": "wealth",
-              "delta": -4
-            }
-          ]
-        },
-        {
-          "id": "c_tea_counter",
-          "text": "回号屋",
-          "next": "scene_counter",
-          "strategyTags": [
-            "avoid_transfer"
-          ],
-          "settlementNote": "你离开茶摊回号。"
-        }
+        {"id": "c_platform_desk", "text": "折回候车室值班台", "next": "scene_lost_found", "strategyTags": ["follow_institution"]},
+        {"id": "c_platform_shortcut", "text": "记下考生说的近路，赶往考点", "next": "scene_depart_station", "condition": {"type": "flag", "flag": "knows_shortcut"}, "effects": [{"type": "setFlag", "flag": "route_hint", "value": true}], "strategyTags": ["labor_trade"]},
+        {"id": "c_platform_run", "text": "回到站前广场，设法赶往考点", "next": "scene_depart_station", "strategyTags": ["labor_trade"]}
       ]
     },
     {
-      "id": "scene_tea_detail",
+      "id": "scene_lost_found",
       "type": "scene",
-      "title": "茶钱换来的话",
-      "background": "cloth-tea",
-      "text": "摊妇把制钱收进竹筒：「往染坊去的那个，袖口沾了靛点子，像是邻号跑腿。东头娃娃手里那片，我瞅着倒像破鞋垫，未必是你们号里的。」话被说破，路线也清楚了。",
+      "title": "值班台上的信封",
+      "background": "early-republic-station",
+      "text": "值班台上果然压着一只被雨水打湿的牛皮纸信封，可姓名一角糊开了。值班员不肯仅凭一句‘是我的’就交出来：你得说出里面的考点、座号，或拿出能对上姓名的材料。墙上的钟还在走。",
+      "revealEvidence": ["exam_e2"],
       "choices": [
-        {
-          "id": "c_detail_dye",
-          "text": "去邻号染坊",
-          "next": "scene_dye",
-          "strategyTags": [
-            "rely_on_relations"
-          ],
-          "settlementNote": "你确认染坊方向后赶去。"
-        },
-        {
-          "id": "c_detail_alley",
-          "text": "仍去巷口确认有没有原角",
-          "next": "scene_alley",
-          "strategyTags": [
-            "labor_trade"
-          ],
-          "settlementNote": "你仍不放心，去巷口翻找。"
-        }
+        {"id": "c_prove_stub", "text": "拿报名表底联核对姓名和报名号", "next": "scene_got_card", "condition": {"type": "flag", "flag": "has_registration_stub"}, "effects": [{"type": "setFlag", "flag": "has_card", "value": true}], "strategyTags": ["follow_institution"]},
+        {"id": "c_prove_letter", "text": "拿单位介绍信核对姓名", "next": "scene_got_card", "condition": {"type": "flag", "flag": "has_intro_letter"}, "effects": [{"type": "setFlag", "flag": "has_card", "value": true}], "strategyTags": ["follow_institution"]},
+        {"id": "c_describe", "text": "准确说出考点、座号和信封内折法", "next": "scene_got_card", "effects": [{"type": "setFlag", "flag": "has_card", "value": true}, {"type": "modifyStat", "stat": "exposure", "delta": 5}], "strategyTags": ["rely_on_relations"]},
+        {"id": "c_snatch", "text": "趁值班员转身，拿起信封就跑", "next": "scene_depart_station", "effects": [{"type": "setFlag", "flag": "has_card", "value": true}, {"type": "setFlag", "flag": "card_disputed", "value": true}, {"type": "modifyStat", "stat": "exposure", "delta": 35}], "strategyTags": ["conceal_identity"]},
+        {"id": "c_leave_desk", "text": "来不及证明，先去考点查名册", "next": "scene_depart_station", "strategyTags": ["avoid_transfer"]}
       ]
     },
     {
-      "id": "scene_alley",
+      "id": "scene_got_card",
       "type": "scene",
-      "title": "墙根布毛",
-      "background": "cloth-alley",
-      "text": "巷口墙根粘着一线同色的布毛，像从更大一片上刮下的。再往前是泥地与鸡啄的痕。柴堆旁似乎有什么被风掀动。",
+      "title": "失而复得",
+      "background": "early-republic-street",
+      "text": "姓名、考点、座号全部对上。值班员把信封递给你，还用旧报纸替你包了一层。你冲进雨里，县一中的钟声已经隐约可闻。",
       "choices": [
-        {
-          "id": "c_alley_find",
-          "text": "在柴堆旁仔细翻找",
-          "next": "scene_found",
-          "strategyTags": [
-            "labor_trade"
-          ],
-          "settlementNote": "你在柴堆旁找回脏了的色样布角。",
-          "condition": {
-            "type": "flag",
-            "flag": "knows_yard"
-          },
-          "effects": [
-            {
-              "type": "setFlag",
-              "flag": "has_swatch",
-              "value": true
-            },
-            {
-              "type": "modifyStat",
-              "stat": "stamina",
-              "delta": -8
-            }
-          ]
-        },
-        {
-          "id": "c_alley_find_any",
-          "text": "把柴堆翻个底朝天",
-          "next": "scene_alley_miss",
-          "strategyTags": [
-            "labor_trade"
-          ],
-          "settlementNote": "你耗尽力气，却只摸到破布与鸡毛。",
-          "effects": [
-            {
-              "type": "modifyStat",
-              "stat": "stamina",
-              "delta": -16
-            }
-          ]
-        },
-        {
-          "id": "c_alley_dye",
-          "text": "找不到完整的，转去染坊求补",
-          "next": "scene_dye",
-          "strategyTags": [
-            "exchange_resources"
-          ],
-          "settlementNote": "你放弃在巷口死翻，改去求补样。"
-        },
-        {
-          "id": "c_alley_counter",
-          "text": "回号屋说明情况",
-          "next": "scene_counter",
-          "strategyTags": [
-            "rely_on_relations"
-          ],
-          "settlementNote": "你空手回号，准备求情或补样。"
-        }
+        {"id": "c_card_gate", "text": "护住准考证，冲向站前广场", "next": "scene_depart_station", "strategyTags": ["follow_institution", "labor_trade"]}
       ]
     },
     {
-      "id": "scene_alley_miss",
+      "id": "scene_depart_station",
       "type": "scene",
-      "title": "空翻一场",
-      "background": "cloth-alley",
-      "text": "柴堆翻乱了，只有线头、鸡毛和半截湿草鞋。日影更短。没有原角，得另想办法。",
+      "title": "怎么去县一中",
+      "background": "early-republic-station",
+      "text": "站前广场积水没过鞋面。去县一中的公交刚刚开走，下一班来不及；一位送考家长扶着自行车，说后座还能坐一个人；街角还有三轮车师傅，但你身上的钱只够付一次车费。远处钟楼指向八点二十分。",
       "choices": [
-        {
-          "id": "c_miss_dye",
-          "text": "赶去染坊求补",
-          "next": "scene_dye",
-          "strategyTags": [
-            "exchange_resources"
-          ],
-          "settlementNote": "空翻之后你改去染坊。"
-        },
-        {
-          "id": "c_miss_counter",
-          "text": "回号屋求司账",
-          "next": "scene_counter",
-          "strategyTags": [
-            "rely_on_relations"
-          ],
-          "settlementNote": "你空手回号求助。"
-        }
+        {"id": "c_depart_bike", "text": "请送考家长捎你一段", "next": "scene_bike", "effects": [{"type": "setFlag", "flag": "met_parent", "value": true}], "strategyTags": ["rely_on_relations"]},
+        {"id": "c_depart_tricycle", "text": "花钱坐三轮车，要求走最快的路", "next": "scene_roadblock", "effects": [{"type": "modifyStat", "stat": "wealth", "delta": -7}, {"type": "setFlag", "flag": "has_driver", "value": true}], "strategyTags": ["exchange_resources"]},
+        {"id": "c_depart_run", "text": "把书塞进衣襟，自己冒雨跑过去", "next": "scene_roadblock", "effects": [{"type": "modifyStat", "stat": "stamina", "delta": -8}], "strategyTags": ["labor_trade"]},
+        {"id": "c_depart_shortcut", "text": "按刚问到的路线穿过邮电局后巷", "next": "scene_alley_route", "condition": {"type": "flag", "flag": "route_hint"}, "effects": [{"type": "modifyStat", "stat": "stamina", "delta": -4}], "strategyTags": ["labor_trade"]}
       ]
     },
     {
-      "id": "scene_found",
+      "id": "scene_bike",
       "type": "scene",
-      "title": "脏了的布角",
-      "background": "cloth-alley",
-      "text": "布角边已经脏了，炭笔痕还在。夹回原签大致能过眼，只是掌柜若较真，仍可能挑刺。日影更短，收绳的喊声从晒场传来。",
+      "title": "自行车后座",
+      "background": "early-republic-street",
+      "text": "你侧坐在自行车后座，一手护着书和材料，一手撑伞。骑车的父亲说女儿复习了两个月，昨晚紧张得没睡。他问你是不是也去参加‘恢复后的头一回考试’。前面十字路口已经堵死，自行车铃响成一片。",
       "choices": [
-        {
-          "id": "c_found_return",
-          "text": "立刻夹回晒场原签，赶去点货",
-          "next": "scene_decision",
-          "strategyTags": [
-            "follow_institution",
-            "labor_trade"
-          ],
-          "settlementNote": "你持原角色样回到点货关口。"
-        },
-        {
-          "id": "c_found_wash",
-          "text": "想先洗净再送，耽搁片刻",
-          "next": "scene_decision",
-          "strategyTags": [
-            "conceal_identity"
-          ],
-          "settlementNote": "你耽搁清洗，时间更紧，暴露感上升。",
-          "effects": [
-            {
-              "type": "modifyStat",
-              "stat": "stamina",
-              "delta": -5
-            },
-            {
-              "type": "modifyStat",
-              "stat": "exposure",
-              "delta": 8
-            }
-          ]
-        }
+        {"id": "c_bike_wait", "text": "让他慢慢挤过路口，避免摔车", "next": "scene_roadblock", "effects": [{"type": "setFlag", "flag": "kept_dry", "value": true}], "strategyTags": ["avoid_transfer"]},
+        {"id": "c_bike_walk", "text": "提前下车，道谢后从人群里跑过去", "next": "scene_roadblock", "effects": [{"type": "modifyStat", "stat": "stamina", "delta": -5}], "strategyTags": ["labor_trade"]},
+        {"id": "c_bike_ask", "text": "边等边问清考点入口和核验桌位置", "next": "scene_roadblock", "effects": [{"type": "setFlag", "flag": "knows_verify_desk", "value": true}], "strategyTags": ["rely_on_relations"]}
       ]
     },
     {
-      "id": "scene_dye",
+      "id": "scene_alley_route",
       "type": "scene",
-      "title": "染坊求补",
-      "background": "cloth-dye",
-      "text": "染坊里靛气扑鼻。伙计听你说完，敲着木桶：「没有原角，只能按你说的深浅重裁一小片。说得准，我帮你；说飘了，掌柜一眼就能看出来。工钱或者——你们司账老陈欠我一顿酒，看你讨不讨得到他的脸。」",
-      "revealEvidence": [
-        "jc_e6"
-      ],
+      "title": "邮电局后巷",
+      "background": "early-republic-street",
+      "text": "后巷确实避开了主路，却有一段正在铺煤渣。一个学生的帆布书包摔开，复习资料散进泥水；另一边，邮电局值班室的电话或许能联系到考点。你能听见县一中的预备广播，却看不见校门。",
       "choices": [
-        {
-          "id": "c_dye_memory",
-          "text": "凭记忆把「青，偏深，忌发红」说清楚",
-          "next": "scene_patch_ok",
-          "condition": {
-            "type": "flag",
-            "flag": "knows_color"
-          },
-          "strategyTags": [
-            "labor_trade"
-          ],
-          "settlementNote": "你凭学徒记忆补得合格色样。",
-          "effects": [
-            {
-              "type": "setFlag",
-              "flag": "has_patch",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": "c_dye_pay",
-          "text": "掏私房钱，买一块近似的布头充数",
-          "next": "scene_patch_bad",
-          "strategyTags": [
-            "exchange_resources"
-          ],
-          "settlementNote": "你买了近似布头，色差风险极高。",
-          "effects": [
-            {
-              "type": "modifyStat",
-              "stat": "wealth",
-              "delta": -8
-            },
-            {
-              "type": "setFlag",
-              "flag": "has_bad_patch",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": "c_dye_favor",
-          "text": "先回号求司账出面说人情",
-          "next": "scene_counter",
-          "condition": {
-            "type": "flag",
-            "flag": "knows_neighbors"
-          },
-          "strategyTags": [
-            "rely_on_relations"
-          ],
-          "settlementNote": "你打算用邻号人情托司账。"
-        },
-        {
-          "id": "c_dye_back",
-          "text": "先回号屋翻色注再来",
-          "next": "scene_counter",
-          "strategyTags": [
-            "follow_institution"
-          ],
-          "settlementNote": "你回号抄色注，再图补样。"
-        }
+        {"id": "c_alley_help", "text": "帮学生捡起资料，再结伴找路", "next": "scene_roadblock", "effects": [{"type": "setFlag", "flag": "met_candidate", "value": true}, {"type": "modifyStat", "stat": "stamina", "delta": -3}], "strategyTags": ["rely_on_relations", "labor_trade"]},
+        {"id": "c_alley_phone", "text": "进邮电局借电话，请考点先查名册", "next": "scene_phone", "strategyTags": ["follow_institution"]},
+        {"id": "c_alley_push", "text": "踩着煤渣继续往前冲", "next": "scene_roadblock", "effects": [{"type": "modifyStat", "stat": "stamina", "delta": -7}], "strategyTags": ["labor_trade"]}
       ]
     },
     {
-      "id": "scene_patch_ok",
+      "id": "scene_phone",
       "type": "scene",
-      "title": "补样入手",
-      "background": "cloth-dye",
-      "text": "伙计按你说的深浅裁下一小片，用指甲弹了弹：「凑合能骗过匆忙的眼。掌柜若把原账翻出来对光看，仍可能挑。你自己掂量。」",
+      "title": "一通接不通的电话",
+      "background": "early-republic-press",
+      "text": "值班员摇了几次把手才接通总机。县一中线路一直占线，但她愿意替你把姓名、原单位和考点写在一张便笺上，让邮递员顺路送到校门。你必须决定继续等回话，还是相信便笺能先到。",
       "choices": [
-        {
-          "id": "c_patch_go",
-          "text": "带着补样赶回点货",
-          "next": "scene_decision",
-          "strategyTags": [
-            "labor_trade",
-            "follow_institution"
-          ],
-          "settlementNote": "你持合格补样进入点货。"
-        }
+        {"id": "c_phone_wait", "text": "再等一次接线，确认名册上确有姓名", "next": "scene_roadblock", "effects": [{"type": "setFlag", "flag": "phone_verified", "value": true}, {"type": "modifyStat", "stat": "exposure", "delta": 4}], "strategyTags": ["follow_institution"]},
+        {"id": "c_phone_note", "text": "托她送便笺，自己立刻追过去", "next": "scene_roadblock", "effects": [{"type": "setFlag", "flag": "message_sent", "value": true}], "strategyTags": ["rely_on_relations"]}
       ]
     },
     {
-      "id": "scene_patch_bad",
+      "id": "scene_roadblock",
       "type": "scene",
-      "title": "近似的布头",
-      "background": "cloth-dye",
-      "text": "市上买来的布头颜色接近，却缺了炭笔痕与号里的夹磨痕迹。你捏在手里，总觉得发飘。",
+      "title": "被堵住的十字路口",
+      "background": "early-republic-street",
+      "text": "一辆运煤卡车坏在十字路口，车、自行车和行人全堵在雨里。三轮车师傅指着右边说可以绕河堤，路远但平；左边菜市场能穿过去，却挤得几乎走不动。正前方的小桥最近，只是桥面正在抢修。",
       "choices": [
-        {
-          "id": "c_bad_go",
-          "text": "硬着头皮拿去点货",
-          "next": "scene_decision",
-          "strategyTags": [
-            "conceal_identity"
-          ],
-          "settlementNote": "你企图用近似布头蒙混点货。",
-          "effects": [
-            {
-              "type": "modifyStat",
-              "stat": "exposure",
-              "delta": 12
-            }
-          ]
-        },
-        {
-          "id": "c_bad_abort",
-          "text": "还是回号求司账暂压",
-          "next": "scene_counter",
-          "strategyTags": [
-            "rely_on_relations"
-          ],
-          "settlementNote": "你不敢蒙混，改求暂压。"
-        }
+        {"id": "c_road_river", "text": "绕河堤走稳妥的远路", "next": "scene_river", "effects": [{"type": "modifyStat", "stat": "stamina", "delta": -5}], "strategyTags": ["avoid_transfer"]},
+        {"id": "c_road_market", "text": "从菜市场的人群里挤过去", "next": "scene_market", "effects": [{"type": "modifyStat", "stat": "exposure", "delta": 5}], "strategyTags": ["labor_trade"]},
+        {"id": "c_road_bridge", "text": "赌一把，走正在抢修的小桥", "next": "scene_bridge", "effects": [{"type": "modifyStat", "stat": "stamina", "delta": -4}], "strategyTags": ["labor_trade"]},
+        {"id": "c_road_driver", "text": "听三轮车师傅判断，从运输站后门绕行", "next": "scene_river", "condition": {"type": "flag", "flag": "has_driver"}, "effects": [{"type": "setFlag", "flag": "arrived_early", "value": true}], "strategyTags": ["rely_on_relations"]}
       ]
     },
     {
-      "id": "scene_counter",
+      "id": "scene_river",
       "type": "scene",
-      "title": "草账与柜台",
-      "background": "cloth-shop",
-      "text": "号屋柜台擦得发亮。司账老陈盯着草账：「这一档，客姓沈，色样注的是『青，偏深，忌发红』。你把角弄丢，我可不能替你挨。掌柜的脚步……」外面日影更短。",
-      "revealEvidence": [
-        "jc_e2",
-        "jc_e4"
-      ],
+      "title": "河堤上的逆风",
+      "background": "early-republic-street",
+      "text": "河堤没有堵车，风却迎面卷着雨。你看见几个同样抱书赶路的人，大家轮流确认方向。有人建议把证件和证明塞进塑料布里，有人说县一中西门离招考办更近。",
       "choices": [
-        {
-          "id": "c_counter_copy",
-          "text": "抄下色注，再去染坊求补",
-          "next": "scene_dye_with_note",
-          "strategyTags": [
-            "follow_institution"
-          ],
-          "settlementNote": "你抄下色注作为补样依据。",
-          "effects": [
-            {
-              "type": "setFlag",
-              "flag": "has_color_note",
-              "value": true
-            }
-          ]
-        },
-        {
-          "id": "c_counter_plea",
-          "text": "求老陈在掌柜前暂压一晚，愿扣月例",
-          "next": "scene_decision",
-          "strategyTags": [
-            "rely_on_relations",
-            "exchange_resources"
-          ],
-          "settlementNote": "你换得暂压机会，代价是月例。",
-          "effects": [
-            {
-              "type": "setFlag",
-              "flag": "has_plea",
-              "value": true
-            },
-            {
-              "type": "modifyStat",
-              "stat": "wealth",
-              "delta": -6
-            }
-          ]
-        },
-        {
-          "id": "c_counter_lie",
-          "text": "谎称色样还在晒场未干，拖过今日",
-          "next": "scene_decision",
-          "strategyTags": [
-            "conceal_identity"
-          ],
-          "settlementNote": "你准备向掌柜撒谎拖延。",
-          "effects": [
-            {
-              "type": "setFlag",
-              "flag": "will_lie",
-              "value": true
-            },
-            {
-              "type": "modifyStat",
-              "stat": "exposure",
-              "delta": 15
-            }
-          ]
-        },
-        {
-          "id": "c_counter_search",
-          "text": "再出去找实物",
-          "next": "scene_tea",
-          "strategyTags": [
-            "labor_trade"
-          ],
-          "settlementNote": "你再次出门寻找色样。"
-        }
+        {"id": "c_river_pack", "text": "停半分钟包好所有纸质材料", "next": "scene_school_approach", "effects": [{"type": "setFlag", "flag": "kept_dry", "value": true}], "strategyTags": ["follow_institution"]},
+        {"id": "c_river_group", "text": "跟着考生们从西门去招考办", "next": "scene_school_approach", "effects": [{"type": "setFlag", "flag": "knows_verify_desk", "value": true}], "strategyTags": ["rely_on_relations"]},
+        {"id": "c_river_sprint", "text": "不再停留，沿河堤冲到底", "next": "scene_school_approach", "effects": [{"type": "modifyStat", "stat": "stamina", "delta": -7}], "strategyTags": ["labor_trade"]}
       ]
     },
     {
-      "id": "scene_dye_with_note",
+      "id": "scene_market",
       "type": "scene",
-      "title": "凭色注补裁",
-      "background": "cloth-dye",
-      "text": "你把草账上的色注念给染坊伙计听。他哼了一声，裁下一片：「有字据好办事。拿去吧——工钱记在老陈酒账上。」",
-      "revealEvidence": [
-        "jc_e6"
-      ],
+      "title": "早市的人潮",
+      "background": "early-republic-street",
+      "text": "菜筐、雨披和自行车把窄路塞满。一个小偷似的人撞了你一下便钻进人群，你赶紧检查贴身口袋；同时，前方卖早点的摊主喊，去县一中的人可以从粮店侧门穿过去。",
       "choices": [
-        {
-          "id": "c_note_patch",
-          "text": "收下补样，赶回点货",
-          "next": "scene_decision",
-          "strategyTags": [
-            "follow_institution",
-            "rely_on_relations"
-          ],
-          "settlementNote": "你凭色注取得补样。",
-          "effects": [
-            {
-              "type": "setFlag",
-              "flag": "has_patch",
-              "value": true
-            }
-          ]
-        }
+        {"id": "c_market_check", "text": "停下清点准考证和全部证明", "next": "scene_school_approach", "effects": [{"type": "setFlag", "flag": "materials_checked", "value": true}], "strategyTags": ["follow_institution"]},
+        {"id": "c_market_side", "text": "相信摊主，从粮店侧门穿行", "next": "scene_school_approach", "effects": [{"type": "setFlag", "flag": "arrived_early", "value": true}], "strategyTags": ["rely_on_relations"]},
+        {"id": "c_market_push", "text": "护住衣袋，硬挤出人群", "next": "scene_school_approach", "effects": [{"type": "modifyStat", "stat": "stamina", "delta": -6}, {"type": "modifyStat", "stat": "exposure", "delta": 4}], "strategyTags": ["labor_trade"]}
       ]
     },
     {
-      "id": "scene_decision",
+      "id": "scene_bridge",
       "type": "scene",
-      "title": "申时将至",
-      "background": "cloth-shop",
-      "text": "晒场开始收绳。远处传来掌柜熟悉的咳嗽声。他进门掸了掸袖上的灰，目光扫向那一档空签：「色样呢？对货。」你必须立刻交出说法——或实物，或补样，或人情，或一句谎话。",
+      "title": "只剩木板的小桥",
+      "background": "early-republic-street",
+      "text": "桥面掀开了一半，只铺着两条临时木板。前面的考生不敢走，修桥工人说自行车得留下，人可以扶绳慢慢过。河水就在脚下，你的鞋底已经湿透。",
       "choices": [
-        {
-          "id": "c_present_swatch",
-          "text": "呈上找回的原角色样",
-          "next": "ending_success_swatch",
-          "condition": {
-            "type": "flag",
-            "flag": "has_swatch"
-          },
-          "strategyTags": [
-            "labor_trade",
-            "follow_institution"
-          ],
-          "settlementNote": "你呈上原角，点货过关。"
-        },
-        {
-          "id": "c_present_patch",
-          "text": "呈上按色注补裁的样布",
-          "next": "ending_success_patch",
-          "condition": {
-            "type": "flag",
-            "flag": "has_patch"
-          },
-          "strategyTags": [
-            "labor_trade",
-            "follow_institution"
-          ],
-          "settlementNote": "你用合格补样对过沈客之货。"
-        },
-        {
-          "id": "c_present_plea",
-          "text": "请司账开口，求暂压记过",
-          "next": "ending_partial_plea",
-          "condition": {
-            "type": "flag",
-            "flag": "has_plea"
-          },
-          "strategyTags": [
-            "rely_on_relations",
-            "exchange_resources"
-          ],
-          "settlementNote": "你以月例换得暂压，今夜过关。"
-        },
-        {
-          "id": "c_present_bad",
-          "text": "呈上市上买的近似布头",
-          "next": "ending_fail_color",
-          "condition": {
-            "type": "flag",
-            "flag": "has_bad_patch"
-          },
-          "strategyTags": [
-            "conceal_identity"
-          ],
-          "settlementNote": "近似布头骗不过掌柜。"
-        },
-        {
-          "id": "c_present_lie",
-          "text": "坚持说色样未干，改拿别档充数",
-          "next": "ending_fail_lie",
-          "condition": {
-            "type": "flag",
-            "flag": "will_lie"
-          },
-          "strategyTags": [
-            "conceal_identity"
-          ],
-          "settlementNote": "隐瞒与充数当场败露。"
-        },
-        {
-          "id": "c_present_empty",
-          "text": "什么都没有，只能低头认罚",
-          "next": "ending_fail_empty",
-          "strategyTags": [
-            "avoid_transfer"
-          ],
-          "settlementNote": "你空手面对点货，按号规受罚。"
-        },
-        {
-          "id": "c_wrong_era_talk",
-          "text": "用一套不像本号规矩的说辞硬撑",
-          "next": "ending_fail_lie",
-          "condition": {
-            "type": "hypothesisMismatch",
-            "field": "period",
-            "value": "清中叶"
-          },
-          "strategyTags": [
-            "conceal_identity"
-          ],
-          "settlementNote": "你的说辞与号规对不上，嫌疑加重。",
-          "effects": [
-            {
-              "type": "modifyStat",
-              "stat": "exposure",
-              "delta": 20
-            }
-          ]
-        }
+        {"id": "c_bridge_slow", "text": "收好材料，扶绳一步步过去", "next": "scene_school_approach", "effects": [{"type": "modifyStat", "stat": "stamina", "delta": -5}], "strategyTags": ["avoid_transfer"]},
+        {"id": "c_bridge_help", "text": "和其他考生互相递包、一起过桥", "next": "scene_school_approach", "effects": [{"type": "setFlag", "flag": "met_candidate", "value": true}], "strategyTags": ["rely_on_relations"]},
+        {"id": "c_bridge_back", "text": "风险太大，折回河堤绕行", "next": "scene_river", "effects": [{"type": "modifyStat", "stat": "stamina", "delta": -4}], "strategyTags": ["avoid_transfer"]}
       ]
     },
     {
-      "id": "ending_success_swatch",
-      "type": "ending",
-      "title": "色样归位",
-      "outcome": "success",
-      "score": 90,
-      "text": "掌柜捏起布角对了对光，又瞅一眼草账，哼了一声：「脏是脏了，号还在。夹回去。」沈客的货对上了样。你在号里又熬过了一天——没有英雄，只有没被辞掉的学徒与伙计。",
-      "unlockSources": [
-        "jc_s1",
-        "jc_s2"
+      "id": "scene_school_approach",
+      "type": "scene",
+      "title": "校门就在前面",
+      "background": "early-republic-press",
+      "text": "县一中的灰砖围墙终于出现。正门排着两列长队：左边是持准考证的考生，右边是材料有问题的人。西侧小门有人喊‘招考办核验走这边’，但入口被自行车棚挡住。第一遍预备铃还有十几分钟。",
+      "choices": [
+        {"id": "c_approach_card_line", "text": "有证也先检查一遍，再排正常入场队", "next": "scene_queue", "condition": {"type": "flag", "flag": "has_card"}, "effects": [{"type": "setFlag", "flag": "chose_card_line", "value": true}], "strategyTags": ["follow_institution"]},
+        {"id": "c_approach_verify", "text": "直接去西门找招考办核验桌", "next": "scene_queue", "effects": [{"type": "setFlag", "flag": "chose_verify_line", "value": true}], "strategyTags": ["follow_institution"]},
+        {"id": "c_approach_ask", "text": "先问维持秩序的学生哪条队更快", "next": "scene_queue", "effects": [{"type": "setFlag", "flag": "queue_advice", "value": true}], "strategyTags": ["rely_on_relations"]},
+        {"id": "c_approach_side", "text": "跟着熟门路的人绕过自行车棚", "next": "scene_queue", "condition": {"type": "flag", "flag": "knows_verify_desk"}, "effects": [{"type": "setFlag", "flag": "arrived_early", "value": true}], "strategyTags": ["labor_trade"]}
       ]
     },
     {
-      "id": "ending_success_patch",
-      "type": "ending",
-      "title": "补样过关",
-      "outcome": "partial",
-      "score": 68,
-      "text": "补样经得起匆忙一瞥。掌柜叮嘱司账把酒账与染坊的人情记下，又警告你：「再丢，月例不够赔。」你保住了位置，也欠下了号里与邻号的账——色样终究不是原物，号规上仍算一记软伤。",
-      "unlockSources": [
-        "jc_s2",
-        "jc_s1"
+      "id": "scene_queue",
+      "type": "scene",
+      "title": "两条队伍",
+      "background": "early-republic-press",
+      "text": "队伍缓慢向前。前面有人忘带照片，有人的姓名被抄错一个字。一个工作人员逐份检查纸张，另一个不停回答‘外省日期和本地不同’。你必须利用排队时间整理材料，或尝试换到更合适的队伍。",
+      "revealEvidence": ["exam_e5"],
+      "choices": [
+        {"id": "c_queue_sort", "text": "按姓名、单位、报名号整理所有材料", "next": "scene_notice", "effects": [{"type": "setFlag", "flag": "materials_checked", "value": true}], "strategyTags": ["follow_institution"]},
+        {"id": "c_queue_compare", "text": "和前后考生核对本地入场要求", "next": "scene_notice", "effects": [{"type": "setFlag", "flag": "knows_rules", "value": true}], "strategyTags": ["rely_on_relations"]},
+        {"id": "c_queue_switch", "text": "根据学生的建议换到西门短队", "next": "scene_notice", "condition": {"type": "flag", "flag": "queue_advice"}, "effects": [{"type": "setFlag", "flag": "arrived_early", "value": true}], "strategyTags": ["rely_on_relations"]},
+        {"id": "c_queue_cut", "text": "声称马上开考，挤到队伍最前面", "next": "scene_notice", "effects": [{"type": "modifyStat", "stat": "exposure", "delta": 14}], "strategyTags": ["conceal_identity"]}
       ]
     },
     {
-      "id": "ending_partial_plea",
-      "type": "ending",
-      "title": "暂压记过",
-      "outcome": "partial",
-      "score": 40,
-      "text": "老陈硬着头皮圆场。掌柜允你次日补样，却当众记下过，并扣了月例。今夜你还能睡在号里，明天仍要面对沈客的布。",
-      "unlockSources": [
-        "jc_s1",
-        "jc_s3"
+      "id": "scene_notice",
+      "type": "scene",
+      "title": "红纸通知",
+      "background": "early-republic-press",
+      "text": "廊柱上的红纸写明本地考试日期、考场纪律和证件要求，落款正是一九七七年十二月。旁边有人坚持说收音机里听到的外省安排才是真的，想拉你离队去另一个学校。门内传来监考员搬试卷的脚步声。",
+      "choices": [
+        {"id": "c_notice_local", "text": "以本地盖章通知为准，继续排队", "next": "scene_gate", "effects": [{"type": "setFlag", "flag": "read_notice", "value": true}], "strategyTags": ["follow_institution"]},
+        {"id": "c_notice_ask_staff", "text": "向工作人员确认考场和座号", "next": "scene_gate", "effects": [{"type": "setFlag", "flag": "staff_confirmed", "value": true}], "strategyTags": ["follow_institution", "rely_on_relations"]},
+        {"id": "c_notice_follow_rumor", "text": "相信收音机传言，离队去找另一个考点", "next": "scene_wrong_school", "strategyTags": ["avoid_transfer"]}
       ]
     },
     {
-      "id": "ending_fail_color",
-      "type": "ending",
-      "title": "色差翻车",
-      "outcome": "failure",
-      "score": 22,
-      "text": "掌柜把布头扔回柜台：「这不是我们夹出去的。」号规无情。你赔了布，也丢了脸，当晚被打发卷铺盖。",
-      "unlockSources": [
-        "jc_s2"
+      "id": "scene_wrong_school",
+      "type": "scene",
+      "title": "差点走错",
+      "background": "early-republic-street",
+      "text": "你走出几十米便看见路牌：另一所学校今天根本没有招生考试。刚才那人也愣住了。广播里说的是外省安排，而红纸通知才是本地执行办法。你掉头冲回县一中，队伍已经短了，时间也更少了。",
+      "choices": [
+        {"id": "c_wrong_return", "text": "承认判断失误，立刻返回原队", "next": "scene_gate", "effects": [{"type": "modifyStat", "stat": "stamina", "delta": -8}, {"type": "modifyStat", "stat": "exposure", "delta": 8}], "strategyTags": ["labor_trade"]},
+        {"id": "c_wrong_side", "text": "从西门直奔核验桌补救", "next": "scene_gate", "effects": [{"type": "setFlag", "flag": "chose_verify_line", "value": true}, {"type": "modifyStat", "stat": "stamina", "delta": -5}], "strategyTags": ["follow_institution"]}
       ]
     },
     {
-      "id": "ending_fail_lie",
-      "type": "ending",
-      "title": "隐瞒败露",
-      "outcome": "failure",
-      "score": 12,
-      "text": "别档的布角骗不过看了一辈子疋头的眼。掌柜当场结清工钱，命你出门。市镇不大，这张嘴会比你的腿跑得更快。",
-      "unlockSources": [
-        "jc_s1"
+      "id": "scene_gate",
+      "type": "scene",
+      "title": "县一中校门",
+      "background": "early-republic-press",
+      "text": "校门外挤满最后一批考生。红纸通知被雨打得发皱：本地区高等学校招生考试，一九七七年十二月，开考前凭准考证入场。门卫已经开始收绳。没有证件的人被引到旁边的临时核验桌，招考办老师正翻一本厚名册。",
+      "revealEvidence": ["exam_e3"],
+      "choices": [
+        {"id": "c_show_card", "text": "出示找回的准考证", "next": "scene_card_check", "condition": {"type": "flag", "flag": "has_card"}, "strategyTags": ["follow_institution"]},
+        {"id": "c_join_verify", "text": "去核验桌报姓名、单位和报名号", "next": "scene_verify", "strategyTags": ["follow_institution"]},
+        {"id": "c_find_teacher", "text": "找认识的老师为你确认身份", "next": "scene_verify", "condition": {"type": "flag", "flag": "knows_teacher"}, "effects": [{"type": "setFlag", "flag": "has_witness", "value": true}], "strategyTags": ["rely_on_relations"]},
+        {"id": "c_follow_crowd", "text": "混在持证考生中挤进校门", "next": "scene_corridor", "effects": [{"type": "setFlag", "flag": "sneaked_in", "value": true}, {"type": "modifyStat", "stat": "exposure", "delta": 30}], "strategyTags": ["conceal_identity"]}
       ]
     },
     {
-      "id": "ending_fail_empty",
-      "type": "ending",
-      "title": "按号规受罚",
-      "outcome": "failure",
-      "score": 15,
-      "text": "你既无原角，也无补样，又无说得过去的人情。按号规赔布记过之后，掌柜仍嫌你碍眼——你被辞出号，站在晒场空绳下，日影已经很长。",
-      "unlockSources": [
-        "jc_s1",
-        "jc_s2"
+      "id": "scene_card_check",
+      "type": "scene",
+      "title": "被雨水泡开的照片",
+      "background": "early-republic-press",
+      "text": "门卫展开准考证，姓名和座号还清楚，贴照片的浆糊却被雨水泡开了一角。若照片彻底脱落，进教室还要再解释一次。门卫让你到屋檐下处理，但不能遮住印章。",
+      "choices": [
+        {"id": "c_card_press", "text": "用干手帕吸水，再把照片轻轻压平", "next": "scene_corridor", "condition": {"type": "flag", "flag": "kept_dry"}, "effects": [{"type": "setFlag", "flag": "card_stable", "value": true}], "strategyTags": ["labor_trade"]},
+        {"id": "c_card_clip", "text": "请门卫用回形针固定，并在旁边签注", "next": "scene_corridor", "effects": [{"type": "setFlag", "flag": "card_stable", "value": true}], "strategyTags": ["follow_institution", "rely_on_relations"]},
+        {"id": "c_card_hide_damage", "text": "把翘起的一角按在手指下，不提损坏", "next": "scene_corridor", "effects": [{"type": "modifyStat", "stat": "exposure", "delta": 12}], "strategyTags": ["conceal_identity"]}
       ]
     },
     {
-      "id": "ending_exhaustion",
-      "type": "ending",
-      "title": "晒场力竭",
-      "outcome": "failure",
-      "score": 5,
-      "text": "翻绳、跑巷、求人，体力先一步垮掉。点货的梆子响起来时，你已说不清色样在哪。"
+      "id": "scene_verify",
+      "type": "scene",
+      "title": "名册上的名字",
+      "background": "early-republic-press",
+      "text": "老师的手指沿名册一行行往下滑。你的姓名、原单位和考场都在上面，但照片栏的墨印已经模糊。广播开始提醒监考员分发试卷。要放你进去，老师还需要最后一项能对应身份的凭据。",
+      "choices": [
+        {"id": "c_verify_letter", "text": "交出盖章的单位介绍信", "next": "scene_temp_pass", "condition": {"type": "flag", "flag": "has_intro_letter"}, "effects": [{"type": "setFlag", "flag": "has_temp_pass", "value": true}], "strategyTags": ["follow_institution"]},
+        {"id": "c_verify_stub", "text": "交出报名表底联核对报名号", "next": "scene_temp_pass", "condition": {"type": "flag", "flag": "has_registration_stub"}, "effects": [{"type": "setFlag", "flag": "has_temp_pass", "value": true}], "strategyTags": ["follow_institution"]},
+        {"id": "c_verify_witness", "text": "请老师或售票员当面作证", "next": "scene_temp_pass", "condition": {"type": "flag", "flag": "has_witness"}, "effects": [{"type": "setFlag", "flag": "has_temp_pass", "value": true}], "strategyTags": ["rely_on_relations"]},
+        {"id": "c_verify_process", "text": "请对照原报名学校来函和照片存根", "next": "scene_temp_pass", "condition": {"type": "flag", "flag": "knows_school_process"}, "effects": [{"type": "setFlag", "flag": "has_temp_pass", "value": true}, {"type": "modifyStat", "stat": "exposure", "delta": 6}], "strategyTags": ["follow_institution"]},
+        {"id": "c_verify_phone", "text": "请老师查看邮电局提前送到的核验便笺", "next": "scene_temp_pass", "condition": {"type": "flag", "flag": "message_sent"}, "effects": [{"type": "setFlag", "flag": "has_temp_pass", "value": true}], "strategyTags": ["follow_institution", "rely_on_relations"]},
+        {"id": "c_verify_call", "text": "说明电话已经核对过名册，请老师复核", "next": "scene_temp_pass", "condition": {"type": "flag", "flag": "phone_verified"}, "effects": [{"type": "setFlag", "flag": "has_temp_pass", "value": true}], "strategyTags": ["follow_institution"]},
+        {"id": "c_verify_beg", "text": "只凭名册相求，请老师破例放行", "next": "scene_corridor", "effects": [{"type": "setFlag", "flag": "unverified", "value": true}], "strategyTags": ["rely_on_relations"]}
+      ]
     },
     {
-      "id": "ending_critical_injury",
-      "type": "ending",
-      "title": "伤病缠身",
-      "outcome": "failure",
-      "score": 8,
-      "text": "伤病拖住你，来不及在死线前把事情办完。号规不等病人。"
+      "id": "scene_temp_pass",
+      "type": "scene",
+      "title": "临时入场条",
+      "background": "early-republic-press",
+      "text": "老师把证明与名册核对两遍，写下一张临时入场条，盖章时印泥都没来得及蘸匀。‘先考试，结束后再补手续。’走廊里已经响起预备铃。",
+      "choices": [
+        {"id": "c_temp_final", "text": "拿好入场条，跑向教学楼", "next": "scene_corridor", "strategyTags": ["follow_institution", "labor_trade"]}
+      ]
     },
     {
-      "id": "ending_exposed_stat",
-      "type": "ending",
-      "title": "嫌疑满号",
-      "outcome": "failure",
-      "score": 10,
-      "text": "号里人人疑你手脚不干净。即便色样还在，你也很难再以原来的身份在柜台前站稳。"
-    }
+      "id": "scene_corridor",
+      "type": "scene",
+      "title": "三楼最里面",
+      "background": "early-republic-press",
+      "text": "你的考场在三楼最里面。楼梯口贴着考场分布图，拥挤的人流却把‘文科’和‘理科’两列挤得看不清。一个考生摔倒，钢笔和证件散了一地；值勤学生催所有人不要停。第二遍预备铃随时会响。",
+      "choices": [
+        {"id": "c_corridor_map", "text": "停下来读清分布图，确认考场编号", "next": "scene_door", "effects": [{"type": "setFlag", "flag": "room_confirmed", "value": true}], "strategyTags": ["follow_institution"]},
+        {"id": "c_corridor_ask", "text": "把座号报给值勤学生，请他直接指路", "next": "scene_door", "effects": [{"type": "setFlag", "flag": "room_confirmed", "value": true}], "strategyTags": ["rely_on_relations"]},
+        {"id": "c_corridor_help", "text": "帮摔倒的考生捡起证件，再一起上楼", "next": "scene_door", "condition": {"type": "flag", "flag": "met_candidate"}, "effects": [{"type": "setFlag", "flag": "candidate_witness", "value": true}, {"type": "modifyStat", "stat": "stamina", "delta": -3}], "strategyTags": ["rely_on_relations", "labor_trade"]},
+        {"id": "c_corridor_follow", "text": "不看分布图，跟着最多的人往楼上跑", "next": "scene_wrong_room", "strategyTags": ["avoid_transfer"]}
+      ]
+    },
+    {
+      "id": "scene_wrong_room",
+      "type": "scene",
+      "title": "走错的二楼",
+      "background": "early-republic-press",
+      "text": "你跟到二楼才发现这里全是另一个科类的考场，座号也对不上。楼下的第二遍预备铃响了。一个监考员看过你的材料，指向另一端楼梯：三楼最里面，还有最后两分钟。",
+      "choices": [
+        {"id": "c_wrong_room_run", "text": "道谢后冲上另一端楼梯", "next": "scene_door", "effects": [{"type": "modifyStat", "stat": "stamina", "delta": -8}, {"type": "modifyStat", "stat": "exposure", "delta": 5}], "strategyTags": ["labor_trade"]},
+        {"id": "c_wrong_room_escort", "text": "请监考员用对讲喊话并带你过去", "next": "scene_door", "effects": [{"type": "setFlag", "flag": "teacher_escorted", "value": true}], "strategyTags": ["follow_institution", "rely_on_relations"]}
+      ]
+    },
+    {
+      "id": "scene_door",
+      "type": "scene",
+      "title": "教室门口的最后核对",
+      "background": "early-republic-press",
+      "text": "教室里已经坐满人。监考员把名册、你的脸和手中材料来回对照，又要求你说出原单位和报名时填写的通讯地址。试卷袋已经放上讲台，只等铃响后拆封。",
+      "choices": [
+        {"id": "c_door_answer", "text": "按报名材料如实回答全部信息", "next": "scene_final", "effects": [{"type": "setFlag", "flag": "door_verified", "value": true}], "strategyTags": ["follow_institution"]},
+        {"id": "c_door_show_sorted", "text": "递上提前整理好的材料，请监考员逐项核对", "next": "scene_final", "condition": {"type": "flag", "flag": "materials_checked"}, "effects": [{"type": "setFlag", "flag": "door_verified", "value": true}], "strategyTags": ["follow_institution"]},
+        {"id": "c_door_witness", "text": "请同行考生或带路老师补充证明", "next": "scene_final", "condition": {"type": "flag", "flag": "candidate_witness"}, "effects": [{"type": "setFlag", "flag": "door_verified", "value": true}], "strategyTags": ["rely_on_relations"]},
+        {"id": "c_door_rush", "text": "反复强调要开考了，试图绕过最后核对", "next": "scene_final", "effects": [{"type": "modifyStat", "stat": "exposure", "delta": 16}], "strategyTags": ["conceal_identity"]}
+      ]
+    },
+    {
+      "id": "scene_final",
+      "type": "scene",
+      "title": "预备铃响了",
+      "background": "early-republic-press",
+      "text": "走廊里满是湿鞋印和翻动试卷的声音。监考员站在教室门口，最后核对一次姓名与座号。你身后，校门的绳子已经拉起。",
+      "choices": [
+        {"id": "c_enter_card", "text": "凭找回的准考证入场", "next": "ending_success_card", "condition": {"type": "flag", "flag": "has_card"}, "strategyTags": ["follow_institution"]},
+        {"id": "c_enter_temp", "text": "凭招考办开的临时入场条入场", "next": "ending_success_verify", "condition": {"type": "flag", "flag": "has_temp_pass"}, "strategyTags": ["follow_institution"]},
+        {"id": "c_enter_sneak", "text": "趁监考员转身坐到名册上的座位", "next": "ending_fail_sneak", "condition": {"type": "flag", "flag": "sneaked_in"}, "strategyTags": ["conceal_identity"]},
+        {"id": "c_enter_unverified", "text": "继续恳求监考员先让你答题", "next": "ending_partial_late", "condition": {"type": "flag", "flag": "unverified"}, "strategyTags": ["rely_on_relations"]},
+        {"id": "c_give_up", "text": "接受无法核验，离开考场", "next": "ending_fail_missed", "strategyTags": ["avoid_transfer"]}
+      ]
+    },
+    {"id": "ending_success_card", "type": "ending", "title": "赶上开考", "outcome": "success", "score": 92, "text": "监考员核对姓名和座号后放你入场。你坐下时手还在发抖，但试卷发到面前的那一刻，雨声突然变得很远。你没有预知未来，只知道这次机会终于握在自己手里。", "unlockSources": ["exam_s1", "exam_s2", "exam_s3"]},
+    {"id": "ending_success_verify", "type": "ending", "title": "名字可以证明", "outcome": "success", "score": 84, "text": "临时入场条被夹进考场记录。你比别人晚坐下几分钟，却没有错过答题。证件可以遗失，名册、证明和愿意认真核验的人，替你把通往考场的门重新打开。", "unlockSources": ["exam_s1", "exam_s2"]},
+    {"id": "ending_partial_late", "type": "ending", "title": "迟到的座位", "outcome": "partial", "score": 55, "text": "老师最终同意先核对笔迹与报名信息，但你错过了开考后的宝贵时间。你仍然拿到了试卷，只是必须用更少的时间回答同样的问题。", "unlockSources": ["exam_s1"]},
+    {"id": "ending_fail_sneak", "type": "ending", "title": "名单对不上脸", "outcome": "failure", "score": 18, "text": "监考员点名时发现你没有任何入场凭据。值班台关于湿信封的电话也追到了学校。你被带离教室，原本可以核验解决的麻烦，因为冒险隐瞒变成了无法解释的嫌疑。"},
+    {"id": "ending_fail_missed", "type": "ending", "title": "校门已经关了", "outcome": "failure", "score": 12, "text": "第一道铃声穿过雨幕。你站在校门外，听见里面翻开试卷的声音。历史的大门确实重新打开了，但这一次，你没能在关门前赶到自己的座位。"},
+    {"id": "ending_exhaustion", "type": "ending", "title": "雨中力竭", "outcome": "failure", "score": 5, "text": "你在车站与考点之间耗尽了体力。等你重新站稳，开考铃已经响过。"},
+    {"id": "ending_critical_injury", "type": "ending", "title": "途中受伤", "outcome": "failure", "score": 8, "text": "湿滑的路面终止了这场奔跑。你没能按时到达考点。"},
+    {"id": "ending_exposed_stat", "type": "ending", "title": "身份受疑", "outcome": "failure", "score": 10, "text": "接连的隐瞒与冒险让工作人员无法再相信你的说法。核验结束前，考场已经关门。"}
   ]
 }
